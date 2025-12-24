@@ -28,8 +28,11 @@ const Manor = () => {
               {manorData.title}
             </h2>
             <p className="text-xl text-[#084a61]/60 italic mb-4">{manorData.subtitle}</p>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+            <p className="text-gray-600 text-lg leading-relaxed mb-4">
               {manorData.description}
+            </p>
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              {manorData.secondParagraph}
             </p>
 
             <div className="grid grid-cols-2 gap-4">
