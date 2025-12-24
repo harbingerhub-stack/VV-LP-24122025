@@ -1,167 +1,60 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { 
-  Calendar, UtensilsCrossed, Film, Waves, Briefcase, Heart, 
-  Baby, Target, Gamepad2, BookOpen, Crown, Star
-} from 'lucide-react';
-import { Button } from '../ui/button';
+import { Check } from 'lucide-react';
 import { manorData } from '../../data/mock';
-
-const iconMap = {
-  Calendar,
-  UtensilsCrossed,
-  Film,
-  Waves,
-  Briefcase,
-  Heart,
-  Baby,
-  Target,
-  Gamepad2,
-  BookOpen
-};
 
 const Manor = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
+  const ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => entry.isIntersecting && setIsVisible(true),
       { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
-  const scrollToContact = () => {
-    const element = document.querySelector('#contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="manor" ref={sectionRef} className="section-padding bg-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #084a61 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }}></div>
-      </div>
-
-      <div className="container-custom relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className={`inline-flex items-center gap-2 text-[#87b04a] font-medium tracking-wider text-sm uppercase mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <Crown className="w-5 h-5" />
-            Exclusive Access
-          </div>
-          <h2 className={`font-display text-4xl md:text-5xl font-bold text-[#084a61] mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            {manorData.title}
-          </h2>
-          <div className={`decorative-line mx-auto mb-6 transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}></div>
-          <p className={`text-[#87b04a] text-xl font-display italic transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            {manorData.subtitle}
-          </p>
-        </div>
-
+    <section ref={ref} className="py-24 md:py-32 bg-[#f8f9f6]">
+      <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className={`order-2 lg:order-1 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
+          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
+            <span className="text-[#87b04a] font-medium tracking-wider text-sm uppercase">
+              Exclusive Access
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl text-[#084a61] mt-4 mb-6">
+              {manorData.title}
+            </h2>
+            <p className="text-xl text-[#084a61]/60 italic mb-4">{manorData.subtitle}</p>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               {manorData.description}
             </p>
 
-            {/* Amenities Grid */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {manorData.amenities.map((amenity, index) => {
-                const Icon = iconMap[amenity.icon];
-                return (
-                  <div
-                    key={amenity.name}
-                    className="group flex items-center gap-3 p-4 bg-[#f8f7f4] rounded-xl hover:bg-[#084a61] transition-all duration-300"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-[#87b04a]/20 group-hover:bg-[#87b04a] flex items-center justify-center flex-shrink-0 transition-colors duration-300">
-                      <Icon className="w-5 h-5 text-[#87b04a] group-hover:text-[#084a61] transition-colors duration-300" />
-                    </div>
-                    <span className="text-gray-700 group-hover:text-white text-sm font-medium transition-colors duration-300">
-                      {amenity.name}
-                    </span>
+            <div className="grid grid-cols-2 gap-4">
+              {manorData.amenities.map((item, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-[#87b04a] flex items-center justify-center">
+                    <Check className="w-4 h-4 text-white" />
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Membership Card */}
-            <div className="bg-gradient-to-r from-[#084a61] to-[#0a5d7a] rounded-2xl p-6 text-white">
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-xl bg-[#87b04a] flex items-center justify-center flex-shrink-0">
-                  <Star className="w-7 h-7 text-[#084a61]" />
+                  <span className="text-gray-700">{item}</span>
                 </div>
-                <div>
-                  <h4 className="font-display font-semibold text-lg mb-2">VV Membership Passport</h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    Your membership grants seamless access to a growing portfolio of VV Resorts & Lounges across India.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
-
-            {/* CTA */}
-            <Button
-              onClick={scrollToContact}
-              className="mt-6 bg-[#87b04a] hover:bg-[#b8954d] text-[#084a61] font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Learn More About The Manor
-            </Button>
           </div>
 
           {/* Image */}
-          <div className={`order-1 lg:order-2 relative transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          <div className={`relative transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-[#084a61]/10 rounded-3xl transform -rotate-3" />
               <img
                 src={manorData.image}
-                alt="The Manor Resort Lounge"
-                className="w-full h-[550px] object-cover"
+                alt="The Manor"
+                className="relative rounded-2xl shadow-2xl w-full h-[450px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#084a61]/70 via-transparent to-transparent"></div>
-              
-              {/* Floating Badge */}
-              <div className="absolute top-6 right-6">
-                <div className="bg-[#87b04a] text-[#084a61] px-4 py-2 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg">
-                  <Crown className="w-4 h-4" />
-                  VV Resorts & Lounges
-                </div>
-              </div>
-
-              {/* Bottom Info */}
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="glass rounded-xl p-4">
-                  <p className="text-[#084a61] font-display font-semibold text-lg">The Art of Leisure</p>
-                  <p className="text-gray-600 text-sm">An independent entity offering exclusive experiences</p>
-                </div>
-              </div>
             </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-[#87b04a]/30 rounded-tl-2xl"></div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-[#87b04a]/30 rounded-br-2xl"></div>
           </div>
-        </div>
-
-        {/* Disclaimer */}
-        <div className={`mt-12 text-center transition-all duration-700 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <p className="text-gray-500 text-sm italic">
-            *The Manor by VV Resorts and Lounges is an independent entity & not a part of the project amenities. Terms and conditions applicable.
-          </p>
         </div>
       </div>
     </section>

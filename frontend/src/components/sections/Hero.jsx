@@ -1,132 +1,117 @@
-import React, { useEffect, useState } from 'react';
-import { ArrowRight, Play, ChevronDown } from 'lucide-react';
+import React, { useEffect, useState, useRef } from 'react';
+import { ArrowDown, Play } from 'lucide-react';
 import { Button } from '../ui/button';
 import { heroData, statsData } from '../../data/mock';
 
-const AnimatedCounter = ({ value, suffix, label, delay }) => {
+const Counter = ({ value, suffix, label }) => {
   const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          let start = 0;
+          const end = value;
+          const duration = 2000;
+          const increment = end / (duration / 16);
+          
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= end) {
+              setCount(end);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(start));
+            }
+          }, 16);
+        }
+      },
+      { threshold: 0.5 }
+    );
 
-  useEffect(() => {
-    if (!isVisible) return;
-    
-    const duration = 2000;
-    const steps = 60;
-    const stepValue = value / steps;
-    let currentStep = 0;
-
-    const interval = setInterval(() => {
-      currentStep++;
-      if (currentStep >= steps) {
-        setCount(value);
-        clearInterval(interval);
-      } else {
-        setCount(Math.floor(stepValue * currentStep));
-      }
-    }, duration / steps);
-
-    return () => clearInterval(interval);
-  }, [value, isVisible]);
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [value, hasAnimated]);
 
   return (
-    <div className={`text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-      <div className="font-display text-3xl md:text-4xl font-bold text-white mb-1">
+    <div ref={ref} className="text-center">
+      <div className="font-display text-5xl md:text-6xl font-bold text-white">
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-[#a8ce6d] text-sm font-medium tracking-wide">{label}</div>
+      <div className="text-white/70 text-sm mt-2 tracking-wider uppercase">{label}</div>
     </div>
   );
 };
 
 const Hero = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true);
+    setLoaded(true);
   }, []);
 
-  const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const scrollToSection = (id) => {
+    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section id="home" className="relative min-h-screen flex flex-col">
+      {/* Background */}
       <div className="absolute inset-0">
-        <img
-          src={heroData.backgroundImage}
-          alt="Vacation Village Chikkamagaluru"
-          className="w-full h-full object-cover"
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroData.backgroundImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#084a61]/95 via-[#084a61]/70 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#084a61]/80 via-transparent to-[#084a61]/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#084a61]/80 via-[#084a61]/60 to-[#084a61]/90" />
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-[#87b04a]/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-40 left-20 w-96 h-96 bg-[#87b04a]/5 rounded-full blur-3xl" style={{ animationDelay: '1s' }}></div>
-
-      {/* Content */}
-      <div className="container-custom relative z-10 pt-32 pb-20">
-        <div className="max-w-3xl">
-          {/* Tagline */}
-          <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-[#a8ce6d] text-sm font-medium tracking-wider border border-[#87b04a]/30">
-              <span className="w-2 h-2 rounded-full bg-[#87b04a] animate-pulse"></span>
+      {/* Main Content */}
+      <div className="relative z-10 flex-1 flex items-center justify-center px-4 pt-24">
+        <div className="text-center max-w-4xl mx-auto">
+          <div className={`transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <span className="inline-block px-4 py-2 bg-[#87b04a]/20 border border-[#87b04a]/40 rounded-full text-[#87b04a] text-sm font-medium tracking-wider mb-8">
               {heroData.tagline}
             </span>
           </div>
-
-          {/* Headline */}
-          <h1 className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mt-8 leading-tight transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="block">This View Is Not</span>
-            <span className="block text-gradient-gold">Borrowed, It's Yours</span>
+          
+          <h1 className={`font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-6 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {heroData.headline}
           </h1>
-
-          {/* Subheadline */}
-          <p className={`text-lg md:text-xl text-gray-300 mt-6 max-w-xl leading-relaxed transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          
+          <p className={`text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-10 font-light leading-relaxed transition-all duration-1000 delay-300 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {heroData.subheadline}
           </p>
 
-          {/* CTA Buttons */}
-          <div className={`flex flex-wrap items-center gap-4 mt-10 transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 delay-400 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <Button
-              onClick={() => scrollToSection('#contact')}
-              className="bg-[#87b04a] hover:bg-[#6f9a3a] text-[#084a61] font-semibold px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 group"
+              onClick={() => scrollToSection('#about')}
+              size="lg"
+              className="bg-[#87b04a] hover:bg-[#6f9a3a] text-white px-10 py-6 text-lg font-medium rounded-full"
             >
               {heroData.ctaText}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
-              variant="outline"
-              className="border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-[#084a61] font-semibold px-8 py-6 text-lg transition-all duration-300 group"
+              variant="ghost"
+              size="lg"
+              className="text-white hover:bg-white/10 px-8 py-6 text-lg font-medium rounded-full group"
             >
-              <Play className="mr-2 w-5 h-5" />
-              Watch Video
+              <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+              {heroData.ctaSecondary}
             </Button>
           </div>
         </div>
+      </div>
 
-        {/* Stats Section */}
-        <div className={`mt-20 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="glass-dark rounded-2xl p-8 max-w-4xl">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      {/* Stats Bar */}
+      <div className={`relative z-10 transition-all duration-1000 delay-500 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="container-custom py-12">
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {statsData.map((stat, index) => (
-                <AnimatedCounter
-                  key={stat.label}
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  label={stat.label}
-                  delay={600 + index * 100}
-                />
+                <Counter key={index} {...stat} />
               ))}
             </div>
           </div>
@@ -137,10 +122,9 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
         <button
           onClick={() => scrollToSection('#about')}
-          className="flex flex-col items-center gap-2 text-white/70 hover:text-[#87b04a] transition-colors group"
+          className="text-white/60 hover:text-white transition-colors animate-bounce"
         >
-          <span className="text-sm tracking-wider">Scroll</span>
-          <ChevronDown className="w-6 h-6 animate-bounce" />
+          <ArrowDown className="w-6 h-6" />
         </button>
       </div>
     </section>

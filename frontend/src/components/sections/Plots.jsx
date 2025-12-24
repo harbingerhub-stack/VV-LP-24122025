@@ -1,165 +1,81 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Ruler, Home, Users, Check, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { plotsData } from '../../data/mock';
 
 const Plots = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [selectedPlot, setSelectedPlot] = useState(null);
-  const sectionRef = useRef(null);
+  const ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => entry.isIntersecting && setIsVisible(true),
       { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   const scrollToContact = () => {
-    const element = document.querySelector('#contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="plots" ref={sectionRef} className="section-padding bg-[#084a61] relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-[#87b04a]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container-custom relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className={`inline-block text-[#87b04a] font-medium tracking-wider text-sm uppercase mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+    <section id="plots" ref={ref} className="py-24 md:py-32 bg-[#084a61]">
+      <div className="container-custom">
+        {/* Header */}
+        <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <span className="text-[#87b04a] font-medium tracking-wider text-sm uppercase">
             Plot Options
           </span>
-          <h2 className={`font-display text-4xl md:text-5xl font-bold text-white mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <h2 className="font-display text-4xl md:text-5xl text-white mt-4 mb-4">
             {plotsData.title}
           </h2>
-          <div className={`decorative-line mx-auto mb-6 transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}></div>
-          <p className={`text-gray-300 text-lg transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            {plotsData.description}
-          </p>
+          <p className="text-white/70 text-xl">{plotsData.subtitle}</p>
         </div>
 
         {/* Plot Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           {plotsData.plots.map((plot, index) => (
             <div
-              key={plot.type}
-              onClick={() => setSelectedPlot(selectedPlot === index ? null : index)}
-              className={`relative group cursor-pointer transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: `${300 + index * 100}ms` }}
+              key={index}
+              className={`bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-[#87b04a]/50 transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border-2 transition-all duration-300 ${
-                selectedPlot === index 
-                  ? 'border-[#87b04a] bg-white/20' 
-                  : 'border-transparent hover:border-[#87b04a]/50'
-              }`}>
-                {/* Type Badge */}
-                <div className="absolute -top-3 left-6">
-                  <span className="bg-[#87b04a] text-[#084a61] px-4 py-1 rounded-full text-sm font-semibold">
-                    Type {plot.type}
-                  </span>
+              {plot.price === 'Popular' && (
+                <div className="bg-[#87b04a] text-white text-xs font-semibold px-3 py-1 rounded-full inline-block mb-4">
+                  Most Popular
                 </div>
-
-                <div className="pt-4">
-                  {/* Size */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#87b04a]/20 flex items-center justify-center">
-                      <Ruler className="w-6 h-6 text-[#87b04a]" />
-                    </div>
-                    <div>
-                      <p className="text-white font-display font-bold text-2xl">{plot.size}</p>
-                      <p className="text-gray-400 text-sm">Plot Size</p>
-                    </div>
-                  </div>
-
-                  {/* Area */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                      <Home className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold text-lg">{plot.sqft}</p>
-                      <p className="text-gray-400 text-sm">Total Area</p>
-                    </div>
-                  </div>
-
-                  {/* Units */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                      <Users className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold text-lg">{plot.units}</p>
-                      <p className="text-gray-400 text-sm">Available</p>
-                    </div>
-                  </div>
+              )}
+              <div className="font-display text-4xl text-white mb-2">{plot.size}</div>
+              <div className="text-[#87b04a] text-2xl font-semibold mb-6">{plot.sqft} Sq.ft</div>
+              
+              <div className="space-y-3 mb-8">
+                <div className="flex justify-between text-white/70">
+                  <span>Available Units</span>
+                  <span className="text-white font-semibold">{plot.units}</span>
                 </div>
-
-                {/* CTA */}
-                <Button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    scrollToContact();
-                  }}
-                  className="w-full mt-6 bg-transparent border-2 border-[#87b04a] text-[#87b04a] hover:bg-[#87b04a] hover:text-[#084a61] transition-all duration-300"
-                >
-                  Enquire Now
-                </Button>
+                <div className="flex justify-between text-white/70">
+                  <span>Category</span>
+                  <span className="text-white font-semibold">{plot.price}</span>
+                </div>
               </div>
+
+              <Button
+                onClick={scrollToContact}
+                className="w-full bg-transparent border-2 border-white/30 text-white hover:bg-[#87b04a] hover:border-[#87b04a] transition-all group-hover:border-[#87b04a]"
+              >
+                Enquire Now
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
             </div>
           ))}
         </div>
 
-        {/* Features Grid */}
-        <div className={`bg-white/5 backdrop-blur-sm rounded-2xl p-8 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h3 className="font-display text-2xl font-semibold text-white mb-6 text-center">
-            Neo-Classical Design Standards
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {plotsData.features.map((feature, index) => (
-              <div key={feature} className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#87b04a] flex items-center justify-center flex-shrink-0">
-                  <Check className="w-5 h-5 text-[#084a61]" />
-                </div>
-                <span className="text-gray-300">{feature}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Note */}
-          <div className="mt-8 pt-6 border-t border-white/10">
-            <p className="text-gray-400 text-sm text-center italic">
-              *All construction is governed by a specific design code regarding elevation, sizing, and height to preserve the grandeur and value of the estate.
-            </p>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className={`text-center mt-12 transition-all duration-700 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <Button
-            onClick={scrollToContact}
-            className="bg-[#87b04a] hover:bg-[#6f9a3a] text-[#084a61] font-semibold px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 group"
-          >
-            Request Master Plan
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
+        {/* Note */}
+        <p className={`text-center text-white/60 text-sm transition-all duration-700 delay-400 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          {plotsData.note}
+        </p>
       </div>
     </section>
   );
