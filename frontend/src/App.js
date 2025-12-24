@@ -8,7 +8,6 @@ import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Location from './components/sections/Location';
 import Plots from './components/sections/Plots';
-import Amenities from './components/sections/Amenities';
 import Manor from './components/sections/Manor';
 import Contact from './components/sections/Contact';
 
@@ -22,7 +21,6 @@ function App() {
         <About />
         <Location />
         <Plots />
-        <Amenities />
         <Manor />
         <Contact />
       </main>
