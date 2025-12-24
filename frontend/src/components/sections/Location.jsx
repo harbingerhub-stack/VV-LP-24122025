@@ -46,7 +46,8 @@ const Location = () => {
               
               {/* Overlay Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-display text-2xl text-white mb-3">Hebballi</h3>
+                <h3 className="font-display text-2xl text-white mb-1">Mullayyanagiri</h3>
+                <p className="text-white/80 text-sm mb-3">Your address in the hills</p>
                 
                 {/* Distance Cards - Compact */}
                 <div className="grid grid-cols-4 gap-2">
