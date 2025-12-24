@@ -56,11 +56,11 @@ const Location = () => {
                 <h3 className="font-display text-2xl text-white mb-3">Mullayyanagiri</h3>
                 
                 {/* Distance Cards - Compact */}
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 gap-4">
                   {locationData.highlights.map((item, index) => {
                     const Icon = iconMap[item.icon];
                     return (
-                      <div key={index} className="bg-white/15 backdrop-blur-sm p-2 rounded-lg text-center">
+                      <div key={index} className="bg-white/15 backdrop-blur-sm p-3 rounded-lg text-center">
                         <Icon className="w-4 h-4 text-[#87b04a] mx-auto mb-1" />
                         <div className="font-bold text-white text-sm">{item.value}</div>
                         <div className="text-white/70 text-[10px] leading-tight">{item.label}</div>
