@@ -40,14 +40,13 @@ const Header = () => {
               e.preventDefault();
               scrollToSection('#home');
             }}
-            className="flex items-center gap-3"
+            className="flex items-center"
           >
-            <div className={`font-display text-2xl tracking-wide transition-colors duration-300 ${
-              isScrolled ? 'text-[#084a61]' : 'text-white'
-            }`}>
-              <span className="font-bold">Vacation</span>
-              <span className="font-light">Village</span>
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_vv-hill-retreat/artifacts/0difxl2s_VV%20BLUE%20LOGO%20SITE-02.png" 
+              alt="Vacation Village Chikkamagaluru" 
+              className={`h-12 md:h-14 w-auto transition-all duration-300 ${isScrolled ? '' : 'brightness-0 invert'}`}
+            />
           </a>
 
           {/* Desktop Navigation */}
