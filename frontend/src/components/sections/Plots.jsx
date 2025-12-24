@@ -110,8 +110,8 @@ const Plots = () => {
             <div className="bg-white rounded-2xl p-4 md:p-6 shadow-2xl max-w-5xl mx-auto">
               <div className="relative">
                 <iframe
-                  src="https://customer-assets.emergentagent.com/job_vv-hill-retreat/artifacts/lopwtct0_master%20plan.pdf"
-                  className="w-full h-[500px] md:h-[600px] rounded-lg"
+                  src="https://docs.google.com/viewer?url=https://customer-assets.emergentagent.com/job_vv-hill-retreat/artifacts/lopwtct0_master%20plan.pdf&embedded=true"
+                  className="w-full h-[500px] md:h-[600px] rounded-lg border-0"
                   title="Site Plan"
                 />
               </div>
@@ -126,7 +126,7 @@ const Plots = () => {
                   className="inline-flex items-center gap-2 bg-[#084a61] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#0a5d7a] transition-colors"
                 >
                   <Map className="w-4 h-4" />
-                  Open Full Plan
+                  Download Full Plan
                 </a>
               </div>
             </div>
