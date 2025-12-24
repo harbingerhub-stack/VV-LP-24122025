@@ -18,7 +18,7 @@ const Manor = () => {
   return (
     <section ref={ref} className="py-24 md:py-32 bg-[#f8f9f6]">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* Content */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <span className="text-[#87b04a] font-medium tracking-wider text-sm uppercase">
