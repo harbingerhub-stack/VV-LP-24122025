@@ -284,5 +284,5 @@ html {
 
 .card-hover:hover {
   transform: translateY(-8px);
-  box-shadow: 0 25px 50px -12px rgba(30, 58, 95, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(8, 74, 97, 0.25);
 }
