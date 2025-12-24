@@ -105,6 +105,5 @@ export const navLinks = [
   { name: "About", href: "#about" },
   { name: "Location", href: "#location" },
   { name: "Plots", href: "#plots" },
-  { name: "Amenities", href: "#amenities" },
   { name: "Contact", href: "#contact" }
 ];
