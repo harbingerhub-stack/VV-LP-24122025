@@ -56,6 +56,13 @@ const Manor = () => {
             />
           </div>
         </div>
+
+        {/* Disclaimer */}
+        <div className={`mt-10 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p className="text-gray-500 text-sm text-center italic">
+            Disclaimer: The Manor by VV Resorts and Lounges (a wholly owned subsidiary of the developer) is an independent entity & not a part of the project amenities. Terms and conditions applicable.
+          </p>
+        </div>
       </div>
     </section>
   );
