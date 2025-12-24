@@ -35,16 +35,16 @@ const About = () => {
   return (
     <section id="about" ref={sectionRef} className="section-padding bg-[#f8f7f4] relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#c9a962]/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#1e3a5f]/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#87b04a]/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#084a61]/5 rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className={`inline-block text-[#c9a962] font-medium tracking-wider text-sm uppercase mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <span className={`inline-block text-[#87b04a] font-medium tracking-wider text-sm uppercase mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Welcome to Vacation Village
           </span>
-          <h2 className={`font-display text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <h2 className={`font-display text-4xl md:text-5xl font-bold text-[#084a61] mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {aboutData.title}
           </h2>
           <div className={`decorative-line mx-auto mb-6 transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}></div>
@@ -63,27 +63,27 @@ const About = () => {
                 alt="Luxury Villa"
                 className="w-full h-[500px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#084a61]/40 to-transparent"></div>
             </div>
             {/* Floating Card */}
             <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-6 shadow-xl max-w-xs hidden md:block">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full bg-[#c9a962]/10 flex items-center justify-center">
-                  <Gem className="w-7 h-7 text-[#c9a962]" />
+                <div className="w-14 h-14 rounded-full bg-[#87b04a]/10 flex items-center justify-center">
+                  <Gem className="w-7 h-7 text-[#87b04a]" />
                 </div>
                 <div>
-                  <h4 className="font-display font-semibold text-[#1e3a5f]">Premium Living</h4>
+                  <h4 className="font-display font-semibold text-[#084a61]">Premium Living</h4>
                   <p className="text-gray-500 text-sm">Luxury Leisure Lifestyle</p>
                 </div>
               </div>
             </div>
             {/* Decorative Frame */}
-            <div className="absolute -top-4 -left-4 w-32 h-32 border-2 border-[#c9a962]/30 rounded-tl-2xl"></div>
+            <div className="absolute -top-4 -left-4 w-32 h-32 border-2 border-[#87b04a]/30 rounded-tl-2xl"></div>
           </div>
 
           {/* Content */}
           <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
-            <h3 className="font-display text-2xl md:text-3xl font-semibold text-[#1e3a5f] mb-6">
+            <h3 className="font-display text-2xl md:text-3xl font-semibold text-[#084a61] mb-6">
               {aboutData.subtitle}
             </h3>
             <p className="text-gray-600 leading-relaxed mb-8">
@@ -91,14 +91,14 @@ const About = () => {
             </p>
 
             {/* Developer Info */}
-            <div className="bg-[#1e3a5f] rounded-xl p-6 text-white">
+            <div className="bg-[#084a61] rounded-xl p-6 text-white">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-lg bg-[#c9a962] flex items-center justify-center">
-                  <Building2 className="w-6 h-6 text-[#1e3a5f]" />
+                <div className="w-12 h-12 rounded-lg bg-[#87b04a] flex items-center justify-center">
+                  <Building2 className="w-6 h-6 text-[#084a61]" />
                 </div>
                 <div>
                   <h4 className="font-semibold">Agrocorp Landbase (P) Limited</h4>
-                  <p className="text-[#c9a962] text-sm">Established 2012, Bengaluru</p>
+                  <p className="text-[#87b04a] text-sm">Established 2012, Bengaluru</p>
                 </div>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed">
@@ -110,7 +110,7 @@ const About = () => {
 
         {/* Pillars Section */}
         <div>
-          <h3 className={`font-display text-2xl md:text-3xl font-semibold text-[#1e3a5f] text-center mb-12 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <h3 className={`font-display text-2xl md:text-3xl font-semibold text-[#084a61] text-center mb-12 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Our Unwavering Commitment
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -119,13 +119,13 @@ const About = () => {
               return (
                 <div
                   key={pillar.title}
-                  className={`group bg-white rounded-xl p-6 shadow-md card-hover border border-transparent hover:border-[#c9a962]/30 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  className={`group bg-white rounded-xl p-6 shadow-md card-hover border border-transparent hover:border-[#87b04a]/30 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                   style={{ transitionDelay: `${600 + index * 100}ms` }}
                 >
-                  <div className="w-14 h-14 rounded-xl bg-[#f8f7f4] group-hover:bg-[#c9a962]/10 flex items-center justify-center mb-4 transition-colors duration-300">
-                    <Icon className="w-7 h-7 text-[#c9a962]" />
+                  <div className="w-14 h-14 rounded-xl bg-[#f8f7f4] group-hover:bg-[#87b04a]/10 flex items-center justify-center mb-4 transition-colors duration-300">
+                    <Icon className="w-7 h-7 text-[#87b04a]" />
                   </div>
-                  <h4 className="font-display font-semibold text-lg text-[#1e3a5f] mb-2">
+                  <h4 className="font-display font-semibold text-lg text-[#084a61] mb-2">
                     {pillar.title}
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
