@@ -72,7 +72,7 @@ const Hero = () => {
       <div className="relative z-10 flex-1 flex items-center justify-center px-4 pt-24">
         <div className="text-center max-w-4xl mx-auto">
           <div className={`transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="inline-block px-4 py-2 bg-[#87b04a]/20 border border-[#87b04a]/40 rounded-full text-[#87b04a] text-sm font-medium tracking-wider mb-8">
+            <span className="inline-block px-4 py-2 bg-white/10 border border-white/40 rounded-full text-white text-sm font-medium tracking-wider mb-8">
               {heroData.tagline}
             </span>
           </div>
