@@ -22,7 +22,6 @@ const About = () => {
           {/* Image Side */}
           <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <div className="relative">
-              <div className="absolute -inset-4 bg-[#87b04a]/10 rounded-3xl transform rotate-3" />
               <img
                 src={aboutData.image}
                 alt="Luxury Villa"
