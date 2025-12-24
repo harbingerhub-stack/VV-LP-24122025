@@ -41,7 +41,7 @@ export const locationData = {
     { title: "Your Own Generational Legacy", desc: "Built to endure. Flexible spaces for traditions, memories, and family heritage." },
     { title: "Peace With Purpose", desc: "14+ years, 11 delivered projects, zero litigations, 1200+ satisfied customers. Excellence you can trust." }
   ],
-  closingText: "At Vacation Village, serenity meets opportunity. Whether you seek a personal escape, a vacation rental, or a long-term appreciation asset — this investment delivers both peace of mind and profit potential.",
+  closingText: "At Vacation Village, serenity meets your lifestyle. Whether you seek a personal escape, family gatherings, or a cherished generational home — this ownership delivers both peace of mind and enduring joy.",
   highlights: [
     { label: "From Bengaluru", value: "230 km", icon: "Car" },
     { label: "From Town", value: "15 km", icon: "MapPin" },
