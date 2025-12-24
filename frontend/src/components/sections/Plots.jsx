@@ -1,7 +1,37 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Grid3X3, Map, X, ZoomIn } from 'lucide-react';
+import { ArrowRight, Grid3X3, Map, X, ZoomIn, Sparkles } from 'lucide-react';
 import { Button } from '../ui/button';
 import { plotsData } from '../../data/mock';
+
+const featuresData = [
+  "12 Metre Paver Roads with Pedestrian Walkway",
+  "Parks & Recreation Zones",
+  "Themed Landscape",
+  "Neo Classical Architecture Theme",
+  "Rain Water Harvesting",
+  "Sewage System with Treatment Plant",
+  "CCTV Surveillance",
+  "Entrance Gate with Security Cabins",
+  "Underground Electricity Infrastructure",
+  "Underground Water Infrastructure",
+  "Street Lights",
+  "EV Charging Station"
+];
+
+const amenitiesData = [
+  "Walking Tracks",
+  "Yoga and Meditation Deck",
+  "Open Air Gym",
+  "Padel Court",
+  "Barbeque Area",
+  "Kids Play Area",
+  "Tennis Court",
+  "Basketball Court",
+  "Kitchen and Herb Garden",
+  "Bonfire Pit",
+  "Staff Lounge",
+  "Mini Golf"
+];
 
 const Plots = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,10 +85,10 @@ const Plots = () => {
 
         {/* Tab Menu */}
         <div className={`flex justify-center mb-10 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="bg-white/10 backdrop-blur-sm rounded-full p-1.5 inline-flex">
+          <div className="bg-white/10 backdrop-blur-sm rounded-full p-1.5 inline-flex flex-wrap justify-center gap-1">
             <button
               onClick={() => setActiveTab('plots')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
                 activeTab === 'plots'
                   ? 'bg-[#87b04a] text-white shadow-lg'
                   : 'text-white/80 hover:text-white'
@@ -69,7 +99,7 @@ const Plots = () => {
             </button>
             <button
               onClick={() => setActiveTab('siteplan')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
                 activeTab === 'siteplan'
                   ? 'bg-[#87b04a] text-white shadow-lg'
                   : 'text-white/80 hover:text-white'
@@ -78,11 +108,22 @@ const Plots = () => {
               <Map className="w-4 h-4" />
               Site Plan
             </button>
+            <button
+              onClick={() => setActiveTab('features')}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
+                activeTab === 'features'
+                  ? 'bg-[#87b04a] text-white shadow-lg'
+                  : 'text-white/80 hover:text-white'
+              }`}
+            >
+              <Sparkles className="w-4 h-4" />
+              Features & Amenities
+            </button>
           </div>
         </div>
 
         {/* Tab Content */}
-        {activeTab === 'plots' ? (
+        {activeTab === 'plots' && (
           <>
             {/* Plot Cards */}
             <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -119,10 +160,12 @@ const Plots = () => {
 
             {/* Note */}
             <p className={`text-center text-white/60 text-sm transition-all duration-700 delay-400 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-              {plotsData.note}
+              *{plotsData.note}
             </p>
           </>
-        ) : (
+        )}
+
+        {activeTab === 'siteplan' && (
           /* Site Plan Tab */
           <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="max-w-4xl mx-auto">
@@ -146,6 +189,49 @@ const Plots = () => {
               <p className="text-center text-white/60 text-sm mt-4">
                 Click on the image to expand and view full details
               </p>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'features' && (
+          /* Features & Amenities Tab */
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Features */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8">
+                <h3 className="font-display text-2xl text-white mb-6 flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-full bg-[#87b04a] flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-white" />
+                  </span>
+                  Features
+                </h3>
+                <div className="grid gap-3">
+                  {featuresData.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3 text-white/80">
+                      <div className="w-2 h-2 rounded-full bg-[#87b04a] flex-shrink-0" />
+                      <span className="text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Amenities */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8">
+                <h3 className="font-display text-2xl text-white mb-6 flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-full bg-[#87b04a] flex items-center justify-center">
+                    <Grid3X3 className="w-5 h-5 text-white" />
+                  </span>
+                  Amenities
+                </h3>
+                <div className="grid gap-3">
+                  {amenitiesData.map((amenity, index) => (
+                    <div key={index} className="flex items-center gap-3 text-white/80">
+                      <div className="w-2 h-2 rounded-full bg-[#87b04a] flex-shrink-0" />
+                      <span className="text-sm">{amenity}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         )}
