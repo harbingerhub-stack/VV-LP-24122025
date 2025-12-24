@@ -262,7 +262,7 @@ html {
 
 .hover-lift:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
+  box-shadow: 0 20px 40px rgba(8, 74, 97, 0.15);
 }
 
 /* Border gold accent */
