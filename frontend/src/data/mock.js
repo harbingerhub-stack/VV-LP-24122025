@@ -52,7 +52,7 @@ export const locationData = {
     "Mullayyanagiri Peak",
     "Coffee Plantations"
   ],
-  mapImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070"
+  mapImage: "https://customer-assets.emergentagent.com/job_vv-hill-retreat/artifacts/vc7qqszz_0334.jpg"
 };
 
 export const plotsData = {
