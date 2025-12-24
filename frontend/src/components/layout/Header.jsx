@@ -42,17 +42,17 @@ const Header = () => {
             }}
             className="flex items-center gap-3 group"
           >
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#1e3a5f] to-[#2d5a87] flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
-              <span className="text-[#c9a962] font-display font-bold text-lg">VV</span>
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#084a61] to-[#0a5d7a] flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
+              <span className="text-[#87b04a] font-display font-bold text-lg">VV</span>
             </div>
             <div className="hidden sm:block">
               <h1 className={`font-display font-semibold text-lg leading-tight transition-colors duration-300 ${
-                isScrolled ? 'text-[#1e3a5f]' : 'text-white'
+                isScrolled ? 'text-[#084a61]' : 'text-white'
               }`}>
                 Vacation Village
               </h1>
               <p className={`text-xs tracking-wider transition-colors duration-300 ${
-                isScrolled ? 'text-[#c9a962]' : 'text-[#e8d5a3]'
+                isScrolled ? 'text-[#87b04a]' : 'text-[#a8ce6d]'
               }`}>
                 CHIKKAMAGALURU
               </p>
@@ -69,8 +69,8 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-[#c9a962] relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-[#c9a962] after:transition-all after:duration-300 hover:after:w-full ${
-                  isScrolled ? 'text-[#1e3a5f]' : 'text-white'
+                className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-[#87b04a] relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-[#87b04a] after:transition-all after:duration-300 hover:after:w-full ${
+                  isScrolled ? 'text-[#084a61]' : 'text-white'
                 }`}
               >
                 {link.name}
@@ -83,15 +83,15 @@ const Header = () => {
             <a
               href={`tel:${contactData.phone}`}
               className={`flex items-center gap-2 text-sm font-medium transition-colors duration-300 ${
-                isScrolled ? 'text-[#1e3a5f]' : 'text-white'
+                isScrolled ? 'text-[#084a61]' : 'text-white'
               }`}
             >
-              <Phone className="w-4 h-4 text-[#c9a962]" />
+              <Phone className="w-4 h-4 text-[#87b04a]" />
               {contactData.phone}
             </a>
             <Button
               onClick={() => scrollToSection('#contact')}
-              className="bg-[#c9a962] hover:bg-[#b8954d] text-[#1e3a5f] font-semibold px-6 shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-[#87b04a] hover:bg-[#6f9a3a] text-[#084a61] font-semibold px-6 shadow-md hover:shadow-lg transition-all duration-300"
             >
               Enquire Now
             </Button>
@@ -101,7 +101,7 @@ const Header = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${
-              isScrolled ? 'text-[#1e3a5f]' : 'text-white'
+              isScrolled ? 'text-[#084a61]' : 'text-white'
             }`}
             aria-label="Toggle menu"
           >
@@ -125,7 +125,7 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="text-[#1e3a5f] font-medium py-2 border-b border-[#e8d5a3]/30 hover:text-[#c9a962] transition-colors"
+                  className="text-[#084a61] font-medium py-2 border-b border-[#a8ce6d]/30 hover:text-[#87b04a] transition-colors"
                 >
                   {link.name}
                 </a>
@@ -134,14 +134,14 @@ const Header = () => {
             <div className="mt-6 flex flex-col gap-3">
               <a
                 href={`tel:${contactData.phone}`}
-                className="flex items-center justify-center gap-2 text-[#1e3a5f] font-medium"
+                className="flex items-center justify-center gap-2 text-[#084a61] font-medium"
               >
-                <Phone className="w-4 h-4 text-[#c9a962]" />
+                <Phone className="w-4 h-4 text-[#87b04a]" />
                 {contactData.phone}
               </a>
               <Button
                 onClick={() => scrollToSection('#contact')}
-                className="w-full bg-[#c9a962] hover:bg-[#b8954d] text-[#1e3a5f] font-semibold"
+                className="w-full bg-[#87b04a] hover:bg-[#6f9a3a] text-[#084a61] font-semibold"
               >
                 Enquire Now
               </Button>
