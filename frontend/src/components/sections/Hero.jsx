@@ -68,19 +68,19 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex-1 flex items-end justify-center px-4 pb-8">
+      <div className="relative z-10 flex-1 flex items-end justify-center px-4 pb-4">
         <div className="text-center max-w-4xl mx-auto">
           <div className={`transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="inline-block px-4 py-2 bg-white/10 border border-white/40 rounded-full text-white text-sm font-medium tracking-wider mb-8">
+            <span className="inline-block px-4 py-2 bg-white/10 border border-white/40 rounded-full text-white text-sm font-medium tracking-wider mb-4">
               {heroData.tagline}
             </span>
           </div>
           
-          <h1 className={`font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl text-white mb-6 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h1 className={`font-display text-4xl sm:text-5xl md:text-5xl lg:text-6xl text-white mb-3 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {heroData.headline}
           </h1>
           
-          <p className={`text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 font-light leading-relaxed transition-all duration-1000 delay-300 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className={`text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-4 font-light leading-relaxed transition-all duration-1000 delay-300 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {heroData.subheadline}
           </p>
         </div>
