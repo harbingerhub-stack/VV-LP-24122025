@@ -107,9 +107,9 @@ const Hero = () => {
 
       {/* Stats Bar */}
       <div className={`relative z-10 transition-all duration-1000 delay-500 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="container-custom py-12">
-          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="container-custom py-6">
+          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 md:p-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {statsData.map((stat, index) => (
                 <Counter key={index} {...stat} />
               ))}
