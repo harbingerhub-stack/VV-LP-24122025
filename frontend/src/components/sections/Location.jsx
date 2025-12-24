@@ -44,6 +44,13 @@ const Location = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#084a61]/90 via-[#084a61]/20 to-transparent" />
               
+              {/* Shot at Site Badge */}
+              <div className="absolute top-4 left-4">
+                <span className="bg-white/90 text-[#084a61] text-xs font-semibold px-3 py-1.5 rounded-full shadow-md">
+                  Shot at site
+                </span>
+              </div>
+              
               {/* Overlay Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="font-display text-2xl text-white mb-1">Mullayyanagiri</h3>
