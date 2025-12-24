@@ -34,6 +34,8 @@ export const locationData = {
   subtitle: "A scenic getaway today. A high-performing investment for tomorrow.",
   description: "Nestled amidst the lush landscapes of Chikkamagaluru, Vacation Village isn't just another retreat — it's a smart real estate investment built for long-term growth. Located in Hebballi, this destination blends natural beauty with strategic connectivity and emerging tourism potential.",
   whyChoose: [
+    { title: "Easy Access", desc: "Just a smooth drive from Bangalore with excellent road connectivity." },
+    { title: "Own Your House in the Mountains", desc: "Wake up to misty peaks and coffee plantations — your personal hill station retreat awaits." },
     { title: "Curated Excellence", desc: "Thoughtfully designed architecture and amenities that put you at the center of luxury living." },
     { title: "Beyond the Boundaries of Home", desc: "Exclusive access to The Manor and our growing network of VV Resorts & Lounges across India." },
     { title: "Your Own Generational Legacy", desc: "Built to endure. Flexible spaces for traditions, memories, and family heritage." },
