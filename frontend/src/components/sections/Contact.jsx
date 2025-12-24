@@ -83,15 +83,15 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="section-padding bg-[#1e3a5f] relative overflow-hidden">
+    <section id="contact" ref={sectionRef} className="section-padding bg-[#084a61] relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#c9a962]/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#87b04a]/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className={`inline-block text-[#c9a962] font-medium tracking-wider text-sm uppercase mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <span className={`inline-block text-[#87b04a] font-medium tracking-wider text-sm uppercase mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Get In Touch
           </span>
           <h2 className={`font-display text-4xl md:text-5xl font-bold text-white mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
@@ -112,7 +112,7 @@ const Contact = () => {
                   <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-10 h-10 text-green-600" />
                   </div>
-                  <h3 className="font-display text-2xl font-semibold text-[#1e3a5f] mb-2">
+                  <h3 className="font-display text-2xl font-semibold text-[#084a61] mb-2">
                     Thank You!
                   </h3>
                   <p className="text-gray-600">
@@ -121,7 +121,7 @@ const Contact = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  <h3 className="font-display text-2xl font-semibold text-[#1e3a5f] mb-6">
+                  <h3 className="font-display text-2xl font-semibold text-[#084a61] mb-6">
                     Schedule a Site Visit
                   </h3>
                   
@@ -135,7 +135,7 @@ const Contact = () => {
                           value={formData.name}
                           onChange={handleInputChange}
                           placeholder="Enter your name"
-                          className="border-gray-200 focus:border-[#c9a962] focus:ring-[#c9a962]"
+                          className="border-gray-200 focus:border-[#87b04a] focus:ring-[#87b04a]"
                           required
                         />
                       </div>
@@ -148,7 +148,7 @@ const Contact = () => {
                           value={formData.phone}
                           onChange={handleInputChange}
                           placeholder="+91 XXXXX XXXXX"
-                          className="border-gray-200 focus:border-[#c9a962] focus:ring-[#c9a962]"
+                          className="border-gray-200 focus:border-[#87b04a] focus:ring-[#87b04a]"
                           required
                         />
                       </div>
@@ -163,14 +163,14 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="your@email.com"
-                        className="border-gray-200 focus:border-[#c9a962] focus:ring-[#c9a962]"
+                        className="border-gray-200 focus:border-[#87b04a] focus:ring-[#87b04a]"
                       />
                     </div>
 
                     <div>
                       <Label htmlFor="plotType" className="text-gray-700 mb-2 block">Interested Plot Size</Label>
                       <Select onValueChange={handleSelectChange} value={formData.plotType}>
-                        <SelectTrigger className="border-gray-200 focus:border-[#c9a962] focus:ring-[#c9a962]">
+                        <SelectTrigger className="border-gray-200 focus:border-[#87b04a] focus:ring-[#87b04a]">
                           <SelectValue placeholder="Select plot size" />
                         </SelectTrigger>
                         <SelectContent>
@@ -192,14 +192,14 @@ const Contact = () => {
                         onChange={handleInputChange}
                         placeholder="Any specific requirements or questions..."
                         rows={4}
-                        className="border-gray-200 focus:border-[#c9a962] focus:ring-[#c9a962] resize-none"
+                        className="border-gray-200 focus:border-[#87b04a] focus:ring-[#87b04a] resize-none"
                       />
                     </div>
 
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#1e3a5f] hover:bg-[#2d5a87] text-white font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-[#084a61] hover:bg-[#0a5d7a] text-white font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center gap-2">
@@ -248,12 +248,12 @@ const Contact = () => {
                     href={`tel:${contactData.phone}`}
                     className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors group"
                   >
-                    <div className="w-12 h-12 rounded-full bg-[#c9a962] flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-[#1e3a5f]" />
+                    <div className="w-12 h-12 rounded-full bg-[#87b04a] flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-[#084a61]" />
                     </div>
                     <div>
                       <p className="text-gray-400 text-sm">Call Us</p>
-                      <p className="text-white font-semibold text-lg group-hover:text-[#c9a962] transition-colors">
+                      <p className="text-white font-semibold text-lg group-hover:text-[#87b04a] transition-colors">
                         {contactData.phone}
                       </p>
                     </div>
@@ -263,20 +263,20 @@ const Contact = () => {
                     href={`mailto:${contactData.email}`}
                     className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors group"
                   >
-                    <div className="w-12 h-12 rounded-full bg-[#c9a962] flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-[#1e3a5f]" />
+                    <div className="w-12 h-12 rounded-full bg-[#87b04a] flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-[#084a61]" />
                     </div>
                     <div>
                       <p className="text-gray-400 text-sm">Email Us</p>
-                      <p className="text-white font-semibold group-hover:text-[#c9a962] transition-colors">
+                      <p className="text-white font-semibold group-hover:text-[#87b04a] transition-colors">
                         {contactData.email}
                       </p>
                     </div>
                   </a>
 
                   <div className="flex items-start gap-4 p-4 bg-white/10 rounded-xl">
-                    <div className="w-12 h-12 rounded-full bg-[#c9a962] flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-[#1e3a5f]" />
+                    <div className="w-12 h-12 rounded-full bg-[#87b04a] flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-[#084a61]" />
                     </div>
                     <div>
                       <p className="text-gray-400 text-sm">Corporate Office</p>
@@ -289,13 +289,13 @@ const Contact = () => {
               </div>
 
               {/* Office Hours */}
-              <div className="bg-[#c9a962] rounded-2xl p-6 text-[#1e3a5f]">
+              <div className="bg-[#87b04a] rounded-2xl p-6 text-[#084a61]">
                 <div className="flex items-center gap-4">
                   <Clock className="w-8 h-8" />
                   <div>
                     <h4 className="font-semibold text-lg">Office Hours</h4>
-                    <p className="text-[#1e3a5f]/80">Mon - Sat: 10:00 AM - 7:00 PM</p>
-                    <p className="text-[#1e3a5f]/80">Sunday: By Appointment Only</p>
+                    <p className="text-[#084a61]/80">Mon - Sat: 10:00 AM - 7:00 PM</p>
+                    <p className="text-[#084a61]/80">Sunday: By Appointment Only</p>
                   </div>
                 </div>
               </div>
