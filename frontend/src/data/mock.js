@@ -26,7 +26,7 @@ export const aboutData = {
     { title: "Effortless Living", desc: "End-to-end property management services" },
     { title: "Smart Investment", desc: "High potential for appreciation and rental income" }
   ],
-  image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075"
+  image: "https://customer-assets.emergentagent.com/job_vv-hill-retreat/artifacts/4fwg2pxd_1500%20Row%20View.png"
 };
 
 export const locationData = {
