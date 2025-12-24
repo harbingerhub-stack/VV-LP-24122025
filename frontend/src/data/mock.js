@@ -12,8 +12,8 @@ export const heroData = {
 export const statsData = [
   { value: 31, suffix: "", label: "Acres of Luxury" },
   { value: 260, suffix: "", label: "Premium Villa Plots" },
-  { value: 12, suffix: "", label: "Meter Paver Roads" },
-  { value: 20, suffix: "+", label: "Amenities" }
+  { value: 55, suffix: "%", label: "Open and Green Spaces" },
+  { value: 20, suffix: "+", label: "Features and Amenities" }
 ];
 
 export const aboutData = {
