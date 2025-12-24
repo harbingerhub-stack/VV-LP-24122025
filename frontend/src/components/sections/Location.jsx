@@ -36,11 +36,11 @@ const Location = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Map/Image */}
           <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl h-full">
               <img
                 src={locationData.mapImage}
                 alt="Chikkamagaluru"
-                className="w-full h-[450px] object-cover"
+                className="w-full h-full min-h-[550px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#084a61]/80 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
