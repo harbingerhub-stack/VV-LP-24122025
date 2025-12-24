@@ -82,9 +82,8 @@ const Contact = () => {
               </div>
             </div>
 
-            <Button onClick={openWhatsApp} className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-lg rounded-full">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Chat on WhatsApp
+            <Button onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-[#87b04a] hover:bg-[#6f9a3a] text-white px-8 py-6 text-lg rounded-full">
+              Schedule Visit
             </Button>
           </div>
 
