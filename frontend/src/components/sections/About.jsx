@@ -31,8 +31,8 @@ const About = () => {
             </div>
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 bg-[#084a61] text-white p-6 rounded-2xl shadow-xl hidden md:block">
-              <div className="font-display text-4xl font-bold">14+</div>
-              <div className="text-white/80 text-sm">Years of Excellence</div>
+              <div className="font-display text-4xl font-bold">260</div>
+              <div className="text-white/80 text-sm">Premium Villa Plots</div>
             </div>
           </div>
 
