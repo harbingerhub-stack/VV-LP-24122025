@@ -52,7 +52,7 @@ const Manor = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #1e3a5f 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 2px 2px, #084a61 1px, transparent 0)`,
           backgroundSize: '40px 40px'
         }}></div>
       </div>
@@ -60,15 +60,15 @@ const Manor = () => {
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className={`inline-flex items-center gap-2 text-[#c9a962] font-medium tracking-wider text-sm uppercase mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <div className={`inline-flex items-center gap-2 text-[#87b04a] font-medium tracking-wider text-sm uppercase mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             <Crown className="w-5 h-5" />
             Exclusive Access
           </div>
-          <h2 className={`font-display text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <h2 className={`font-display text-4xl md:text-5xl font-bold text-[#084a61] mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {manorData.title}
           </h2>
           <div className={`decorative-line mx-auto mb-6 transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}></div>
-          <p className={`text-[#c9a962] text-xl font-display italic transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p className={`text-[#87b04a] text-xl font-display italic transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {manorData.subtitle}
           </p>
         </div>
@@ -87,10 +87,10 @@ const Manor = () => {
                 return (
                   <div
                     key={amenity.name}
-                    className="group flex items-center gap-3 p-4 bg-[#f8f7f4] rounded-xl hover:bg-[#1e3a5f] transition-all duration-300"
+                    className="group flex items-center gap-3 p-4 bg-[#f8f7f4] rounded-xl hover:bg-[#084a61] transition-all duration-300"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-[#c9a962]/20 group-hover:bg-[#c9a962] flex items-center justify-center flex-shrink-0 transition-colors duration-300">
-                      <Icon className="w-5 h-5 text-[#c9a962] group-hover:text-[#1e3a5f] transition-colors duration-300" />
+                    <div className="w-10 h-10 rounded-lg bg-[#87b04a]/20 group-hover:bg-[#87b04a] flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                      <Icon className="w-5 h-5 text-[#87b04a] group-hover:text-[#084a61] transition-colors duration-300" />
                     </div>
                     <span className="text-gray-700 group-hover:text-white text-sm font-medium transition-colors duration-300">
                       {amenity.name}
@@ -101,10 +101,10 @@ const Manor = () => {
             </div>
 
             {/* Membership Card */}
-            <div className="bg-gradient-to-r from-[#1e3a5f] to-[#2d5a87] rounded-2xl p-6 text-white">
+            <div className="bg-gradient-to-r from-[#084a61] to-[#0a5d7a] rounded-2xl p-6 text-white">
               <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-xl bg-[#c9a962] flex items-center justify-center flex-shrink-0">
-                  <Star className="w-7 h-7 text-[#1e3a5f]" />
+                <div className="w-14 h-14 rounded-xl bg-[#87b04a] flex items-center justify-center flex-shrink-0">
+                  <Star className="w-7 h-7 text-[#084a61]" />
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-lg mb-2">VV Membership Passport</h4>
@@ -118,7 +118,7 @@ const Manor = () => {
             {/* CTA */}
             <Button
               onClick={scrollToContact}
-              className="mt-6 bg-[#c9a962] hover:bg-[#b8954d] text-[#1e3a5f] font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="mt-6 bg-[#87b04a] hover:bg-[#b8954d] text-[#084a61] font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Learn More About The Manor
             </Button>
@@ -132,11 +132,11 @@ const Manor = () => {
                 alt="The Manor Resort Lounge"
                 className="w-full h-[550px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/70 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#084a61]/70 via-transparent to-transparent"></div>
               
               {/* Floating Badge */}
               <div className="absolute top-6 right-6">
-                <div className="bg-[#c9a962] text-[#1e3a5f] px-4 py-2 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg">
+                <div className="bg-[#87b04a] text-[#084a61] px-4 py-2 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg">
                   <Crown className="w-4 h-4" />
                   VV Resorts & Lounges
                 </div>
@@ -145,15 +145,15 @@ const Manor = () => {
               {/* Bottom Info */}
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="glass rounded-xl p-4">
-                  <p className="text-[#1e3a5f] font-display font-semibold text-lg">The Art of Leisure</p>
+                  <p className="text-[#084a61] font-display font-semibold text-lg">The Art of Leisure</p>
                   <p className="text-gray-600 text-sm">An independent entity offering exclusive experiences</p>
                 </div>
               </div>
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-[#c9a962]/30 rounded-tl-2xl"></div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-[#c9a962]/30 rounded-br-2xl"></div>
+            <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-[#87b04a]/30 rounded-tl-2xl"></div>
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-[#87b04a]/30 rounded-br-2xl"></div>
           </div>
         </div>
 
