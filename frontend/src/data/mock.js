@@ -44,7 +44,7 @@ export const locationData = {
   closingText: "At Vacation Village, serenity meets your lifestyle. Whether you seek a personal escape, family gatherings, or a cherished generational home — this ownership delivers both peace of mind and enduring joy.",
   highlights: [
     { label: "From Bengaluru", value: "230 km", icon: "Car" },
-    { label: "From Town", value: "15 km", icon: "MapPin" }
+    { label: "From Chikkamagaluru", value: "15 km", icon: "MapPin" }
   ],
   attractions: [
     "Bhadra Wildlife Sanctuary",
