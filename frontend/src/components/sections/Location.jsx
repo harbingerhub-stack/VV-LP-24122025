@@ -82,7 +82,7 @@ const Location = () => {
 
               {/* Why Choose Section */}
               <div className="mb-6 flex-1">
-                <h3 className="font-display text-xl text-[#084a61] mb-4">Why Choose Vacation Village?</h3>
+                <h3 className="font-display text-xl text-[#084a61] mb-4">Why Choose Vacation Village Chikkamagaluru?</h3>
                 <div className="space-y-3">
                   {locationData.whyChoose.map((item, index) => (
                     <div key={index} className="flex gap-3">
