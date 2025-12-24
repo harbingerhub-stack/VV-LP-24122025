@@ -196,38 +196,48 @@ const Plots = () => {
         {activeTab === 'features' && (
           /* Features & Amenities Tab */
           <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {/* Features */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8">
-                <h3 className="font-display text-2xl text-white mb-6 flex items-center gap-3">
-                  <span className="w-10 h-10 rounded-full bg-[#87b04a] flex items-center justify-center">
-                    <Sparkles className="w-5 h-5 text-white" />
+            <div className="max-w-6xl mx-auto">
+              {/* Features Section */}
+              <div className="mb-10">
+                <h3 className="font-display text-2xl text-white mb-6 text-center">
+                  <span className="inline-flex items-center gap-3 bg-white/10 px-6 py-2 rounded-full">
+                    <Sparkles className="w-5 h-5 text-[#87b04a]" />
+                    Features
                   </span>
-                  Features
                 </h3>
-                <div className="grid gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {featuresData.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3 text-white/80">
-                      <div className="w-2 h-2 rounded-full bg-[#87b04a] flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
+                    <div 
+                      key={index} 
+                      className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center hover:bg-white/20 transition-all duration-300 group border border-white/5 hover:border-[#87b04a]/30"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-[#87b04a]/20 flex items-center justify-center mx-auto mb-3 group-hover:bg-[#87b04a]/30 transition-colors">
+                        <div className="w-3 h-3 rounded-full bg-[#87b04a]" />
+                      </div>
+                      <span className="text-white/90 text-sm leading-tight block">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Amenities */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8">
-                <h3 className="font-display text-2xl text-white mb-6 flex items-center gap-3">
-                  <span className="w-10 h-10 rounded-full bg-[#87b04a] flex items-center justify-center">
-                    <Grid3X3 className="w-5 h-5 text-white" />
+              {/* Amenities Section */}
+              <div>
+                <h3 className="font-display text-2xl text-white mb-6 text-center">
+                  <span className="inline-flex items-center gap-3 bg-white/10 px-6 py-2 rounded-full">
+                    <Grid3X3 className="w-5 h-5 text-[#87b04a]" />
+                    Amenities
                   </span>
-                  Amenities
                 </h3>
-                <div className="grid gap-3">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {amenitiesData.map((amenity, index) => (
-                    <div key={index} className="flex items-center gap-3 text-white/80">
-                      <div className="w-2 h-2 rounded-full bg-[#87b04a] flex-shrink-0" />
-                      <span className="text-sm">{amenity}</span>
+                    <div 
+                      key={index} 
+                      className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center hover:bg-white/20 transition-all duration-300 group border border-white/5 hover:border-[#87b04a]/30"
+                    >
+                      <div className="w-12 h-12 rounded-full bg-[#87b04a]/20 flex items-center justify-center mx-auto mb-3 group-hover:bg-[#87b04a]/30 transition-colors">
+                        <div className="w-3 h-3 rounded-full bg-[#87b04a]" />
+                      </div>
+                      <span className="text-white/90 text-sm leading-tight block">{amenity}</span>
                     </div>
                   ))}
                 </div>
