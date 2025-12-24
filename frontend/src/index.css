@@ -267,14 +267,14 @@ html {
 
 /* Border gold accent */
 .border-gold-accent {
-  border-image: linear-gradient(135deg, #c9a962 0%, #e8d5a3 100%) 1;
+  border-image: linear-gradient(135deg, #87b04a 0%, #a8ce6d 100%) 1;
 }
 
 /* Decorative line */
 .decorative-line {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #c9a962, #e8d5a3);
+  background: linear-gradient(90deg, #87b04a, #a8ce6d);
 }
 
 /* Card hover effect */
