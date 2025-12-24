@@ -6,7 +6,7 @@ export const heroData = {
   subheadline: "Discover neo-classical living amidst the misty mountains of Chikkamagaluru",
   ctaText: "Explore Now",
   ctaSecondary: "Watch Story",
-  backgroundImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070"
+  backgroundImage: "https://customer-assets.emergentagent.com/job_vv-hill-retreat/artifacts/wlea667s_0367.jpg"
 };
 
 export const statsData = [
