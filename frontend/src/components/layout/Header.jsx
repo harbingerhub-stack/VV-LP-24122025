@@ -43,7 +43,7 @@ const Header = () => {
             className="flex items-center"
           >
             <img 
-              src="https://customer-assets.emergentagent.com/job_vv-hill-retreat/artifacts/0difxl2s_VV%20BLUE%20LOGO%20SITE-02.png" 
+              src="https://customer-assets.emergentagent.com/job_paradise-plots-3/artifacts/pxhq9e10_VV%20BLUE%20LOGO%20SITE-02.png" 
               alt="Vacation Village Chikkamagaluru" 
               className={`h-28 md:h-36 w-auto transition-all duration-300 -my-4 md:-my-6 ${isScrolled ? '' : 'brightness-0 invert'}`}
             />
