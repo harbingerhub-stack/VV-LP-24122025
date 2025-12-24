@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { ArrowDown, Play } from 'lucide-react';
-import { Button } from '../ui/button';
+import { ArrowDown } from 'lucide-react';
 import { heroData, statsData } from '../../data/mock';
 
 const Counter = ({ value, suffix, label }) => {
