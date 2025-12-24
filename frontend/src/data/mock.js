@@ -24,7 +24,7 @@ export const aboutData = {
     { title: "Themed Architecture", desc: "Neo-classical design that stands the test of time" },
     { title: "Prime Locations", desc: "Handpicked destinations with stunning natural beauty" },
     { title: "Effortless Living", desc: "End-to-end property management services" },
-    { title: "Signature Lifestyle", desc: "World-class features for luxury leisure lifestyle" }
+    { title: "Signature Lifestyle", desc: "World‑class features and amenities for a premium leisure lifestyle" }
   ],
   image: "https://customer-assets.emergentagent.com/job_vv-hill-retreat/artifacts/4fwg2pxd_1500%20Row%20View.png"
 };
