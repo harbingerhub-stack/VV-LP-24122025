@@ -10,10 +10,10 @@ export const heroData = {
 };
 
 export const statsData = [
-  { value: 14, suffix: "+", label: "Years" },
-  { value: 1200, suffix: "+", label: "Happy Families" },
-  { value: 11, suffix: "", label: "Projects" },
-  { value: 0, suffix: "", label: "Litigations" }
+  { value: 31, suffix: "", label: "Acres of Luxury" },
+  { value: 260, suffix: "", label: "Premium Villa Plots" },
+  { value: 12, suffix: "", label: "Meter Paver Roads" },
+  { value: 20, suffix: "+", label: "Amenities" }
 ];
 
 export const aboutData = {
