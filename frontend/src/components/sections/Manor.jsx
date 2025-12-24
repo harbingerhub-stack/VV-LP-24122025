@@ -49,14 +49,11 @@ const Manor = () => {
 
           {/* Image */}
           <div className={`relative transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-[#084a61]/10 rounded-3xl transform -rotate-3" />
-              <img
-                src={manorData.image}
-                alt="The Manor"
-                className="relative rounded-2xl shadow-2xl w-full h-[450px] object-cover"
-              />
-            </div>
+            <img
+              src={manorData.image}
+              alt="The Manor"
+              className="rounded-2xl shadow-2xl w-full h-full min-h-[550px] object-cover"
+            />
           </div>
         </div>
       </div>
