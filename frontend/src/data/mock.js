@@ -59,9 +59,9 @@ export const plotsData = {
   title: "Choose Your Canvas",
   subtitle: "Flexible plot sizes for your dream home",
   plots: [
-    { size: "30' × 40'", sqft: "1,200", units: "6", price: "Premium" },
-    { size: "30' × 50'", sqft: "1,500", units: "198", price: "Standard" },
-    { size: "30' × 60'", sqft: "1,800", units: "18", price: "Exclusive" }
+    { size: "30' × 40'", sqft: "1,200", units: "6", price: "Single Suite Villa Plot" },
+    { size: "30' × 50'", sqft: "1,500", units: "198", price: "2BHK Villa Plot" },
+    { size: "30' × 60'", sqft: "1,800", units: "18", price: "3BHK Villa Plot" }
   ],
   note: "All plots governed by neo-classical design code"
 };
