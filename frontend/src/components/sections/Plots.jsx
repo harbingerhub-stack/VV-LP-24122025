@@ -198,23 +198,23 @@ const Plots = () => {
           <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="max-w-6xl mx-auto">
               {/* Features Section */}
-              <div className="mb-10">
-                <h3 className="font-display text-2xl text-white mb-6 text-center">
-                  <span className="inline-flex items-center gap-3 bg-white/10 px-6 py-2 rounded-full">
-                    <Sparkles className="w-5 h-5 text-[#87b04a]" />
+              <div className="mb-8">
+                <h3 className="font-display text-xl text-white mb-5 text-center">
+                  <span className="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-sm">
+                    <Sparkles className="w-4 h-4 text-[#87b04a]" />
                     Features
                   </span>
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                   {featuresData.map((feature, index) => (
                     <div 
                       key={index} 
-                      className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center hover:bg-white/20 transition-all duration-300 group border border-white/5 hover:border-[#87b04a]/30"
+                      className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center hover:bg-white/20 transition-all duration-300 group border border-white/5 hover:border-[#87b04a]/30"
                     >
-                      <div className="w-12 h-12 rounded-full bg-[#87b04a]/20 flex items-center justify-center mx-auto mb-3 group-hover:bg-[#87b04a]/30 transition-colors">
-                        <div className="w-3 h-3 rounded-full bg-[#87b04a]" />
+                      <div className="w-8 h-8 rounded-full bg-[#87b04a]/20 flex items-center justify-center mx-auto mb-2 group-hover:bg-[#87b04a]/30 transition-colors">
+                        <div className="w-2 h-2 rounded-full bg-[#87b04a]" />
                       </div>
-                      <span className="text-white/90 text-sm leading-tight block">{feature}</span>
+                      <span className="text-white/90 text-xs leading-tight block">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -222,22 +222,22 @@ const Plots = () => {
 
               {/* Amenities Section */}
               <div>
-                <h3 className="font-display text-2xl text-white mb-6 text-center">
-                  <span className="inline-flex items-center gap-3 bg-white/10 px-6 py-2 rounded-full">
-                    <Grid3X3 className="w-5 h-5 text-[#87b04a]" />
+                <h3 className="font-display text-xl text-white mb-5 text-center">
+                  <span className="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-sm">
+                    <Grid3X3 className="w-4 h-4 text-[#87b04a]" />
                     Amenities
                   </span>
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                   {amenitiesData.map((amenity, index) => (
                     <div 
                       key={index} 
-                      className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center hover:bg-white/20 transition-all duration-300 group border border-white/5 hover:border-[#87b04a]/30"
+                      className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center hover:bg-white/20 transition-all duration-300 group border border-white/5 hover:border-[#87b04a]/30"
                     >
-                      <div className="w-12 h-12 rounded-full bg-[#87b04a]/20 flex items-center justify-center mx-auto mb-3 group-hover:bg-[#87b04a]/30 transition-colors">
-                        <div className="w-3 h-3 rounded-full bg-[#87b04a]" />
+                      <div className="w-8 h-8 rounded-full bg-[#87b04a]/20 flex items-center justify-center mx-auto mb-2 group-hover:bg-[#87b04a]/30 transition-colors">
+                        <div className="w-2 h-2 rounded-full bg-[#87b04a]" />
                       </div>
-                      <span className="text-white/90 text-sm leading-tight block">{amenity}</span>
+                      <span className="text-white/90 text-xs leading-tight block">{amenity}</span>
                     </div>
                   ))}
                 </div>
