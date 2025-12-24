@@ -95,7 +95,7 @@ export const manorData = {
   description: "Ownership at Vacation Village unlocks exclusive access to The Manor, our professionally managed resort lounge and community hub. World-class amenities like pools, spa, gourmet dining, and event spaces arrive at your doorstep. Strict standards ensure luxury excellence, plus membership access to our expanding VV Resorts network nationwide.",
   secondParagraph: "Curated premium amenities elevate your lifestyle: wellness spa, recreation spaces, social hubs, all managed with resort precision for your exclusive retreat.",
   amenities: ["Event Space", "Gourmet Restaurant", "Home Theatre", "Swimming Pool", "Executive Business Centre", "Wellness and Spa Zone", "Children's Play Area", "Snooker and Billiard Room", "Indoor Games Room", "Reading Room"],
-  image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070"
+  image: "https://customer-assets.emergentagent.com/job_vv-hill-retreat/artifacts/4uehag4n_mANOR.jpg"
 };
 
 export const contactData = {
