@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { 
-  Road, Zap, Droplets, Recycle, Shield, Lightbulb, BatteryCharging,
-  Trees, Footprints, Trophy, CircleDot, Goal, Gamepad2, Baby,
+  Route, Zap, Droplets, Recycle, Shield, Lightbulb, BatteryCharging,
+  TreePine, Footprints, Trophy, CircleDot, Target, Gamepad2, Baby,
   Heart, Dumbbell, Flame, Coffee, Flower2
 } from 'lucide-react';
 import { amenitiesData } from '../../data/mock';
 
 const iconMap = {
-  "12 Metre Paver Roads with Pedestrian Walkway": Road,
+  "12 Metre Paver Roads with Pedestrian Walkway": Route,
   "Underground Electricity Infrastructure": Zap,
   "Underground Water Infrastructure": Droplets,
   "Sewage System with Treatment Plant": Recycle,
@@ -16,12 +16,12 @@ const iconMap = {
   "Entrance Gate with Security Cabins": Shield,
   "Street Lights": Lightbulb,
   "EV Charging Station": BatteryCharging,
-  "Parks & Recreation Zones": Trees,
+  "Parks & Recreation Zones": TreePine,
   "Walking Tracks": Footprints,
   "Tennis Court": Trophy,
   "Basketball Court": CircleDot,
-  "Padel Court": Goal,
-  "Mini Golf": Goal,
+  "Padel Court": Target,
+  "Mini Golf": Target,
   "Kids Play Area": Baby,
   "Yoga and Meditation Deck": Heart,
   "Open Air Gym": Dumbbell,
