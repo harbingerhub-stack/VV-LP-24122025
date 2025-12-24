@@ -38,10 +38,10 @@ const Counter = ({ value, suffix, label }) => {
 
   return (
     <div ref={ref} className="text-center">
-      <div className="font-display text-5xl md:text-6xl font-bold text-white">
+      <div className="font-display text-2xl md:text-3xl font-bold text-white">
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-white/70 text-sm mt-2 tracking-wider uppercase">{label}</div>
+      <div className="text-white/70 text-xs mt-1 tracking-wider uppercase">{label}</div>
     </div>
   );
 };
