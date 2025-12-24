@@ -30,9 +30,16 @@ export const aboutData = {
 };
 
 export const locationData = {
-  title: "Chikkamagaluru",
-  subtitle: "The Coffee Capital of India",
-  description: "Strategically positioned at Hebballi, your vacation home sits amidst coffee plantations and misty mountains, just minutes from premium resorts and attractions.",
+  title: "Own Your Slice of Paradise in Chikkamagaluru",
+  subtitle: "A scenic getaway today. A high-performing investment for tomorrow.",
+  description: "Nestled amidst the lush landscapes of Chikkamagaluru, Vacation Village isn't just another retreat — it's a smart real estate investment built for long-term growth. Located in Hebballi, this destination blends natural beauty with strategic connectivity and emerging tourism potential.",
+  whyChoose: [
+    { title: "Prime Location", desc: "Just a smooth drive from Bangalore with excellent road connectivity." },
+    { title: "Year-Round Destination", desc: "A pleasant climate adored by travellers in every season." },
+    { title: "Tourism Growth Hub", desc: "Hebballi is fast becoming a preferred leisure and holiday spot." },
+    { title: "High ROI Potential", desc: "Enjoy peace today while your property value appreciates tomorrow." }
+  ],
+  closingText: "At Vacation Village, serenity meets opportunity. Whether you seek a personal escape, a vacation rental, or a long-term appreciation asset — this investment delivers both peace of mind and profit potential.",
   highlights: [
     { label: "From Bengaluru", value: "230 km", icon: "Car" },
     { label: "From Town", value: "15 km", icon: "MapPin" },
