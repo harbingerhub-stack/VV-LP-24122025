@@ -106,7 +106,7 @@ const Plots = () => {
               }`}
             >
               <Map className="w-4 h-4" />
-              Site Plan
+              Master Plan
             </button>
             <button
               onClick={() => setActiveTab('features')}
