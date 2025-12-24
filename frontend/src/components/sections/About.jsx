@@ -40,7 +40,7 @@ const About = () => {
             <span className="text-[#87b04a] font-medium tracking-wider text-sm uppercase">
               Welcome to Vacation Village
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-[#084a61] mt-4 mb-6">
+            <h2 className="font-display text-3xl md:text-4xl text-[#084a61] mt-4 mb-6">
               {aboutData.title}
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
