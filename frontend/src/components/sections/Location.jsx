@@ -90,8 +90,15 @@ const Location = () => {
                 </div>
               </div>
 
+              {/* Closing Text */}
+              <div className="border-l-3 border-[#87b04a] pl-4 bg-[#87b04a]/5 py-3 rounded-r-lg mb-4">
+                <p className="text-gray-700 text-sm leading-relaxed italic">
+                  {locationData.closingText}
+                </p>
+              </div>
+
               {/* Nearby Attractions - Compact */}
-              <div className="bg-[#084a61] p-4 rounded-xl mb-4">
+              <div className="bg-[#084a61] p-4 rounded-xl">
                 <h4 className="text-white font-semibold mb-2 text-sm">Nearby Attractions</h4>
                 <div className="flex flex-wrap gap-2">
                   {locationData.attractions.map((item, index) => {
@@ -104,13 +111,6 @@ const Location = () => {
                     );
                   })}
                 </div>
-              </div>
-
-              {/* Closing Text */}
-              <div className="border-l-3 border-[#87b04a] pl-4 bg-[#87b04a]/5 py-3 rounded-r-lg">
-                <p className="text-gray-700 text-sm leading-relaxed italic">
-                  {locationData.closingText}
-                </p>
               </div>
             </div>
           </div>
