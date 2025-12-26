@@ -446,20 +446,18 @@ const EOIForm = () => {
                         />
                       </div>
                     </div>
-                    {formData.applicant2Name && (
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">2nd Applicant Signature</label>
-                        <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center bg-gray-50">
-                          <p className="text-gray-500 text-sm">Type your full name as digital signature</p>
-                          <Input 
-                            placeholder="Type your full name" 
-                            className="mt-3 text-center font-display text-lg" 
-                            value={formData.applicant2Name}
-                            readOnly
-                          />
-                        </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">2nd Applicant Signature <span className="text-gray-400 font-normal">(if applicable)</span></label>
+                      <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center bg-gray-50">
+                        <p className="text-gray-500 text-sm">Type your full name as digital signature</p>
+                        <Input 
+                          placeholder="Type your full name" 
+                          className="mt-3 text-center font-display text-lg" 
+                          value={formData.applicant2Name || ''}
+                          readOnly
+                        />
                       </div>
-                    )}
+                    </div>
                   </div>
 
                   <label className="flex items-start gap-3 cursor-pointer">
