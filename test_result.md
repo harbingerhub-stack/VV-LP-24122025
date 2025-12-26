@@ -51,17 +51,77 @@ backend:
         comment: "✅ GET /api/payment/config, POST /api/payment/create-order, and GET /api/payment/{eoi_id} endpoints working correctly. Razorpay integration functional with test keys. Payment order creation and status retrieval working as expected."
 
 frontend:
-  - task: "Frontend Testing"
+  - task: "Landing Page Navigation"
     implemented: true
-    working: "NA"
+    working: true
     file: "frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Landing page loads correctly with all sections (Hero, About, Location, Plots, Manor, Contact). Header navigation links work properly. Floating 'EOI Now Open' button is visible and functional."
+
+  - task: "Footer Links Navigation"
+    implemented: true
+    working: true
+    file: "frontend/src/components/layout/Footer.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Footer links working correctly. Terms & Conditions link navigates to /terms with all 13 sections loaded. Privacy Policy link navigates to /privacy with all 8 sections loaded. Back to Home buttons work on both pages."
+
+  - task: "Contact Form Functionality"
+    implemented: true
+    working: true
+    file: "frontend/src/components/sections/Contact.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Contact form (Request a Call Back) working perfectly. Successfully filled form with test data (Name='Test User', Phone='9876543210', Email='test@test.com', Message='Testing contact form') and received success toast message 'Thank you! We will contact you soon.'"
+
+  - task: "EOI Form Complete Flow"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/EOIForm.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ EOI form complete flow working correctly. Step 1: Successfully filled applicant details (Name='EOI Test User', Email='eoi@test.com', Mobile='8888777766', PAN='ABCDE1234F'). Step 2: Successfully selected TYPE A plot (1200 sq.ft, ₹45.99 Lakhs). Step 3: Successfully selected Online Payment option with ₹99,999 amount displayed correctly. Step 4: Successfully accepted terms and submitted EOI. Razorpay checkout modal opened successfully with payment options."
+
+  - task: "Terms & Conditions Page"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/TermsAndConditions.jsx"
     stuck_count: 0
     priority: "medium"
     needs_retesting: false
     status_history:
-      - working: "NA"
+      - working: true
         agent: "testing"
-        comment: "Frontend testing not performed as per system limitations - testing agent focuses only on backend API testing."
+        comment: "✅ Terms & Conditions page working correctly. All 13 sections are present and properly formatted. Back to Home button navigates correctly to homepage."
+
+  - task: "Privacy Policy Page"
+    implemented: true
+    working: true
+    file: "frontend/src/pages/PrivacyPolicy.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Privacy Policy page working correctly. All 8 sections are present and properly formatted. Back to Home button navigates correctly to homepage."
 
 metadata:
   created_by: "testing_agent"
