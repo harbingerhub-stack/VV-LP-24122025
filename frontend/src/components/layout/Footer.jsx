@@ -13,9 +13,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="font-display text-3xl mb-4">
-              <span className="font-bold">Vacation</span>
-              <span className="font-light">Village</span>
+            <div className="mb-4">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_paradise-plots-3/artifacts/9m721w20_VV_Logo_white_runalto-02.png" 
+                alt="Vacation Village" 
+                className="h-24 w-auto"
+              />
             </div>
             <p className="text-white/60 leading-relaxed mb-6 max-w-md">
               India's premium vacation home development. Crafting extraordinary worlds defined by breathtaking architecture and seamless convenience.
