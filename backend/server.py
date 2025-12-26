@@ -286,6 +286,142 @@ async def get_eoi_submission(eoi_id: str):
     return submission
 
 
+# ==================== RAZORPAY PAYMENT ENDPOINTS ====================
+
+class CreateOrderRequest(BaseModel):
+    amount: int  # Amount in paise (e.g., 100 = ₹1)
+    eoi_id: str
+    applicant_name: str
+    applicant_email: str
+    applicant_phone: str
+
+class VerifyPaymentRequest(BaseModel):
+    razorpay_order_id: str
+    razorpay_payment_id: str
+    razorpay_signature: str
+    eoi_id: str
+
+@api_router.get("/payment/config")
+async def get_payment_config():
+    """Get Razorpay public key for frontend"""
+    return {
+        "key_id": os.environ.get('RAZORPAY_KEY_ID', ''),
+        "currency": "INR"
+    }
+
+@api_router.post("/payment/create-order")
+async def create_payment_order(request: CreateOrderRequest):
+    """Create a Razorpay order for EOI payment"""
+    try:
+        # Create Razorpay order
+        order_data = {
+            "amount": request.amount,  # Amount in paise
+            "currency": "INR",
+            "receipt": f"eoi_{request.eoi_id[:8]}",
+            "notes": {
+                "eoi_id": request.eoi_id,
+                "applicant_name": request.applicant_name
+            }
+        }
+        
+        razorpay_order = razorpay_client.order.create(data=order_data)
+        
+        # Store order in database
+        payment_doc = {
+            "id": str(uuid.uuid4()),
+            "eoi_id": request.eoi_id,
+            "razorpay_order_id": razorpay_order['id'],
+            "amount": request.amount,
+            "currency": "INR",
+            "status": "created",
+            "applicant_name": request.applicant_name,
+            "applicant_email": request.applicant_email,
+            "applicant_phone": request.applicant_phone,
+            "created_at": datetime.now(timezone.utc).isoformat()
+        }
+        
+        await db.payments.insert_one(payment_doc)
+        logger.info(f"Payment order created: {razorpay_order['id']} for EOI: {request.eoi_id}")
+        
+        return {
+            "success": True,
+            "order_id": razorpay_order['id'],
+            "amount": request.amount,
+            "currency": "INR",
+            "key_id": os.environ.get('RAZORPAY_KEY_ID', '')
+        }
+        
+    except Exception as e:
+        logger.error(f"Error creating payment order: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Failed to create payment order: {str(e)}")
+
+@api_router.post("/payment/verify")
+async def verify_payment(request: VerifyPaymentRequest):
+    """Verify Razorpay payment signature and update status"""
+    try:
+        # Verify signature
+        key_secret = os.environ.get('RAZORPAY_KEY_SECRET', '')
+        
+        msg = f"{request.razorpay_order_id}|{request.razorpay_payment_id}"
+        generated_signature = hmac.new(
+            key_secret.encode(),
+            msg.encode(),
+            hashlib.sha256
+        ).hexdigest()
+        
+        if generated_signature != request.razorpay_signature:
+            logger.warning(f"Payment signature verification failed for order: {request.razorpay_order_id}")
+            raise HTTPException(status_code=400, detail="Payment signature verification failed")
+        
+        # Update payment status in database
+        await db.payments.update_one(
+            {"razorpay_order_id": request.razorpay_order_id},
+            {
+                "$set": {
+                    "razorpay_payment_id": request.razorpay_payment_id,
+                    "razorpay_signature": request.razorpay_signature,
+                    "status": "paid",
+                    "paid_at": datetime.now(timezone.utc).isoformat()
+                }
+            }
+        )
+        
+        # Update EOI status
+        await db.eoi_submissions.update_one(
+            {"id": request.eoi_id},
+            {
+                "$set": {
+                    "payment_status": "paid",
+                    "razorpay_payment_id": request.razorpay_payment_id
+                }
+            }
+        )
+        
+        logger.info(f"Payment verified successfully: {request.razorpay_payment_id}")
+        
+        return {
+            "success": True,
+            "message": "Payment verified successfully",
+            "payment_id": request.razorpay_payment_id
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error verifying payment: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Payment verification failed: {str(e)}")
+
+@api_router.get("/payment/{eoi_id}")
+async def get_payment_status(eoi_id: str):
+    """Get payment status for an EOI"""
+    payment = await db.payments.find_one({"eoi_id": eoi_id}, {"_id": 0})
+    
+    if not payment:
+        return {"status": "not_initiated", "eoi_id": eoi_id}
+    
+    return payment
+
+
 # Include the router in the main app
 app.include_router(api_router)
 
