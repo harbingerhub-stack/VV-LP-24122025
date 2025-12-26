@@ -20,7 +20,7 @@ const Amenities = () => {
       <div className="container-custom">
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="text-[#87b04a] font-medium tracking-wider text-sm uppercase">
+          <span className="text-[#dee3d6] font-medium tracking-wider text-sm uppercase">
             Lifestyle
           </span>
           <h2 className="font-display text-4xl md:text-5xl text-[#084a61] mt-4 mb-4">
@@ -53,8 +53,8 @@ const Amenities = () => {
               key={index}
               className="bg-[#f8f9f6] p-6 rounded-2xl text-center hover:bg-[#084a61] hover:text-white transition-all duration-300 group cursor-pointer"
             >
-              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#87b04a]/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
-                <div className="w-3 h-3 rounded-full bg-[#87b04a]" />
+              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#dee3d6]/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
+                <div className="w-3 h-3 rounded-full bg-[#dee3d6]" />
               </div>
               <span className="text-sm font-medium">{item}</span>
             </div>

@@ -37,7 +37,7 @@ const About = () => {
 
           {/* Content Side */}
           <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
-            <span className="text-[#87b04a] font-medium tracking-wider text-sm uppercase">
+            <span className="text-[#dee3d6] font-medium tracking-wider text-sm uppercase">
               Welcome to Vacation Village
             </span>
             <h2 className="font-display text-3xl md:text-4xl text-[#084a61] mt-4 mb-6">
@@ -51,8 +51,8 @@ const About = () => {
             <div className="grid sm:grid-cols-2 gap-6">
               {aboutData.features.map((feature, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#87b04a]/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-5 h-5 text-[#87b04a]" />
+                  <div className="w-10 h-10 rounded-full bg-[#dee3d6]/10 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-5 h-5 text-[#dee3d6]" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-[#084a61] mb-1">{feature.title}</h4>

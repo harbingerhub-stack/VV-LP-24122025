@@ -59,7 +59,7 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-[#87b04a] ${
+                className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-[#dee3d6] ${
                   isScrolled ? 'text-[#084a61]' : 'text-white/90'
                 }`}
               >
@@ -83,7 +83,7 @@ const Header = () => {
               onClick={() => scrollToSection('#contact')}
               className={`font-medium px-6 transition-all duration-300 ${
                 isScrolled 
-                  ? 'bg-[#87b04a] hover:bg-[#6f9a3a] text-white' 
+                  ? 'bg-[#dee3d6] hover:bg-[#6f9a3a] text-white' 
                   : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
               }`}
             >
@@ -114,14 +114,14 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="text-[#084a61] font-medium py-2 hover:text-[#87b04a] transition-colors"
+                  className="text-[#084a61] font-medium py-2 hover:text-[#dee3d6] transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
               <Button
                 onClick={() => scrollToSection('#contact')}
-                className="mt-4 w-full bg-[#87b04a] hover:bg-[#6f9a3a] text-white"
+                className="mt-4 w-full bg-[#dee3d6] hover:bg-[#6f9a3a] text-white"
               >
                 Get in Touch
               </Button>

@@ -74,7 +74,7 @@ const Plots = () => {
       <div className="container-custom">
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="text-[#87b04a] font-medium tracking-wider text-sm uppercase">
+          <span className="text-[#dee3d6] font-medium tracking-wider text-sm uppercase">
             Plot Options
           </span>
           <h2 className="font-display text-4xl md:text-5xl text-white mt-4 mb-4">
@@ -90,7 +90,7 @@ const Plots = () => {
               onClick={() => setActiveTab('plots')}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
                 activeTab === 'plots'
-                  ? 'bg-[#87b04a] text-white shadow-lg'
+                  ? 'bg-[#dee3d6] text-white shadow-lg'
                   : 'text-white/80 hover:text-white'
               }`}
             >
@@ -101,7 +101,7 @@ const Plots = () => {
               onClick={() => setActiveTab('siteplan')}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
                 activeTab === 'siteplan'
-                  ? 'bg-[#87b04a] text-white shadow-lg'
+                  ? 'bg-[#dee3d6] text-white shadow-lg'
                   : 'text-white/80 hover:text-white'
               }`}
             >
@@ -112,7 +112,7 @@ const Plots = () => {
               onClick={() => setActiveTab('features')}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
                 activeTab === 'features'
-                  ? 'bg-[#87b04a] text-white shadow-lg'
+                  ? 'bg-[#dee3d6] text-white shadow-lg'
                   : 'text-white/80 hover:text-white'
               }`}
             >
@@ -130,12 +130,12 @@ const Plots = () => {
               {plotsData.plots.map((plot, index) => (
                 <div
                   key={index}
-                  className={`bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-[#87b04a]/50 transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  className={`bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-[#dee3d6]/50 transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <div className="font-display text-4xl text-white mb-2">{plot.size}</div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="text-[#87b04a] text-2xl font-semibold">{plot.sqft} Sq.ft</div>
+                    <div className="text-[#dee3d6] text-2xl font-semibold">{plot.sqft} Sq.ft</div>
                     <div className="text-white text-xl font-bold">{plot.cost}</div>
                   </div>
                   
@@ -152,7 +152,7 @@ const Plots = () => {
 
                   <Button
                     onClick={scrollToContact}
-                    className="w-full bg-transparent border-2 border-white/30 text-white hover:bg-[#87b04a] hover:border-[#87b04a] transition-all group-hover:border-[#87b04a]"
+                    className="w-full bg-transparent border-2 border-white/30 text-white hover:bg-[#dee3d6] hover:border-[#dee3d6] transition-all group-hover:border-[#dee3d6]"
                   >
                     Enquire Now
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -204,7 +204,7 @@ const Plots = () => {
               <div className="mb-8">
                 <h3 className="font-display text-xl text-white mb-5 text-center">
                   <span className="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-sm">
-                    <Sparkles className="w-4 h-4 text-[#87b04a]" />
+                    <Sparkles className="w-4 h-4 text-[#dee3d6]" />
                     Features
                   </span>
                 </h3>
@@ -212,10 +212,10 @@ const Plots = () => {
                   {featuresData.map((feature, index) => (
                     <div 
                       key={index} 
-                      className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center hover:bg-white/20 transition-all duration-300 group border border-white/5 hover:border-[#87b04a]/30"
+                      className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center hover:bg-white/20 transition-all duration-300 group border border-white/5 hover:border-[#dee3d6]/30"
                     >
-                      <div className="w-8 h-8 rounded-full bg-[#87b04a]/20 flex items-center justify-center mx-auto mb-2 group-hover:bg-[#87b04a]/30 transition-colors">
-                        <div className="w-2 h-2 rounded-full bg-[#87b04a]" />
+                      <div className="w-8 h-8 rounded-full bg-[#dee3d6]/20 flex items-center justify-center mx-auto mb-2 group-hover:bg-[#dee3d6]/30 transition-colors">
+                        <div className="w-2 h-2 rounded-full bg-[#dee3d6]" />
                       </div>
                       <span className="text-white/90 text-xs leading-tight block">{feature}</span>
                     </div>
@@ -227,7 +227,7 @@ const Plots = () => {
               <div>
                 <h3 className="font-display text-xl text-white mb-5 text-center">
                   <span className="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-sm">
-                    <Grid3X3 className="w-4 h-4 text-[#87b04a]" />
+                    <Grid3X3 className="w-4 h-4 text-[#dee3d6]" />
                     Amenities
                   </span>
                 </h3>
@@ -235,10 +235,10 @@ const Plots = () => {
                   {amenitiesData.map((amenity, index) => (
                     <div 
                       key={index} 
-                      className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center hover:bg-white/20 transition-all duration-300 group border border-white/5 hover:border-[#87b04a]/30"
+                      className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center hover:bg-white/20 transition-all duration-300 group border border-white/5 hover:border-[#dee3d6]/30"
                     >
-                      <div className="w-8 h-8 rounded-full bg-[#87b04a]/20 flex items-center justify-center mx-auto mb-2 group-hover:bg-[#87b04a]/30 transition-colors">
-                        <div className="w-2 h-2 rounded-full bg-[#87b04a]" />
+                      <div className="w-8 h-8 rounded-full bg-[#dee3d6]/20 flex items-center justify-center mx-auto mb-2 group-hover:bg-[#dee3d6]/30 transition-colors">
+                        <div className="w-2 h-2 rounded-full bg-[#dee3d6]" />
                       </div>
                       <span className="text-white/90 text-xs leading-tight block">{amenity}</span>
                     </div>
