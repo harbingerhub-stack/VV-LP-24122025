@@ -283,35 +283,132 @@ const EOIForm = () => {
                     <CreditCard className="w-6 h-6 text-[#87b04a]" />
                     Payment Details
                   </h2>
-                  <p className="text-gray-600 mb-6">Payment to be made in favour of "ALPL 3 LLP COLLECTION AC FOR VACATION VILLAGE"</p>
+                  <p className="text-gray-600 mb-6">Choose your preferred payment method</p>
 
-                  <div className="bg-[#084a61]/5 p-6 rounded-xl mb-6">
-                    <h3 className="font-semibold text-[#084a61] mb-3">Bank Account Details</h3>
-                    <div className="grid md:grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <p className="text-gray-500">Account Name</p>
-                        <p className="font-medium text-[#084a61]">ALPL 3 LLP Collection A/c for Vacation Village</p>
+                  {/* Payment Method Selection */}
+                  <div className="grid md:grid-cols-2 gap-4 mb-8">
+                    <label 
+                      className={`relative p-6 rounded-xl border-2 cursor-pointer transition-all ${
+                        formData.paymentMethod === 'bank' 
+                          ? 'border-[#87b04a] bg-[#87b04a]/5' 
+                          : 'border-gray-200 hover:border-[#084a61]/30'
+                      }`}
+                    >
+                      <input 
+                        type="radio" 
+                        name="paymentMethod" 
+                        value="bank" 
+                        checked={formData.paymentMethod === 'bank'} 
+                        onChange={handleChange} 
+                        className="sr-only" 
+                      />
+                      <div className="flex items-start gap-4">
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${formData.paymentMethod === 'bank' ? 'bg-[#87b04a]/20' : 'bg-gray-100'}`}>
+                          <Landmark className={`w-6 h-6 ${formData.paymentMethod === 'bank' ? 'text-[#87b04a]' : 'text-gray-500'}`} />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-[#084a61] mb-1">Bank Transfer</h3>
+                          <p className="text-gray-500 text-sm">NEFT / RTGS / Cheque / Demand Draft</p>
+                        </div>
+                        {formData.paymentMethod === 'bank' && (
+                          <CheckCircle className="w-5 h-5 text-[#87b04a] absolute top-4 right-4" />
+                        )}
                       </div>
-                      <div>
-                        <p className="text-gray-500">Account Number</p>
-                        <p className="font-medium text-[#084a61]">3333111145</p>
+                    </label>
+
+                    <label 
+                      className={`relative p-6 rounded-xl border-2 cursor-pointer transition-all ${
+                        formData.paymentMethod === 'gateway' 
+                          ? 'border-[#87b04a] bg-[#87b04a]/5' 
+                          : 'border-gray-200 hover:border-[#084a61]/30'
+                      }`}
+                    >
+                      <input 
+                        type="radio" 
+                        name="paymentMethod" 
+                        value="gateway" 
+                        checked={formData.paymentMethod === 'gateway'} 
+                        onChange={handleChange} 
+                        className="sr-only" 
+                      />
+                      <div className="flex items-start gap-4">
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${formData.paymentMethod === 'gateway' ? 'bg-[#87b04a]/20' : 'bg-gray-100'}`}>
+                          <Globe className={`w-6 h-6 ${formData.paymentMethod === 'gateway' ? 'text-[#87b04a]' : 'text-gray-500'}`} />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-[#084a61] mb-1">Online Payment</h3>
+                          <p className="text-gray-500 text-sm">Credit/Debit Card, UPI, Net Banking</p>
+                        </div>
+                        {formData.paymentMethod === 'gateway' && (
+                          <CheckCircle className="w-5 h-5 text-[#87b04a] absolute top-4 right-4" />
+                        )}
                       </div>
-                      <div>
-                        <p className="text-gray-500">Bank & Branch</p>
-                        <p className="font-medium text-[#084a61]">Kotak Mahindra Bank, Jakkur Branch, Bengaluru</p>
+                    </label>
+                  </div>
+
+                  {/* Bank Transfer Details */}
+                  {formData.paymentMethod === 'bank' && (
+                    <>
+                      <div className="bg-[#084a61]/5 p-6 rounded-xl mb-6">
+                        <h3 className="font-semibold text-[#084a61] mb-3">Bank Account Details</h3>
+                        <p className="text-gray-600 text-sm mb-4">Payment to be made in favour of "ALPL 3 LLP COLLECTION AC FOR VACATION VILLAGE"</p>
+                        <div className="grid md:grid-cols-2 gap-4 text-sm">
+                          <div>
+                            <p className="text-gray-500">Account Name</p>
+                            <p className="font-medium text-[#084a61]">ALPL 3 LLP Collection A/c for Vacation Village</p>
+                          </div>
+                          <div>
+                            <p className="text-gray-500">Account Number</p>
+                            <p className="font-medium text-[#084a61]">3333111145</p>
+                          </div>
+                          <div>
+                            <p className="text-gray-500">Bank & Branch</p>
+                            <p className="font-medium text-[#084a61]">Kotak Mahindra Bank, Jakkur Branch, Bengaluru</p>
+                          </div>
+                          <div>
+                            <p className="text-gray-500">IFSC Code</p>
+                            <p className="font-medium text-[#084a61]">KKBK0008146</p>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-gray-500">IFSC Code</p>
-                        <p className="font-medium text-[#084a61]">KKBK0008146</p>
+
+                      <h3 className="font-semibold text-[#084a61] mb-4">Payment Instrument Details</h3>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <Input name="paymentDate" type="date" placeholder="Payment Date" value={formData.paymentDate} onChange={handleChange} className="py-3" />
+                        <Input name="paymentNumber" placeholder="Cheque/RTGS/NEFT Number" value={formData.paymentNumber} onChange={handleChange} className="py-3" />
+                        <Input name="bankBranch" placeholder="Your Bank & Branch" value={formData.bankBranch} onChange={handleChange} className="py-3 md:col-span-2" />
+                      </div>
+                    </>
+                  )}
+
+                  {/* Online Payment Gateway */}
+                  {formData.paymentMethod === 'gateway' && (
+                    <div className="bg-gradient-to-br from-[#084a61]/5 to-[#87b04a]/5 p-8 rounded-xl border border-[#084a61]/10">
+                      <div className="text-center mb-6">
+                        <div className="w-16 h-16 bg-[#084a61] rounded-full flex items-center justify-center mx-auto mb-4">
+                          <Shield className="w-8 h-8 text-white" />
+                        </div>
+                        <h3 className="font-semibold text-[#084a61] text-lg mb-2">Secure Online Payment</h3>
+                        <p className="text-gray-600 text-sm">You will be redirected to our secure payment gateway after submitting this form</p>
+                      </div>
+                      
+                      <div className="bg-white p-4 rounded-lg mb-4">
+                        <h4 className="font-medium text-[#084a61] mb-3 text-sm">Accepted Payment Methods</h4>
+                        <div className="flex flex-wrap gap-3 justify-center">
+                          <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">Credit Card</span>
+                          <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">Debit Card</span>
+                          <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">UPI</span>
+                          <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">Net Banking</span>
+                          <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">Wallets</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
+                        <Shield className="w-4 h-4" />
+                        <span>256-bit SSL Encrypted & PCI DSS Compliant</span>
                       </div>
                     </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <Input name="paymentDate" type="date" placeholder="Payment Date" value={formData.paymentDate} onChange={handleChange} className="py-3" />
-                    <Input name="paymentNumber" placeholder="Cheque/RTGS/NEFT Number" value={formData.paymentNumber} onChange={handleChange} className="py-3" />
-                    <Input name="bankBranch" placeholder="Your Bank & Branch" value={formData.bankBranch} onChange={handleChange} className="py-3 md:col-span-2" />
-                  </div>
+                  )}
 
                   <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-200">
                     <div className="flex gap-3">
@@ -321,7 +418,12 @@ const EOIForm = () => {
                         <ul className="list-disc list-inside space-y-1">
                           <li>Minimum booking amount: 10% of total sale consideration</li>
                           <li>Payments accepted only from Applicant's or Co-Applicant's account</li>
-                          <li>₹1,000 penalty applicable for cheque dishonour</li>
+                          {formData.paymentMethod === 'bank' && (
+                            <li>₹1,000 penalty applicable for cheque dishonour</li>
+                          )}
+                          {formData.paymentMethod === 'gateway' && (
+                            <li>Payment gateway charges, if any, will be borne by the applicant</li>
+                          )}
                         </ul>
                       </div>
                     </div>
