@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, MapPin, Send, MessageCircle } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
@@ -7,6 +8,7 @@ import { contactData } from '../../data/mock';
 import { toast } from 'sonner';
 
 const Contact = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
