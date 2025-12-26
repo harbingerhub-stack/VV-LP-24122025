@@ -16,12 +16,12 @@ def test_callback_api():
     """Test the callback/contact form API endpoints"""
     print("\n=== Testing Callback API ===")
     
-    # Test data for callback request
+    # Test data for callback request (as specified in review request)
     callback_data = {
-        "name": "Rajesh Kumar",
-        "phone": "9876543210", 
-        "email": "rajesh.kumar@email.com",
-        "message": "Interested in TYPE B plots. Please call me to discuss pricing and availability."
+        "name": "Final Test User",
+        "phone": "9999000000", 
+        "email": "final@test.com",
+        "message": "Final testing"
     }
     
     try:
