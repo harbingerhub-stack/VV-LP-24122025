@@ -234,7 +234,7 @@ code {
 
 /* Gold gradient text */
 .text-gradient-gold {
-  background: linear-gradient(135deg, #dee3d6 0%, #a8ce6d 50%, #dee3d6 100%);
+  background: linear-gradient(135deg, #dee3d6 0%, #e8ece3 50%, #dee3d6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -267,14 +267,14 @@ html {
 
 /* Border gold accent */
 .border-gold-accent {
-  border-image: linear-gradient(135deg, #dee3d6 0%, #a8ce6d 100%) 1;
+  border-image: linear-gradient(135deg, #dee3d6 0%, #e8ece3 100%) 1;
 }
 
 /* Decorative line */
 .decorative-line {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #dee3d6, #a8ce6d);
+  background: linear-gradient(90deg, #dee3d6, #e8ece3);
 }
 
 /* Card hover effect */
