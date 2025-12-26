@@ -397,9 +397,7 @@ const EOIForm = () => {
                         <div className="flex flex-wrap gap-3 justify-center">
                           <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">Credit Card</span>
                           <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">Debit Card</span>
-                          <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">UPI</span>
                           <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">Net Banking</span>
-                          <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">Wallets</span>
                         </div>
                       </div>
 
