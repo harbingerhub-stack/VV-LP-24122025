@@ -13,10 +13,10 @@ const FloatingCTA = () => {
   return (
     <button
       onClick={() => navigate('/eoi')}
-      className="fixed bottom-1/4 right-0 z-50 bg-[#9B9068] hover:bg-[#7a7352] text-white px-3 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
+      className="fixed bottom-1/4 right-0 z-50 bg-[#9B9068] hover:bg-[#7a7352] text-white px-4 py-8 shadow-lg hover:shadow-xl transition-all duration-300 rounded-l-lg"
       style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
     >
-      <span className="font-semibold tracking-wider text-sm">Register Now</span>
+      <span className="font-semibold tracking-wider text-base">Expression of Interest Now Open</span>
     </button>
   );
 };
