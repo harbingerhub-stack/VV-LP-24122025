@@ -337,7 +337,7 @@ const EOIForm = () => {
                         </div>
                         <div className="flex-1">
                           <h3 className="font-semibold text-[#084a61] mb-1">Online Payment</h3>
-                          <p className="text-gray-500 text-sm">Credit/Debit Card, UPI, Net Banking</p>
+                          <p className="text-gray-500 text-sm">Credit/Debit Card, Net Banking</p>
                         </div>
                         {formData.paymentMethod === 'gateway' && (
                           <CheckCircle className="w-5 h-5 text-[#87b04a] absolute top-4 right-4" />
