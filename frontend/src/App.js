@@ -13,6 +13,7 @@ import Plots from './components/sections/Plots';
 import Manor from './components/sections/Manor';
 import Contact from './components/sections/Contact';
 import EOIForm from './pages/EOIForm';
+import TermsAndConditions from './pages/TermsAndConditions';
 
 function LandingPage() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/eoi" element={<EOIForm />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
         </Routes>
       </div>
     </Router>
