@@ -53,8 +53,6 @@ const Location = () => {
               
               {/* Overlay Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-display text-2xl text-white mb-3">Mullayyanagiri</h3>
-                
                 {/* Distance Cards - Compact */}
                 <div className="grid grid-cols-2 gap-4">
                   {locationData.highlights.map((item, index) => {
