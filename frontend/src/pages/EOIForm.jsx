@@ -673,6 +673,24 @@ const EOIForm = () => {
                       </ul>
                     </div>
 
+                    <div>
+                      <h3 className="font-semibold text-[#084a61] mb-2">10. Cancellation and Refund</h3>
+                      <ul className="list-disc list-inside space-y-1 text-gray-600">
+                        <li>The EOI amount is collected only to register interest and does not constitute a confirmed booking.</li>
+                        <li>Cancellation is permitted prior to allotment, and refunds, if applicable, will be processed through the original payment mode.</li>
+                        <li>Agrocorp reserves the right to modify this policy at any time.</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold text-[#084a61] mb-2">11. Shipping Details</h3>
+                      <ul className="list-disc list-inside space-y-1 text-gray-600">
+                        <li>Transaction details and receipts will be accessible through the applicant's email ID.</li>
+                        <li>If required, the same can be sent to the applicant's address upon request.</li>
+                        <li>ALPL 3 LLP reserves the right to choose the delivery mode of the said documents.</li>
+                      </ul>
+                    </div>
+
                     <div className="pt-4 border-t">
                       <p className="text-gray-600">
                         <strong>Contact for queries:</strong><br />
