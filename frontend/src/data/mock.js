@@ -38,8 +38,7 @@ export const locationData = {
     { title: "Own Your House in the Mountains", desc: "Wake up to misty peaks and coffee plantations — your personal hill station retreat awaits." },
     { title: "Curated Excellence", desc: "Thoughtfully designed architecture and amenities that put you at the center of luxury living." },
     { title: "Beyond the Boundaries of Home", desc: "Exclusive access to The Manor and our growing network of VV Resorts & Lounges across India." },
-    { title: "Your Own Generational Legacy", desc: "Built to endure. Flexible spaces for traditions, memories, and family heritage." },
-    { title: "Peace With Purpose", desc: "14+ years, 11 delivered projects, zero litigations, 1200+ satisfied customers. Excellence you can trust." }
+    { title: "Your Own Generational Legacy", desc: "Built to endure. Flexible spaces for traditions, memories, and family heritage." }
   ],
   closingText: "At Vacation Village, serenity meets your lifestyle. Whether you seek a personal escape, family gatherings, or a cherished generational home — this ownership delivers both peace of mind and enduring joy.",
   highlights: [
