@@ -567,7 +567,7 @@ const EOIForm = () => {
                       <div className="text-sm text-amber-800">
                         <p className="font-medium mb-1">Important Notes:</p>
                         <ul className="list-disc list-inside space-y-1">
-                          <li>Minimum booking amount: 10% of total sale consideration</li>
+                          <li>EOI Registration Amount: ₹99,999 (Fixed)</li>
                           <li>Payments accepted only from Applicant's or Co-Applicant's account</li>
                           {formData.paymentMethod === 'bank' && (
                             <li>₹1,000 penalty applicable for cheque dishonour</li>
