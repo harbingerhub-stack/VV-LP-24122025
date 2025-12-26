@@ -623,7 +623,7 @@ const EOIForm = () => {
                   <Button 
                     type="submit" 
                     disabled={isSubmitting || !formData.acceptTerms}
-                    className="bg-[#9B9068] hover:bg-[#c5cabe] text-white px-8"
+                    className="bg-[#9B9068] hover:bg-[#7a7352] text-white px-8"
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit EOI'}
                   </Button>
