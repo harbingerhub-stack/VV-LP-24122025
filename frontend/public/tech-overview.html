@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Village - Technical Overview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #fff;
+        }
+        
+        h1 {
+            color: #084a61;
+            font-size: 28px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #9B9068;
+        }
+        
+        h2 {
+            color: #084a61;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        h3 {
+            color: #9B9068;
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        
+        th {
+            background: #084a61;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            font-size: 13px;
+        }
+        
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 12px;
+            line-height: 1.4;
+            margin: 15px 0;
+        }
+        
+        .architecture-box {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Consolas', monospace;
+            font-size: 11px;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .badge-success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .badge-warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        .color-swatch {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-right: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .file-tree {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            font-family: 'Consolas', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .date {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .json-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', monospace;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        
+        @media print {
+            body {
+                padding: 20px;
+            }
+            
+            h2 {
+                page-break-after: avoid;
+            }
+            
+            table, pre, .architecture-box {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-info">
+        <h1>🏗️ Vacation Village Chikkamagaluru<br><span style="font-size: 18px; font-weight: normal;">Technical Overview</span></h1>
+        <div class="date">Generated: December 2024</div>
+    </div>
+
+    <div class="section">
+        <h2>Tech Stack</h2>
+        <table>
+            <tr><th>Layer</th><th>Technology</th></tr>
+            <tr><td>Frontend</td><td>React 18 + Tailwind CSS + Shadcn/UI</td></tr>
+            <tr><td>Backend</td><td>FastAPI (Python)</td></tr>
+            <tr><td>Database</td><td>MongoDB (Motor async driver)</td></tr>
+            <tr><td>Routing</td><td>React Router v7</td></tr>
+            <tr><td>State Management</td><td>React useState hooks</td></tr>
+            <tr><td>Notifications</td><td>Sonner (toast notifications)</td></tr>
+            <tr><td>Icons</td><td>Lucide React</td></tr>
+            <tr><td>Fonts</td><td>Custom font (Runalto) + System fonts</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Architecture Diagram</h2>
+        <div class="architecture-box">┌─────────────────────────────────────────────────────────────┐
+│                        FRONTEND                              │
+│                    (React + Tailwind)                        │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │  Landing    │  │  EOI Form   │  │  Floating CTA       │  │
+│  │  Page       │  │  (/eoi)     │  │  Button             │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+│         │                │                                   │
+│         ▼                ▼                                   │
+│  ┌─────────────────────────────────────────────────────┐    │
+│  │              API Calls (fetch)                       │    │
+│  └─────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                        BACKEND                               │
+│                    (FastAPI + Python)                        │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │ /api/       │  │/api/callback│  │    /api/eoi         │  │
+│  │ (health)    │  │ (contact)   │  │ (EOI submissions)   │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                       DATABASE                               │
+│                       (MongoDB)                              │
+│  ┌─────────────────┐  ┌─────────────────────────────────┐   │
+│  │callback_requests│  │      eoi_submissions            │   │
+│  └─────────────────┘  └─────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘</div>
+    </div>
+
+    <div class="section">
+        <h2>File Structure</h2>
+        <div class="file-tree">/app
+├── backend/
+│   ├── .env                    # Environment variables (MONGO_URL, DB_NAME)
+│   ├── requirements.txt        # Python dependencies
+│   └── server.py               # FastAPI application (all API routes)
+│
+└── frontend/
+    ├── .env                    # Environment variables (REACT_APP_BACKEND_URL)
+    ├── package.json            # Node dependencies
+    ├── tailwind.config.js      # Tailwind CSS configuration
+    └── src/
+        ├── App.js              # Main app with routing
+        ├── App.css             # Global styles + custom font
+        ├── index.css           # Tailwind imports + animations
+        │
+        ├── assets/
+        │   ├── Runalto.ttf     # Custom display font
+        │   └── images/         # Local images
+        │
+        ├── components/
+        │   ├── layout/
+        │   │   ├── Header.jsx      # Sticky navigation header
+        │   │   ├── Footer.jsx      # Footer with social links
+        │   │   └── FloatingCTA.jsx # Fixed "Register Now" button
+        │   │
+        │   ├── sections/
+        │   │   ├── Hero.jsx        # Hero banner section
+        │   │   ├── About.jsx       # About section
+        │   │   ├── Location.jsx    # Prime Location section
+        │   │   ├── Plots.jsx       # Plot Options (tabbed interface)
+        │   │   ├── Manor.jsx       # The Manor section
+        │   │   └── Contact.jsx     # Get in Touch + Callback form
+        │   │
+        │   └── ui/                 # Shadcn/UI components
+        │
+        ├── pages/
+        │   └── EOIForm.jsx         # Multi-step EOI form page
+        │
+        └── data/
+            └── mock.js             # Centralized content/data</div>
+    </div>
+
+    <div class="section">
+        <h2>Frontend Pages & Components</h2>
+        
+        <h3>1. Landing Page (/)</h3>
+        <table>
+            <tr><th>Section</th><th>Component</th><th>Features</th></tr>
+            <tr><td>Header</td><td>Header.jsx</td><td>Sticky, transparent → white on scroll, logo, nav links, CTA</td></tr>
+            <tr><td>Hero</td><td>Hero.jsx</td><td>Full-screen banner, headline, CTA buttons</td></tr>
+            <tr><td>About</td><td>About.jsx</td><td>Image + content, animated on scroll, feature list</td></tr>
+            <tr><td>Location</td><td>Location.jsx</td><td>Map image, distance cards, "Why Choose" points, attractions</td></tr>
+            <tr><td>Plots</td><td>Plots.jsx</td><td>Tabbed interface (Plot Sizes / Master Plan / Features & Amenities)</td></tr>
+            <tr><td>Manor</td><td>Manor.jsx</td><td>The Manor resort access info, amenities list</td></tr>
+            <tr><td>Contact</td><td>Contact.jsx</td><td>Contact info + "Request a Call Back" form</td></tr>
+            <tr><td>Footer</td><td>Footer.jsx</td><td>Logo, description, quick links, contact, social icons</td></tr>
+            <tr><td>Floating CTA</td><td>FloatingCTA.jsx</td><td>Fixed vertical "Register Now" button (right edge)</td></tr>
+        </table>
+
+        <h3>2. EOI Form Page (/eoi)</h3>
+        <table>
+            <tr><th>Step</th><th>Content</th></tr>
+            <tr><td>Step 1</td><td>Applicant Details (1st & 2nd applicant - name, email, mobile, DOB, occupation, Aadhaar, PAN, GST, TAN, address)</td></tr>
+            <tr><td>Step 2</td><td>Plot Selection (Type A/B/C with prices, custom plot option, financing type)</td></tr>
+            <tr><td>Step 3</td><td>Payment Details (Bank Transfer or Online Payment gateway options)</td></tr>
+            <tr><td>Step 4</td><td>Terms & Conditions + Digital Signatures + Consent checkbox</td></tr>
+            <tr><td>Step 5</td><td>Success confirmation page</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Backend API Endpoints</h2>
+        <table>
+            <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+            <tr><td><code>GET</code></td><td>/api/</td><td>Health check - returns {"message": "Vacation Village API"}</td></tr>
+            <tr><td><code>POST</code></td><td>/api/callback</td><td>Submit callback request (contact form)</td></tr>
+            <tr><td><code>GET</code></td><td>/api/callback</td><td>Get all callback requests</td></tr>
+            <tr><td><code>POST</code></td><td>/api/eoi</td><td>Submit EOI form</td></tr>
+            <tr><td><code>GET</code></td><td>/api/eoi</td><td>Get all EOI submissions</td></tr>
+            <tr><td><code>GET</code></td><td>/api/eoi/{id}</td><td>Get specific EOI by ID</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Database Schema (MongoDB)</h2>
+        
+        <h3>Collection: callback_requests</h3>
+        <div class="json-block">{
+  "id": "uuid-string",
+  "name": "string",
+  "phone": "string",
+  "email": "string (optional)",
+  "message": "string (optional)",
+  "created_at": "ISO datetime",
+  "status": "pending | contacted | closed"
+}</div>
+
+        <h3>Collection: eoi_submissions</h3>
+        <div class="json-block">{
+  "id": "uuid-string",
+  "eoi_number": "EOI-YYYYMMDD-XXXXXXXX",
+  "applicant1": {
+    "name": "string",
+    "email": "string",
+    "mobile": "string",
+    "address": "string",
+    "dob": "string",
+    "occupation": "string",
+    "designation": "string",
+    "aadhaar": "string",
+    "pan": "string",
+    "gst": "string",
+    "tan": "string"
+  },
+  "applicant2": { ... } | null,
+  "plot_type": "TYPE A | TYPE B | TYPE C | ODD TYPE",
+  "plot_area": "string (sq.ft)",
+  "eoi_amount": "string",
+  "total_consideration": "string",
+  "financing_type": "self | loan",
+  "payment_method": "bank | gateway",
+  "payment_date": "string",
+  "payment_number": "string",
+  "bank_branch": "string",
+  "created_at": "ISO datetime",
+  "status": "submitted | confirmed | cancelled",
+  "terms_accepted": true
+}</div>
+    </div>
+
+    <div class="section">
+        <h2>Design System</h2>
+        
+        <h3>Color Palette</h3>
+        <table>
+            <tr><th>Color</th><th>Hex</th><th>Usage</th></tr>
+            <tr><td><span class="color-swatch" style="background: #084a61;"></span>Primary (Teal)</td><td>#084a61</td><td>Headers, buttons, backgrounds</td></tr>
+            <tr><td><span class="color-swatch" style="background: #9B9068;"></span>Accent (Gold/Olive)</td><td>#9B9068</td><td>Highlights, CTAs, labels</td></tr>
+            <tr><td><span class="color-swatch" style="background: #7a7352;"></span>Accent Hover</td><td>#7a7352</td><td>Button hover states</td></tr>
+            <tr><td><span class="color-swatch" style="background: #052f3d;"></span>Dark Footer</td><td>#052f3d</td><td>Footer background</td></tr>
+            <tr><td><span class="color-swatch" style="background: #ffffff;"></span>White</td><td>#ffffff</td><td>Cards, text</td></tr>
+            <tr><td><span class="color-swatch" style="background: #f8f9f6;"></span>Light Gray</td><td>#f8f9f6</td><td>Section backgrounds</td></tr>
+        </table>
+
+        <h3>Typography</h3>
+        <table>
+            <tr><th>Type</th><th>Font</th><th>Sizes</th></tr>
+            <tr><td>Display/Headings</td><td>Runalto (custom)</td><td>text-3xl to text-6xl</td></tr>
+            <tr><td>Body</td><td>System sans-serif</td><td>text-sm to text-lg</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Key Features</h2>
+        <table>
+            <tr><th>Feature</th><th>Implementation</th></tr>
+            <tr><td>Responsive Design</td><td>Tailwind breakpoints (sm:, md:, lg:)</td></tr>
+            <tr><td>Scroll Animations</td><td>Intersection Observer API</td></tr>
+            <tr><td>Smooth Scrolling</td><td>scrollIntoView({ behavior: 'smooth' })</td></tr>
+            <tr><td>Sticky Header</td><td>position: fixed with scroll state</td></tr>
+            <tr><td>Image Lightbox</td><td>Modal for master plan image</td></tr>
+            <tr><td>Multi-step Form</td><td>React state-based step navigation</td></tr>
+            <tr><td>Form Validation</td><td>Required fields + toast notifications</td></tr>
+            <tr><td>Floating CTA</td><td>Fixed position button with vertical text</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>External Integrations</h2>
+        <table>
+            <tr><th>Service</th><th>Status</th></tr>
+            <tr><td>MongoDB</td><td><span class="badge badge-success">✅ Connected</span></td></tr>
+            <tr><td>Payment Gateway</td><td><span class="badge badge-warning">🔲 UI Ready (placeholder)</span></td></tr>
+            <tr><td>Email Notifications</td><td><span class="badge badge-warning">🔲 Not implemented</span></td></tr>
+            <tr><td>WhatsApp</td><td><span class="badge badge-success">✅ Link ready</span></td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Deployment Checklist</h2>
+        <table>
+            <tr><th>Item</th><th>Status</th></tr>
+            <tr><td>Environment variables configured</td><td><span class="badge badge-success">✅ Complete</span></td></tr>
+            <tr><td>CORS configured for production</td><td><span class="badge badge-success">✅ Complete</span></td></tr>
+            <tr><td>API routes prefixed with /api</td><td><span class="badge badge-success">✅ Complete</span></td></tr>
+            <tr><td>MongoDB connection ready</td><td><span class="badge badge-success">✅ Complete</span></td></tr>
+            <tr><td>All forms functional and tested</td><td><span class="badge badge-success">✅ Complete</span></td></tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 12px;">
+        <p>Vacation Village Chikkamagaluru - Technical Documentation</p>
+        <p>Generated by Emergent AI Platform</p>
+    </div>
+</body>
+</html>
