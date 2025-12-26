@@ -90,7 +90,7 @@ const Contact = () => {
           {/* Form Side */}
           <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl">
-              <h3 className="font-display text-2xl text-[#084a61] mb-6">Expression of Interest</h3>
+              <h3 className="font-display text-2xl text-[#084a61] mb-6">Request a Call Back</h3>
               
               <div className="space-y-5">
                 <div>
