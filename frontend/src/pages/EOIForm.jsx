@@ -21,17 +21,12 @@ const loadRazorpayScript = () => {
   });
 };
 
-// Plot prices in paise (₹1 = 100 paise)
-const PLOT_PRICES = {
-  'TYPE A': 459900000, // ₹45,99,000 = 45.99 Lakhs (in paise)
-  'TYPE B': 559900000, // ₹55,99,000 = 55.99 Lakhs (in paise)
-  'TYPE C': 659900000, // ₹65,99,000 = 65.99 Lakhs (in paise)
-};
+// Fixed EOI booking amount in paise (₹99,999 = 9999900 paise)
+const EOI_AMOUNT = 9999900;
 
-// EOI booking amount (10% of plot price)
+// EOI booking amount (fixed ₹99,999)
 const getEOIAmount = (plotType) => {
-  const price = PLOT_PRICES[plotType] || 0;
-  return Math.round(price * 0.1); // 10% booking amount in paise
+  return EOI_AMOUNT; // Fixed booking amount
 };
 
 const EOIForm = () => {
