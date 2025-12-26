@@ -24,11 +24,15 @@ const Footer = () => {
               India's premium vacation home development. Crafting extraordinary worlds defined by breathtaking architecture and seamless convenience.
             </p>
             <div className="flex gap-4">
-              {[Instagram, Facebook, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#87b04a] transition-colors">
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a href="https://www.instagram.com/thevacationvillage" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#87b04a] transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61556209175651" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#87b04a] transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="https://www.linkedin.com/company/tvv-official/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#87b04a] transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
