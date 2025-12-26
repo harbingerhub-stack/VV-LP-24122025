@@ -6,7 +6,7 @@ Specific test cases as requested in the review request
 import requests
 import json
 
-BACKEND_URL = "https://paradise-plots-3.preview.emergentagent.com/api"
+BACKEND_URL = "https://harmony-estates.preview.emergentagent.com/api"
 
 def test_specific_callback_request():
     """Test the exact callback request from review request"""

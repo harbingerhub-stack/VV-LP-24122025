@@ -10,7 +10,7 @@ import sys
 from datetime import datetime
 
 # Backend URL from frontend/.env
-BACKEND_URL = "https://paradise-plots-3.preview.emergentagent.com/api"
+BACKEND_URL = "https://harmony-estates.preview.emergentagent.com/api"
 
 def test_callback_api():
     """Test the callback/contact form API endpoints"""
