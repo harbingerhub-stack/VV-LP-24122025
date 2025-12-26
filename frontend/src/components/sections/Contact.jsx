@@ -83,7 +83,7 @@ const Contact = () => {
             </div>
 
             <Button onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-[#87b04a] hover:bg-[#6f9a3a] text-white px-8 py-6 text-lg rounded-full">
-              Submit EOI
+              Register Now
             </Button>
           </div>
 
