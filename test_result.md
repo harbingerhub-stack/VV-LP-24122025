@@ -35,6 +35,18 @@ backend:
         agent: "testing"
         comment: "✅ API root endpoint responding correctly with proper message. Backend service is healthy and accessible at the configured URL."
 
+  - task: "Razorpay Payment Integration"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ All Razorpay payment integration endpoints working correctly. GET /api/payment/config returns proper key_id (rzp_test_RwA9PzgM4M0fH2) and currency (INR). POST /api/payment/create-order successfully creates Razorpay orders with proper amount (45990000 paise), returns valid order_id from Razorpay API. GET /api/payment/{eoi_id} retrieves payment status correctly. Payment data properly stored in MongoDB payments collection with all required fields including eoi_id, razorpay_order_id, amount, applicant details, and timestamps. Integration with Razorpay API confirmed working."
+
 frontend:
   - task: "Contact Form Integration"
     implemented: true
