@@ -99,12 +99,12 @@ export const manorData = {
 
 export const contactData = {
   title: "Begin Your Journey",
-  subtitle: "Schedule a site visit today",
+  subtitle: "to know more",
   phone: "+91 9555 26 1111",
   email: "enquiries@vacationvillage.co.in",
   website: "www.vacationvillage.co.in",
   whatsapp: "919555261111",
-  address: "VISTA PIXEL, NO. 7 LEVEL - 3, BELLARY ROAD JAKKURU, BENGALURU, 560092"
+  address: "Vista Pixel, No. 7 Level - 3, Bellary Road Jakkuru, Bengaluru, 560092"
 };
 
 export const navLinks = [
