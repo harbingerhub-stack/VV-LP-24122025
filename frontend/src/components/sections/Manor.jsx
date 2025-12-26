@@ -27,7 +27,9 @@ const Manor = () => {
             <h2 className="font-display text-4xl md:text-5xl text-[#084a61] mt-4 mb-6">
               {manorData.title}
             </h2>
-            <p className="text-xl text-[#084a61]/60 italic mb-4">{manorData.subtitle}</p>
+            {manorData.subtitle && (
+              <p className="text-xl text-[#084a61]/60 italic mb-4">{manorData.subtitle}</p>
+            )}
             <p className="text-gray-600 text-lg leading-relaxed mb-4">
               {manorData.description}
             </p>
