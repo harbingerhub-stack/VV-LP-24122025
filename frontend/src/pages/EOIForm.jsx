@@ -208,9 +208,9 @@ const EOIForm = () => {
 
                   <div className="grid md:grid-cols-3 gap-4 mb-8">
                     {[
-                      { type: 'TYPE A', area: '1200', price: '₹ On Request' },
-                      { type: 'TYPE B', area: '1500', price: '₹ On Request' },
-                      { type: 'TYPE C', area: '1800', price: '₹ On Request' },
+                      { type: 'TYPE A', area: '1200', price: '₹45.99 Lakhs*' },
+                      { type: 'TYPE B', area: '1500', price: '₹55.99 Lakhs*' },
+                      { type: 'TYPE C', area: '1800', price: '₹65.99 Lakhs*' },
                     ].map((plot) => (
                       <div 
                         key={plot.type}
@@ -225,7 +225,7 @@ const EOIForm = () => {
                           <h3 className="font-display text-xl text-[#084a61] mb-2">{plot.type}</h3>
                           <p className="text-3xl font-bold text-[#87b04a] mb-1">{plot.area}</p>
                           <p className="text-gray-500 text-sm">Sq. Ft.</p>
-                          <p className="text-[#084a61] font-medium mt-3">{plot.price}</p>
+                          <p className="text-[#084a61] font-bold text-lg mt-3">{plot.price}</p>
                         </div>
                         {formData.plotType === plot.type && (
                           <div className="mt-4 flex justify-center">
