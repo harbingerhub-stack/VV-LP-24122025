@@ -95,6 +95,7 @@ test_plan:
     - "Contact Form Integration"
     - "EOI Form Integration"
     - "Floating CTA Button"
+    - "Razorpay Payment Integration"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
