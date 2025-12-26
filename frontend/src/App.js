@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
 import { Toaster } from './components/ui/sonner';
 
@@ -10,11 +11,11 @@ import Location from './components/sections/Location';
 import Plots from './components/sections/Plots';
 import Manor from './components/sections/Manor';
 import Contact from './components/sections/Contact';
+import EOIForm from './pages/EOIForm';
 
-function App() {
+function LandingPage() {
   return (
-    <div className="App">
-      <Toaster position="top-right" richColors />
+    <>
       <Header />
       <main>
         <Hero />
@@ -25,7 +26,21 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Toaster position="top-right" richColors />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/eoi" element={<EOIForm />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
