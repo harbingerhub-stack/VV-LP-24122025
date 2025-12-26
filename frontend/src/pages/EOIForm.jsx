@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, User, Building, FileText, CreditCard, CheckCircle, AlertCircle } from 'lucide-react';
+import { ArrowLeft, User, Building, FileText, CreditCard, CheckCircle, AlertCircle, Landmark, Globe, Shield } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
@@ -40,6 +40,7 @@ const EOIForm = () => {
     totalConsideration: '',
     financingType: 'self',
     // Payment Details
+    paymentMethod: 'bank',
     paymentDate: '',
     paymentNumber: '',
     bankBranch: '',
