@@ -15,6 +15,7 @@ import Contact from './components/sections/Contact';
 import EOIForm from './pages/EOIForm';
 import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import CompanyProfile from './pages/CompanyProfile';
 
 function LandingPage() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/eoi" element={<EOIForm />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/about-us" element={<CompanyProfile />} />
         </Routes>
       </div>
     </Router>
