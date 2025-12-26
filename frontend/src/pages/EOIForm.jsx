@@ -235,6 +235,7 @@ const EOIForm = () => {
                       </div>
                     ))}
                   </div>
+                  <p className="text-center text-gray-500 text-sm mb-6">*All inclusive pricing</p>
 
                   <div className="bg-gray-50 p-6 rounded-xl">
                     <h3 className="font-semibold text-[#084a61] mb-4">Or Enter Custom Plot Details</h3>
