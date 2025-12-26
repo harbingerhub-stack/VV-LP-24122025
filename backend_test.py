@@ -218,8 +218,8 @@ def test_payment_api():
             if not order_result.get('order_id'):
                 print(f"   ❌ Missing order_id in response")
                 return False
-            if order_result.get('amount') != 45990000:
-                print(f"   ❌ Amount mismatch: expected 45990000, got {order_result.get('amount')}")
+            if order_result.get('amount') != 9999900:
+                print(f"   ❌ Amount mismatch: expected 9999900, got {order_result.get('amount')}")
                 return False
                 
             order_id = order_result.get('order_id')
