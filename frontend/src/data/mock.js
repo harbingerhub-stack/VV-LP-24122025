@@ -105,7 +105,7 @@ export const contactData = {
   email: "enquiries@vacationvillage.co.in",
   website: "www.vacationvillage.co.in",
   whatsapp: "919555261111",
-  address: "Bengaluru, Karnataka"
+  address: "VISTA PIXEL, NO. 7 LEVEL - 3, BELLARY ROAD JAKKURU, BENGALURU, 560092"
 };
 
 export const navLinks = [
