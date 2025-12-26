@@ -5,6 +5,7 @@ import { Toaster } from './components/ui/sonner';
 
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import FloatingCTA from './components/layout/FloatingCTA';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Location from './components/sections/Location';
@@ -35,6 +36,7 @@ function App() {
     <Router>
       <div className="App">
         <Toaster position="top-right" richColors />
+        <FloatingCTA />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/eoi" element={<EOIForm />} />
