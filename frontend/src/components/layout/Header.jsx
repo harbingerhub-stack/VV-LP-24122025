@@ -83,7 +83,7 @@ const Header = () => {
               onClick={() => scrollToSection('#contact')}
               className={`font-medium px-6 transition-all duration-300 ${
                 isScrolled 
-                  ? 'bg-[#dee3d6] hover:bg-[#6f9a3a] text-white' 
+                  ? 'bg-[#dee3d6] hover:bg-[#c5cabe] text-white' 
                   : 'bg-white/20 hover:bg-white/30 text-white border border-white/30'
               }`}
             >
@@ -121,7 +121,7 @@ const Header = () => {
               ))}
               <Button
                 onClick={() => scrollToSection('#contact')}
-                className="mt-4 w-full bg-[#dee3d6] hover:bg-[#6f9a3a] text-white"
+                className="mt-4 w-full bg-[#dee3d6] hover:bg-[#c5cabe] text-white"
               >
                 Get in Touch
               </Button>

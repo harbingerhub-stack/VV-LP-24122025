@@ -84,7 +84,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <Button onClick={() => navigate('/eoi')} className="bg-[#dee3d6] hover:bg-[#6f9a3a] text-white px-8 py-6 text-lg rounded-full">
+            <Button onClick={() => navigate('/eoi')} className="bg-[#dee3d6] hover:bg-[#c5cabe] text-white px-8 py-6 text-lg rounded-full">
               Register Now
             </Button>
           </div>
