@@ -170,6 +170,107 @@ def test_eoi_api():
         print(f"   ❌ Unexpected error during EOI API test: {e}")
         return False
 
+def test_payment_api():
+    """Test the Razorpay payment integration API endpoints"""
+    print("\n=== Testing Razorpay Payment API ===")
+    
+    try:
+        # Test GET /api/payment/config
+        print("1. Testing GET /api/payment/config...")
+        response = requests.get(f"{BACKEND_URL}/payment/config", timeout=30)
+        print(f"   Status Code: {response.status_code}")
+        
+        if response.status_code == 200:
+            config = response.json()
+            print(f"   ✅ Payment config retrieved successfully")
+            print(f"   Key ID: {config.get('key_id')}")
+            print(f"   Currency: {config.get('currency')}")
+            
+            if not config.get('key_id'):
+                print(f"   ❌ Missing Razorpay key_id in config")
+                return False
+            if config.get('currency') != 'INR':
+                print(f"   ❌ Expected currency INR, got {config.get('currency')}")
+                return False
+        else:
+            print(f"   ❌ Failed to get payment config: {response.text}")
+            return False
+            
+        # Test POST /api/payment/create-order
+        print("\n2. Testing POST /api/payment/create-order...")
+        order_data = {
+            "amount": 45990000,  # ₹459,900 in paise
+            "eoi_id": "test-razorpay-123",
+            "applicant_name": "Razorpay Test",
+            "applicant_email": "razorpay@test.com",
+            "applicant_phone": "9999888877"
+        }
+        
+        response = requests.post(f"{BACKEND_URL}/payment/create-order", json=order_data, timeout=30)
+        print(f"   Status Code: {response.status_code}")
+        
+        if response.status_code == 200:
+            order_result = response.json()
+            print(f"   ✅ Payment order created successfully")
+            print(f"   Success: {order_result.get('success')}")
+            print(f"   Order ID: {order_result.get('order_id')}")
+            print(f"   Amount: {order_result.get('amount')}")
+            print(f"   Currency: {order_result.get('currency')}")
+            print(f"   Key ID: {order_result.get('key_id')}")
+            
+            if not order_result.get('success'):
+                print(f"   ❌ Order creation not successful")
+                return False
+            if not order_result.get('order_id'):
+                print(f"   ❌ Missing order_id in response")
+                return False
+            if order_result.get('amount') != 45990000:
+                print(f"   ❌ Amount mismatch: expected 45990000, got {order_result.get('amount')}")
+                return False
+                
+            order_id = order_result.get('order_id')
+            eoi_id = order_data['eoi_id']
+        else:
+            print(f"   ❌ Failed to create payment order: {response.text}")
+            return False
+            
+        # Test GET /api/payment/{eoi_id}
+        print(f"\n3. Testing GET /api/payment/{eoi_id}...")
+        response = requests.get(f"{BACKEND_URL}/payment/{eoi_id}", timeout=30)
+        print(f"   Status Code: {response.status_code}")
+        
+        if response.status_code == 200:
+            payment_status = response.json()
+            print(f"   ✅ Payment status retrieved successfully")
+            print(f"   EOI ID: {payment_status.get('eoi_id')}")
+            print(f"   Status: {payment_status.get('status')}")
+            print(f"   Razorpay Order ID: {payment_status.get('razorpay_order_id')}")
+            print(f"   Amount: {payment_status.get('amount')}")
+            print(f"   Applicant Name: {payment_status.get('applicant_name')}")
+            
+            if payment_status.get('eoi_id') != eoi_id:
+                print(f"   ❌ EOI ID mismatch in payment status")
+                return False
+            if payment_status.get('status') != 'created':
+                print(f"   ❌ Expected status 'created', got {payment_status.get('status')}")
+                return False
+            if payment_status.get('razorpay_order_id') != order_id:
+                print(f"   ❌ Razorpay order ID mismatch")
+                return False
+        else:
+            print(f"   ❌ Failed to retrieve payment status: {response.text}")
+            return False
+            
+        print("   ✅ Razorpay Payment API tests passed")
+        return True
+        
+    except requests.exceptions.RequestException as e:
+        print(f"   ❌ Network error during payment API test: {e}")
+        return False
+    except Exception as e:
+        print(f"   ❌ Unexpected error during payment API test: {e}")
+        return False
+
 def test_api_health():
     """Test basic API health and connectivity"""
     print("\n=== Testing API Health ===")
