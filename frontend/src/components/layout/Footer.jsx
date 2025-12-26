@@ -94,7 +94,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Vacation Village. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-white/40">
-            <Link to="/terms" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
