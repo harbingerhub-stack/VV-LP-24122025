@@ -80,20 +80,14 @@ def test_eoi_api():
     """Test the EOI (Expression of Interest) API endpoints"""
     print("\n=== Testing EOI API ===")
     
-    # Test data for EOI submission
+    # Test data for EOI submission (as specified in review request)
     eoi_data = {
-        "applicant1Name": "Priya Sharma",
-        "applicant1Email": "priya.sharma@email.com",
-        "applicant1Mobile": "9999999999",
-        "applicant1Address": "123 MG Road, Bangalore, Karnataka 560001",
+        "applicant1Name": "Deployment Test",
+        "applicant1Email": "deploy@test.com",
+        "applicant1Mobile": "8888000000",
         "applicant1PAN": "ABCDE1234F",
-        "applicant1Aadhaar": "123456789012",
-        "applicant1Occupation": "Software Engineer",
-        "applicant1Designation": "Senior Developer",
         "plotType": "TYPE B",
         "plotArea": "1500",
-        "eoiAmount": "50000",
-        "totalConsideration": "2500000",
         "financingType": "self",
         "paymentMethod": "gateway",
         "acceptTerms": True
