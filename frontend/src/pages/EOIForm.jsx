@@ -21,17 +21,17 @@ const loadRazorpayScript = () => {
   });
 };
 
-// Plot prices in paise (multiply by 100)
+// Plot prices in paise (₹1 = 100 paise)
 const PLOT_PRICES = {
-  'TYPE A': 4599000, // ₹45,99,000 = 45.99 Lakhs
-  'TYPE B': 5599000, // ₹55,99,000 = 55.99 Lakhs
-  'TYPE C': 6599000, // ₹65,99,000 = 65.99 Lakhs
+  'TYPE A': 459900000, // ₹45,99,000 = 45.99 Lakhs (in paise)
+  'TYPE B': 559900000, // ₹55,99,000 = 55.99 Lakhs (in paise)
+  'TYPE C': 659900000, // ₹65,99,000 = 65.99 Lakhs (in paise)
 };
 
 // EOI booking amount (10% of plot price)
 const getEOIAmount = (plotType) => {
   const price = PLOT_PRICES[plotType] || 0;
-  return Math.round(price * 0.1); // 10% booking amount
+  return Math.round(price * 0.1); // 10% booking amount in paise
 };
 
 const EOIForm = () => {
