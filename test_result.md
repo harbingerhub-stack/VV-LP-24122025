@@ -80,8 +80,9 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Callback API (Contact Form)"
-    - "EOI API (Expression of Interest Form)"
+    - "Contact Form Integration"
+    - "EOI Form Integration"
+    - "Floating CTA Button"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -89,3 +90,5 @@ test_plan:
 agent_communication:
   - agent: "testing"
     message: "Backend API testing completed successfully. All high-priority backend endpoints (callback and EOI APIs) are working correctly. Data persistence to MongoDB verified. APIs are ready for frontend integration. No critical issues found."
+  - agent: "testing"
+    message: "✅ FRONTEND TESTING COMPLETED SUCCESSFULLY! Both Contact form and EOI form are working perfectly. Contact form: Successfully submits to /api/callback, shows success toast, clears form. EOI form: Complete 4-step flow working - applicant details, plot selection, payment details, terms acceptance. Form submits to /api/eoi and shows success page. Floating CTA button navigates correctly to EOI form. All frontend-backend integrations confirmed working. No critical issues found."
