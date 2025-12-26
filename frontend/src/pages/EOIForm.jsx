@@ -1,13 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, User, Building, FileText, CreditCard, CheckCircle, AlertCircle, Landmark, Globe, Shield } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { toast } from 'sonner';
 
+// Load Razorpay script
+const loadRazorpayScript = () => {
+  return new Promise((resolve) => {
+    if (document.getElementById('razorpay-script')) {
+      resolve(true);
+      return;
+    }
+    const script = document.createElement('script');
+    script.id = 'razorpay-script';
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+};
+
+// Plot prices in paise (multiply by 100)
+const PLOT_PRICES = {
+  'TYPE A': 4599000, // ₹45,99,000 = 45.99 Lakhs
+  'TYPE B': 5599000, // ₹55,99,000 = 55.99 Lakhs
+  'TYPE C': 6599000, // ₹65,99,000 = 65.99 Lakhs
+};
+
+// EOI booking amount (10% of plot price)
+const getEOIAmount = (plotType) => {
+  const price = PLOT_PRICES[plotType] || 0;
+  return Math.round(price * 0.1); // 10% booking amount
+};
+
 const EOIForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [eoiData, setEoiData] = useState(null); // Store EOI response after submission
   const [formData, setFormData] = useState({
     // Applicant 1 Details
     applicant1Name: '',
@@ -48,6 +78,10 @@ const EOIForm = () => {
     acceptTerms: false,
   });
 
+  useEffect(() => {
+    loadRazorpayScript();
+  }, []);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
@@ -62,6 +96,94 @@ const EOIForm = () => {
       plotType: type,
       plotArea: area
     }));
+  };
+
+  const initiateRazorpayPayment = async (eoiId) => {
+    const amount = getEOIAmount(formData.plotType);
+    
+    if (amount === 0) {
+      toast.error('Please select a plot type first');
+      return false;
+    }
+
+    try {
+      // Create order on backend
+      const orderResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payment/create-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: amount,
+          eoi_id: eoiId,
+          applicant_name: formData.applicant1Name,
+          applicant_email: formData.applicant1Email,
+          applicant_phone: formData.applicant1Mobile
+        })
+      });
+
+      if (!orderResponse.ok) {
+        throw new Error('Failed to create payment order');
+      }
+
+      const orderData = await orderResponse.json();
+
+      // Open Razorpay checkout
+      const options = {
+        key: process.env.REACT_APP_RAZORPAY_KEY_ID,
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: 'Vacation Village',
+        description: `EOI Booking - ${formData.plotType} (${formData.plotArea} Sq.ft)`,
+        order_id: orderData.order_id,
+        handler: async function (response) {
+          // Verify payment on backend
+          try {
+            const verifyResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payment/verify`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+                eoi_id: eoiId
+              })
+            });
+
+            if (verifyResponse.ok) {
+              toast.success('Payment successful! Your EOI has been confirmed.');
+              setCurrentStep(5);
+            } else {
+              toast.error('Payment verification failed. Please contact support.');
+            }
+          } catch (error) {
+            console.error('Payment verification error:', error);
+            toast.error('Payment verification failed. Please contact support.');
+          }
+        },
+        prefill: {
+          name: formData.applicant1Name,
+          email: formData.applicant1Email,
+          contact: formData.applicant1Mobile
+        },
+        theme: {
+          color: '#084a61'
+        },
+        modal: {
+          ondismiss: function() {
+            toast.info('Payment cancelled. You can complete payment later.');
+            setCurrentStep(5); // Still show success as EOI is submitted
+          }
+        }
+      };
+
+      const razorpay = new window.Razorpay(options);
+      razorpay.open();
+      return true;
+
+    } catch (error) {
+      console.error('Razorpay error:', error);
+      toast.error('Failed to initiate payment. Please try again.');
+      return false;
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -83,8 +205,16 @@ const EOIForm = () => {
       
       if (response.ok) {
         const data = await response.json();
-        toast.success('Your Expression of Interest has been submitted successfully!');
-        setCurrentStep(5); // Success step
+        setEoiData(data);
+        
+        // If online payment method selected, initiate Razorpay
+        if (formData.paymentMethod === 'gateway') {
+          toast.success('EOI submitted! Initiating payment...');
+          await initiateRazorpayPayment(data.id);
+        } else {
+          toast.success('Your Expression of Interest has been submitted successfully!');
+          setCurrentStep(5); // Success step
+        }
       } else {
         toast.error('Something went wrong. Please try again.');
       }
