@@ -83,8 +83,15 @@ const EOIForm = () => {
     { number: 4, title: 'Terms & Signature', icon: FileText },
   ];
 
-  const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, 4));
-  const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
+  const nextStep = () => {
+    setCurrentStep(prev => Math.min(prev + 1, 4));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
+  const prevStep = () => {
+    setCurrentStep(prev => Math.max(prev - 1, 1));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen bg-[#f8f9f6]">
