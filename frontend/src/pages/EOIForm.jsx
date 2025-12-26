@@ -71,10 +71,29 @@ const EOIForm = () => {
       return;
     }
     setIsSubmitting(true);
-    await new Promise(r => setTimeout(r, 2000));
-    toast.success('Your Expression of Interest has been submitted successfully!');
+    
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/eoi`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        toast.success('Your Expression of Interest has been submitted successfully!');
+        setCurrentStep(5); // Success step
+      } else {
+        toast.error('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting EOI:', error);
+      toast.error('Something went wrong. Please try again.');
+    }
+    
     setIsSubmitting(false);
-    setCurrentStep(5); // Success step
   };
 
   const steps = [
