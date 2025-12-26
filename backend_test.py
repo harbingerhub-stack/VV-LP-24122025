@@ -193,11 +193,11 @@ def test_payment_api():
         # Test POST /api/payment/create-order
         print("\n2. Testing POST /api/payment/create-order...")
         order_data = {
-            "amount": 45990000,  # ₹459,900 in paise
-            "eoi_id": "test-razorpay-123",
-            "applicant_name": "Razorpay Test",
-            "applicant_email": "razorpay@test.com",
-            "applicant_phone": "9999888877"
+            "amount": 9999900,  # As specified in review request
+            "eoi_id": "final-test-123",
+            "applicant_name": "Test User",
+            "applicant_email": "test@example.com",
+            "applicant_phone": "9876543210"
         }
         
         response = requests.post(f"{BACKEND_URL}/payment/create-order", json=order_data, timeout=30)
