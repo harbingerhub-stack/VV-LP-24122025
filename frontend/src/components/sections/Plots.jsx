@@ -134,7 +134,10 @@ const Plots = () => {
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <div className="font-display text-4xl text-white mb-2">{plot.size}</div>
-                  <div className="text-[#87b04a] text-2xl font-semibold mb-6">{plot.sqft} Sq.ft</div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="text-[#87b04a] text-2xl font-semibold">{plot.sqft} Sq.ft</div>
+                    <div className="text-white text-xl font-bold">{plot.cost}</div>
+                  </div>
                   
                   <div className="space-y-3 mb-8">
                     <div className="flex justify-between text-white/70">
