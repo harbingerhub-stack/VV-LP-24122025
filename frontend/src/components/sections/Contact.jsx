@@ -30,9 +30,27 @@ const Contact = () => {
       return;
     }
     setIsSubmitting(true);
-    await new Promise(r => setTimeout(r, 1500));
-    toast.success('Thank you! We will contact you soon.');
-    setFormData({ name: '', phone: '', email: '', message: '' });
+    
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/callback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        toast.success('Thank you! We will contact you soon.');
+        setFormData({ name: '', phone: '', email: '', message: '' });
+      } else {
+        toast.error('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Something went wrong. Please try again.');
+    }
+    
     setIsSubmitting(false);
   };
 
