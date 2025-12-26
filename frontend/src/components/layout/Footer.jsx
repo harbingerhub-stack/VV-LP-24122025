@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { contactData, navLinks } from '../../data/mock';
 
@@ -50,6 +51,12 @@ const Footer = () => {
                   {link.name}
                 </a>
               ))}
+              <Link
+                to="/terms"
+                className="block text-white/60 hover:text-[#9B9068] transition-colors"
+              >
+                Terms & Conditions
+              </Link>
             </nav>
           </div>
 
@@ -81,8 +88,8 @@ const Footer = () => {
             © {new Date().getFullYear()} Vacation Village. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-white/40">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link to="/terms" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
