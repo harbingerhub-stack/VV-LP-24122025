@@ -59,7 +59,7 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-[#9B9068] ${
+                className={`text-base font-medium tracking-wide transition-all duration-300 hover:text-[#9B9068] ${
                   isScrolled ? 'text-[#084a61]' : 'text-white/90'
                 }`}
               >
