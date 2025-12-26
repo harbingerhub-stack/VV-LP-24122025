@@ -52,18 +52,18 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-semibold mb-6">Contact</h4>
-            <div className="space-y-4">
+            <div className="space-y-4 text-sm">
               <a href={`tel:${contactData.phone}`} className="flex items-center gap-3 text-white/60 hover:text-[#87b04a] transition-colors">
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 flex-shrink-0" />
                 {contactData.phone}
               </a>
               <a href={`mailto:${contactData.email}`} className="flex items-center gap-3 text-white/60 hover:text-[#87b04a] transition-colors">
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4 flex-shrink-0" />
                 {contactData.email}
               </a>
               <div className="flex items-start gap-3 text-white/60">
-                <MapPin className="w-4 h-4 mt-1" />
-                {contactData.address}
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>{contactData.address}</span>
               </div>
             </div>
           </div>
