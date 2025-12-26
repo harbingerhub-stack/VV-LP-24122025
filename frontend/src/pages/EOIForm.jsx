@@ -388,15 +388,6 @@ const EOIForm = () => {
                     ))}
                   </div>
                   <p className="text-center text-gray-500 text-sm mb-6">*All inclusive pricing</p>
-
-                  <div className="bg-gray-50 p-6 rounded-xl">
-                    <h3 className="font-semibold text-[#084a61] mb-4">Or Enter Custom Plot Details</h3>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <Input name="plotArea" placeholder="Plot Area (Sq. Ft.)" value={formData.plotArea} onChange={handleChange} className="py-3" />
-                      <Input name="eoiAmount" placeholder="EOI Amount (Rs.)" value={formData.eoiAmount} onChange={handleChange} className="py-3" />
-                      <Input name="totalConsideration" placeholder="Total Sales Consideration (Rs.)" value={formData.totalConsideration} onChange={handleChange} className="py-3 md:col-span-2" />
-                    </div>
-                  </div>
                 </div>
 
                 <div className="border-t pt-8">
