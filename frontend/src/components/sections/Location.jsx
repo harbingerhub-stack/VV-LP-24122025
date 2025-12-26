@@ -24,7 +24,7 @@ const Location = () => {
       <div className="container-custom">
         {/* Header */}
         <div className={`text-center max-w-4xl mx-auto mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="text-[#dee3d6] font-medium tracking-wider text-sm uppercase">
+          <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase">
             Prime Location
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-[#084a61] mt-4 mb-4">
@@ -59,7 +59,7 @@ const Location = () => {
                     const Icon = iconMap[item.icon];
                     return (
                       <div key={index} className="bg-white/15 backdrop-blur-sm p-3 rounded-lg text-center">
-                        <Icon className="w-4 h-4 text-[#dee3d6] mx-auto mb-1" />
+                        <Icon className="w-4 h-4 text-[#9B9068] mx-auto mb-1" />
                         <div className="font-bold text-white text-sm">{item.value}</div>
                         <div className="text-white/70 text-[10px] leading-tight">{item.label}</div>
                       </div>
@@ -83,7 +83,7 @@ const Location = () => {
                 <div className="space-y-3">
                   {locationData.whyChoose.map((item, index) => (
                     <div key={index} className="flex gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#dee3d6] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full bg-[#9B9068] flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check className="w-3 h-3 text-white" />
                       </div>
                       <div className="text-sm">
@@ -96,7 +96,7 @@ const Location = () => {
               </div>
 
               {/* Closing Text */}
-              <div className="border-l-3 border-[#dee3d6] pl-4 bg-[#dee3d6]/5 py-3 rounded-r-lg mb-4">
+              <div className="border-l-3 border-[#9B9068] pl-4 bg-[#9B9068]/5 py-3 rounded-r-lg mb-4">
                 <p className="text-gray-700 text-sm leading-relaxed italic">
                   {locationData.closingText}
                 </p>
@@ -110,7 +110,7 @@ const Location = () => {
                     const Icon = attractionIcons[index];
                     return (
                       <div key={index} className="flex items-center gap-1.5 bg-white/10 px-2 py-1 rounded-full">
-                        <Icon className="w-3 h-3 text-[#dee3d6]" />
+                        <Icon className="w-3 h-3 text-[#9B9068]" />
                         <span className="text-white/90 text-xs">{item}</span>
                       </div>
                     );

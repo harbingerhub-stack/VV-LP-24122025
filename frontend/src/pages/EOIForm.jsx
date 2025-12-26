@@ -99,7 +99,7 @@ const EOIForm = () => {
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 text-[#084a61] hover:text-[#dee3d6] transition-colors">
+          <a href="/" className="flex items-center gap-2 text-[#084a61] hover:text-[#9B9068] transition-colors">
             <ArrowLeft className="w-5 h-5" />
             <span className="font-medium">Back to Home</span>
           </a>
@@ -114,7 +114,7 @@ const EOIForm = () => {
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         {/* Title Section */}
         <div className="text-center mb-10">
-          <span className="text-[#dee3d6] font-medium tracking-wider text-sm uppercase">
+          <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase">
             Vacation Village Chikkamagaluru
           </span>
           <h1 className="font-display text-3xl md:text-4xl text-[#084a61] mt-2 mb-4">
@@ -160,7 +160,7 @@ const EOIForm = () => {
               <div className="space-y-8">
                 <div>
                   <h2 className="font-display text-2xl text-[#084a61] mb-6 flex items-center gap-2">
-                    <User className="w-6 h-6 text-[#dee3d6]" />
+                    <User className="w-6 h-6 text-[#9B9068]" />
                     1st Applicant Details
                   </h2>
                   <div className="grid md:grid-cols-2 gap-4">
@@ -182,7 +182,7 @@ const EOIForm = () => {
 
                 <div className="border-t pt-8">
                   <h2 className="font-display text-2xl text-[#084a61] mb-6 flex items-center gap-2">
-                    <User className="w-6 h-6 text-[#dee3d6]" />
+                    <User className="w-6 h-6 text-[#9B9068]" />
                     2nd Applicant Details <span className="text-sm font-normal text-gray-500">(Optional)</span>
                   </h2>
                   <div className="grid md:grid-cols-2 gap-4">
@@ -209,7 +209,7 @@ const EOIForm = () => {
               <div className="space-y-8">
                 <div>
                   <h2 className="font-display text-2xl text-[#084a61] mb-2 flex items-center gap-2">
-                    <Building className="w-6 h-6 text-[#dee3d6]" />
+                    <Building className="w-6 h-6 text-[#9B9068]" />
                     Select Your Plot
                   </h2>
                   <p className="text-gray-600 mb-6">Choose from our available plot types</p>
@@ -225,19 +225,19 @@ const EOIForm = () => {
                         onClick={() => handlePlotSelect(plot.type, plot.area)}
                         className={`p-6 rounded-xl border-2 cursor-pointer transition-all ${
                           formData.plotType === plot.type 
-                            ? 'border-[#dee3d6] bg-[#dee3d6]/5' 
+                            ? 'border-[#9B9068] bg-[#9B9068]/5' 
                             : 'border-gray-200 hover:border-[#084a61]/30'
                         }`}
                       >
                         <div className="text-center">
                           <h3 className="font-display text-xl text-[#084a61] mb-2">{plot.type}</h3>
-                          <p className="text-3xl font-bold text-[#dee3d6] mb-1">{plot.area}</p>
+                          <p className="text-3xl font-bold text-[#9B9068] mb-1">{plot.area}</p>
                           <p className="text-gray-500 text-sm">Sq. Ft.</p>
                           <p className="text-[#084a61] font-bold text-lg mt-3">{plot.price}</p>
                         </div>
                         {formData.plotType === plot.type && (
                           <div className="mt-4 flex justify-center">
-                            <CheckCircle className="w-6 h-6 text-[#dee3d6]" />
+                            <CheckCircle className="w-6 h-6 text-[#9B9068]" />
                           </div>
                         )}
                       </div>
@@ -258,13 +258,13 @@ const EOIForm = () => {
                 <div className="border-t pt-8">
                   <h3 className="font-semibold text-[#084a61] mb-4">Financing Details</h3>
                   <div className="flex gap-4">
-                    <label className={`flex-1 p-4 rounded-xl border-2 cursor-pointer transition-all ${formData.financingType === 'self' ? 'border-[#dee3d6] bg-[#dee3d6]/5' : 'border-gray-200'}`}>
+                    <label className={`flex-1 p-4 rounded-xl border-2 cursor-pointer transition-all ${formData.financingType === 'self' ? 'border-[#9B9068] bg-[#9B9068]/5' : 'border-gray-200'}`}>
                       <input type="radio" name="financingType" value="self" checked={formData.financingType === 'self'} onChange={handleChange} className="sr-only" />
                       <div className="text-center">
                         <p className="font-medium text-[#084a61]">Self Funding</p>
                       </div>
                     </label>
-                    <label className={`flex-1 p-4 rounded-xl border-2 cursor-pointer transition-all ${formData.financingType === 'loan' ? 'border-[#dee3d6] bg-[#dee3d6]/5' : 'border-gray-200'}`}>
+                    <label className={`flex-1 p-4 rounded-xl border-2 cursor-pointer transition-all ${formData.financingType === 'loan' ? 'border-[#9B9068] bg-[#9B9068]/5' : 'border-gray-200'}`}>
                       <input type="radio" name="financingType" value="loan" checked={formData.financingType === 'loan'} onChange={handleChange} className="sr-only" />
                       <div className="text-center">
                         <p className="font-medium text-[#084a61]">Bank Loan</p>
@@ -280,7 +280,7 @@ const EOIForm = () => {
               <div className="space-y-8">
                 <div>
                   <h2 className="font-display text-2xl text-[#084a61] mb-2 flex items-center gap-2">
-                    <CreditCard className="w-6 h-6 text-[#dee3d6]" />
+                    <CreditCard className="w-6 h-6 text-[#9B9068]" />
                     Payment Details
                   </h2>
                   <p className="text-gray-600 mb-6">Choose your preferred payment method</p>
@@ -290,7 +290,7 @@ const EOIForm = () => {
                     <label 
                       className={`relative p-6 rounded-xl border-2 cursor-pointer transition-all ${
                         formData.paymentMethod === 'bank' 
-                          ? 'border-[#dee3d6] bg-[#dee3d6]/5' 
+                          ? 'border-[#9B9068] bg-[#9B9068]/5' 
                           : 'border-gray-200 hover:border-[#084a61]/30'
                       }`}
                     >
@@ -303,15 +303,15 @@ const EOIForm = () => {
                         className="sr-only" 
                       />
                       <div className="flex items-start gap-4">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${formData.paymentMethod === 'bank' ? 'bg-[#dee3d6]/20' : 'bg-gray-100'}`}>
-                          <Landmark className={`w-6 h-6 ${formData.paymentMethod === 'bank' ? 'text-[#dee3d6]' : 'text-gray-500'}`} />
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${formData.paymentMethod === 'bank' ? 'bg-[#9B9068]/20' : 'bg-gray-100'}`}>
+                          <Landmark className={`w-6 h-6 ${formData.paymentMethod === 'bank' ? 'text-[#9B9068]' : 'text-gray-500'}`} />
                         </div>
                         <div className="flex-1">
                           <h3 className="font-semibold text-[#084a61] mb-1">Bank Transfer</h3>
                           <p className="text-gray-500 text-sm">NEFT / RTGS / Cheque / Demand Draft</p>
                         </div>
                         {formData.paymentMethod === 'bank' && (
-                          <CheckCircle className="w-5 h-5 text-[#dee3d6] absolute top-4 right-4" />
+                          <CheckCircle className="w-5 h-5 text-[#9B9068] absolute top-4 right-4" />
                         )}
                       </div>
                     </label>
@@ -319,7 +319,7 @@ const EOIForm = () => {
                     <label 
                       className={`relative p-6 rounded-xl border-2 cursor-pointer transition-all ${
                         formData.paymentMethod === 'gateway' 
-                          ? 'border-[#dee3d6] bg-[#dee3d6]/5' 
+                          ? 'border-[#9B9068] bg-[#9B9068]/5' 
                           : 'border-gray-200 hover:border-[#084a61]/30'
                       }`}
                     >
@@ -332,15 +332,15 @@ const EOIForm = () => {
                         className="sr-only" 
                       />
                       <div className="flex items-start gap-4">
-                        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${formData.paymentMethod === 'gateway' ? 'bg-[#dee3d6]/20' : 'bg-gray-100'}`}>
-                          <Globe className={`w-6 h-6 ${formData.paymentMethod === 'gateway' ? 'text-[#dee3d6]' : 'text-gray-500'}`} />
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center ${formData.paymentMethod === 'gateway' ? 'bg-[#9B9068]/20' : 'bg-gray-100'}`}>
+                          <Globe className={`w-6 h-6 ${formData.paymentMethod === 'gateway' ? 'text-[#9B9068]' : 'text-gray-500'}`} />
                         </div>
                         <div className="flex-1">
                           <h3 className="font-semibold text-[#084a61] mb-1">Online Payment</h3>
                           <p className="text-gray-500 text-sm">Credit/Debit Card, Net Banking</p>
                         </div>
                         {formData.paymentMethod === 'gateway' && (
-                          <CheckCircle className="w-5 h-5 text-[#dee3d6] absolute top-4 right-4" />
+                          <CheckCircle className="w-5 h-5 text-[#9B9068] absolute top-4 right-4" />
                         )}
                       </div>
                     </label>
@@ -383,7 +383,7 @@ const EOIForm = () => {
 
                   {/* Online Payment Gateway */}
                   {formData.paymentMethod === 'gateway' && (
-                    <div className="bg-gradient-to-br from-[#084a61]/5 to-[#dee3d6]/5 p-8 rounded-xl border border-[#084a61]/10">
+                    <div className="bg-gradient-to-br from-[#084a61]/5 to-[#9B9068]/5 p-8 rounded-xl border border-[#084a61]/10">
                       <div className="text-center mb-6">
                         <div className="w-16 h-16 bg-[#084a61] rounded-full flex items-center justify-center mx-auto mb-4">
                           <Shield className="w-8 h-8 text-white" />
@@ -435,7 +435,7 @@ const EOIForm = () => {
               <div className="space-y-8">
                 <div>
                   <h2 className="font-display text-2xl text-[#084a61] mb-2 flex items-center gap-2">
-                    <FileText className="w-6 h-6 text-[#dee3d6]" />
+                    <FileText className="w-6 h-6 text-[#9B9068]" />
                     Terms & Conditions
                   </h2>
                   <p className="text-gray-600 mb-6">Please review and accept the terms and conditions</p>
@@ -567,7 +567,7 @@ const EOIForm = () => {
                       name="acceptTerms" 
                       checked={formData.acceptTerms} 
                       onChange={handleChange}
-                      className="mt-1 w-5 h-5 rounded border-gray-300 text-[#dee3d6] focus:ring-[#dee3d6]"
+                      className="mt-1 w-5 h-5 rounded border-gray-300 text-[#9B9068] focus:ring-[#9B9068]"
                     />
                     <span className="text-sm text-gray-600">
                       I/We hereby confirm that I/we have read, understood, and agree to the above Terms and Conditions. 
@@ -583,8 +583,8 @@ const EOIForm = () => {
             {/* Step 5: Success */}
             {currentStep === 5 && (
               <div className="text-center py-12">
-                <div className="w-20 h-20 bg-[#dee3d6]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-10 h-10 text-[#dee3d6]" />
+                <div className="w-20 h-20 bg-[#9B9068]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle className="w-10 h-10 text-[#9B9068]" />
                 </div>
                 <h2 className="font-display text-3xl text-[#084a61] mb-4">Thank You!</h2>
                 <p className="text-gray-600 mb-8 max-w-md mx-auto">
@@ -623,7 +623,7 @@ const EOIForm = () => {
                   <Button 
                     type="submit" 
                     disabled={isSubmitting || !formData.acceptTerms}
-                    className="bg-[#dee3d6] hover:bg-[#c5cabe] text-white px-8"
+                    className="bg-[#9B9068] hover:bg-[#c5cabe] text-white px-8"
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit EOI'}
                   </Button>

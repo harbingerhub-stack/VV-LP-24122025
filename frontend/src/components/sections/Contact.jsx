@@ -46,7 +46,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Info Side */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-            <span className="text-[#dee3d6] font-medium tracking-wider text-sm uppercase">
+            <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase">
               Get in Touch
             </span>
             <h2 className="font-display text-4xl md:text-5xl text-white mt-4 mb-6">
@@ -55,7 +55,7 @@ const Contact = () => {
             <p className="text-white/70 text-lg mb-10">{contactData.subtitle}</p>
 
             <div className="space-y-6 mb-10">
-              <a href={`tel:${contactData.phone}`} className="flex items-center gap-4 text-white hover:text-[#dee3d6] transition-colors">
+              <a href={`tel:${contactData.phone}`} className="flex items-center gap-4 text-white hover:text-[#9B9068] transition-colors">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                   <Phone className="w-5 h-5" />
                 </div>
@@ -64,7 +64,7 @@ const Contact = () => {
                   <div className="text-lg font-semibold">{contactData.phone}</div>
                 </div>
               </a>
-              <a href={`mailto:${contactData.email}`} className="flex items-center gap-4 text-white hover:text-[#dee3d6] transition-colors">
+              <a href={`mailto:${contactData.email}`} className="flex items-center gap-4 text-white hover:text-[#9B9068] transition-colors">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                   <Mail className="w-5 h-5" />
                 </div>
@@ -84,7 +84,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <Button onClick={() => navigate('/eoi')} className="bg-[#dee3d6] hover:bg-[#c5cabe] text-white px-8 py-6 text-lg rounded-full">
+            <Button onClick={() => navigate('/eoi')} className="bg-[#9B9068] hover:bg-[#c5cabe] text-white px-8 py-6 text-lg rounded-full">
               Register Now
             </Button>
           </div>

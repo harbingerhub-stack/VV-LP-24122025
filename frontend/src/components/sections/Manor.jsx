@@ -21,7 +21,7 @@ const Manor = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* Content */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-            <span className="text-[#dee3d6] font-medium tracking-wider text-sm uppercase">
+            <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase">
               Exclusive Access
             </span>
             <h2 className="font-display text-4xl md:text-5xl text-[#084a61] mt-4 mb-6">
@@ -38,7 +38,7 @@ const Manor = () => {
             <div className="grid grid-cols-2 gap-4">
               {manorData.amenities.map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#dee3d6] flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-[#9B9068] flex items-center justify-center">
                     <Check className="w-4 h-4 text-white" />
                   </div>
                   <span className="text-gray-700">{item}</span>

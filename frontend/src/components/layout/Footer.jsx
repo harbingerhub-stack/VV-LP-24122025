@@ -24,13 +24,13 @@ const Footer = () => {
               India's premium vacation home development. Crafting extraordinary worlds defined by breathtaking architecture and seamless convenience.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/thevacationvillage" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#dee3d6] transition-colors">
+              <a href="https://www.instagram.com/thevacationvillage" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#9B9068] transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61556209175651" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#dee3d6] transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61556209175651" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#9B9068] transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/company/tvv-official/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#dee3d6] transition-colors">
+              <a href="https://www.linkedin.com/company/tvv-official/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#9B9068] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -45,7 +45,7 @@ const Footer = () => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
-                  className="block text-white/60 hover:text-[#dee3d6] transition-colors"
+                  className="block text-white/60 hover:text-[#9B9068] transition-colors"
                 >
                   {link.name}
                 </a>
@@ -57,11 +57,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-6">Contact</h4>
             <div className="space-y-4 text-sm">
-              <a href={`tel:${contactData.phone}`} className="flex items-center gap-3 text-white/60 hover:text-[#dee3d6] transition-colors">
+              <a href={`tel:${contactData.phone}`} className="flex items-center gap-3 text-white/60 hover:text-[#9B9068] transition-colors">
                 <Phone className="w-4 h-4 flex-shrink-0" />
                 {contactData.phone}
               </a>
-              <a href={`mailto:${contactData.email}`} className="flex items-center gap-3 text-white/60 hover:text-[#dee3d6] transition-colors">
+              <a href={`mailto:${contactData.email}`} className="flex items-center gap-3 text-white/60 hover:text-[#9B9068] transition-colors">
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 {contactData.email}
               </a>
