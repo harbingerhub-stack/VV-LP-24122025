@@ -90,7 +90,7 @@ export const amenitiesData = {
 
 export const manorData = {
   title: "The Manor",
-  subtitle: "Your Exclusive Resort Lounge",
+  subtitle: "",
   description: "Ownership at Vacation Village unlocks exclusive access to The Manor, our professionally managed resort lounge and community hub. World-class amenities like pools, spa, gourmet dining, and event spaces arrive at your doorstep. Strict standards ensure luxury excellence, plus membership access to our expanding VV Resorts network nationwide.",
   secondParagraph: "Curated premium amenities elevate your lifestyle: wellness spa, recreation spaces, social hubs, all managed with resort precision for your exclusive retreat.",
   amenities: ["Event Space", "Gourmet Restaurant", "Home Theatre", "Swimming Pool", "Executive Business Centre", "Wellness and Spa Zone", "Children's Play Area", "Snooker and Billiard Room", "Indoor Games Room", "Reading Room"],
