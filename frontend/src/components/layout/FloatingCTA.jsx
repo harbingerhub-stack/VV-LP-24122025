@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 
 const FloatingCTA = () => {
   const navigate = useNavigate();
@@ -14,10 +13,10 @@ const FloatingCTA = () => {
   return (
     <button
       onClick={() => navigate('/eoi')}
-      className="fixed bottom-6 right-6 z-50 bg-[#9B9068] hover:bg-[#7a7352] text-white px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 group"
+      className="fixed bottom-1/4 right-0 z-50 bg-[#9B9068] hover:bg-[#7a7352] text-white px-3 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
+      style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
     >
-      <span className="font-semibold">Register Now</span>
-      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+      <span className="font-semibold tracking-wider text-sm">Register Now</span>
     </button>
   );
 };
