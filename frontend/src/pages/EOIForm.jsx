@@ -387,7 +387,7 @@ const EOIForm = () => {
                       </div>
                     ))}
                   </div>
-                  <p className="text-center text-gray-500 text-sm mb-6">*All inclusive pricing</p>
+                  <p className="text-center text-gray-500 text-sm mb-6">*Terms and Conditions Apply</p>
                 </div>
 
                 <div className="border-t pt-8">
