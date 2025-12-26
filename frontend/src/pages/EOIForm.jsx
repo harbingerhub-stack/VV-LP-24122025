@@ -393,7 +393,7 @@ const EOIForm = () => {
                       </div>
                       
                       <div className="bg-white p-4 rounded-lg mb-4">
-                        <h4 className="font-medium text-[#084a61] mb-3 text-sm">Accepted Payment Methods</h4>
+                        <h4 className="font-medium text-[#084a61] mb-3 text-sm text-center">Accepted Payment Methods</h4>
                         <div className="flex flex-wrap gap-3 justify-center">
                           <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">Credit Card</span>
                           <span className="px-3 py-1.5 bg-gray-100 rounded-full text-xs font-medium text-gray-700">Debit Card</span>
