@@ -537,19 +537,13 @@ const EOIForm = () => {
                       </div>
 
                       {/* Booking Amount Display */}
-                      {formData.plotType && (
-                        <div className="bg-[#084a61] text-white p-4 rounded-lg mb-4 text-center">
-                          <p className="text-sm opacity-80 mb-1">Booking Amount (10% of plot value)</p>
-                          <p className="text-3xl font-bold">₹{(getEOIAmount(formData.plotType) / 100).toLocaleString('en-IN')}</p>
+                      <div className="bg-[#084a61] text-white p-4 rounded-lg mb-4 text-center">
+                        <p className="text-sm opacity-80 mb-1">EOI Registration Amount</p>
+                        <p className="text-3xl font-bold">₹99,999</p>
+                        {formData.plotType && (
                           <p className="text-xs opacity-70 mt-1">For {formData.plotType} - {formData.plotArea} Sq.ft</p>
-                        </div>
-                      )}
-
-                      {!formData.plotType && (
-                        <div className="bg-amber-50 text-amber-800 p-4 rounded-lg mb-4 text-center text-sm">
-                          Please select a plot type in Step 2 to see the booking amount
-                        </div>
-                      )}
+                        )}
+                      </div>
                       
                       <div className="bg-white p-4 rounded-lg mb-4">
                         <h4 className="font-medium text-[#084a61] mb-3 text-sm text-center">Accepted Payment Methods</h4>
