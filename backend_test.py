@@ -309,6 +309,7 @@ def main():
     test_results.append(("API Health", test_api_health()))
     test_results.append(("Callback API", test_callback_api()))
     test_results.append(("EOI API", test_eoi_api()))
+    test_results.append(("Razorpay Payment API", test_payment_api()))
     
     # Print summary
     print("\n" + "="*50)
