@@ -36,17 +36,41 @@ backend:
         comment: "✅ API root endpoint responding correctly with proper message. Backend service is healthy and accessible at the configured URL."
 
 frontend:
-  - task: "Frontend Integration Testing"
+  - task: "Contact Form Integration"
     implemented: true
-    working: "NA"
-    file: "/app/frontend/src/App.js"
+    working: true
+    file: "/app/frontend/src/components/sections/Contact.jsx"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
     status_history:
-      - working: "NA"
+      - working: true
         agent: "testing"
-        comment: "Frontend testing not performed as per system limitations. Backend APIs are confirmed working and ready for frontend integration."
+        comment: "✅ Contact form working perfectly. Successfully tested form submission with test data (Frontend Test User, 8888888888, frontend@test.com). Form submits to /api/callback endpoint correctly, displays success toast message 'Thank you! We will contact you soon.', and clears form fields after submission. Frontend-backend integration confirmed working."
+
+  - task: "EOI Form Integration"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/EOIForm.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ EOI form working perfectly. Successfully tested complete 4-step form flow: Step 1 (Applicant Details) - filled all required fields including name, email, mobile, PAN, address. Step 2 (Plot Selection) - selected TYPE A plot successfully. Step 3 (Payment Details) - Bank Transfer option selected by default. Step 4 (Terms & Signature) - terms acceptance checkbox working. Form submits to /api/eoi endpoint correctly and displays success page with 'Thank You!' message. All form navigation, validation, and submission working as expected."
+
+  - task: "Floating CTA Button"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/components/layout/FloatingCTA.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Floating 'Register Now' button working correctly. Button is visible on homepage, positioned on right side, and successfully navigates to /eoi page when clicked. Button correctly hides on EOI page itself."
 
 metadata:
   created_by: "testing_agent"
