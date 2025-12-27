@@ -108,7 +108,7 @@ export const contactData = {
 };
 
 export const navLinks = [
-  { name: "Home", href: "/company-profile", isPage: true },
+  { name: "Home", href: "/about-us", isPage: true },
   { name: "About", href: "#about" },
   { name: "Location", href: "#location" },
   { name: "Plots", href: "#plots" },
