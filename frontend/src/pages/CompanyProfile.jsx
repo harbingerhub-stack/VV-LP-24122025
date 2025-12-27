@@ -112,31 +112,36 @@ const CompanyProfile = () => {
       name: "Arush Nagpal",
       title: "Director",
       quote: "People forget that they are at the core of any true real estate transaction. We value people & they value the transaction process.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+      image: "https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/ghovtwlg_Arush.jpg",
+      linkedin: "https://www.linkedin.com/in/arush-nagpal-2b347795/"
     },
     {
       name: "Ayan Nagpal",
       title: "Director",
       quote: "Land is limited & is the core of all realty developments. The idea is to make the journey of all stakeholders organised, transparent & seamless.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+      image: "https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/833sdw4a_Ayan.jpg",
+      linkedin: "https://www.linkedin.com/in/ayan-nagpal-7b36b4116/"
     },
     {
       name: "Shailesh Kumar",
       title: "Vice President: Transaction Advisory",
       quote: "Shared vision, integrity and transparency is the bedrock of my decade long relationship with global and domestic financial institutions, private equity funds and real estate developers",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face"
+      image: "https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/1j2qnufj_Shailesh.png",
+      linkedin: "https://www.linkedin.com/in/shailesh-kumar-a8a2672a5/"
     },
     {
       name: "Saummay Sinha",
       title: "Associate Vice President: Sales",
       quote: "One should not only persevere to complete the sales cycle but to make the process effective and sustainable",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face"
+      image: "https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/vwovc0mv_Saummay.png",
+      linkedin: "https://www.linkedin.com/in/saummay-sinha-007a79b5/"
     },
     {
       name: "Sagar Patil",
       title: "Associate Vice President: Acquisitions",
       quote: "Land is the one entity that at its core is limited, but provides unlimited opportunities for meaningful endeavours & purposeful benefits for our investments",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face"
+      image: "https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/3irr6b73_Sagar.jpg",
+      linkedin: "https://www.linkedin.com/in/sagarpatil03/"
     }
   ];
 
