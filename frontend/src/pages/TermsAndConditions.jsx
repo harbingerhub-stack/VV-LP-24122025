@@ -42,10 +42,10 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">1. Introduction and Acceptance of Terms</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                Welcome to Vacation Village (ALPL 3 LLP) (the "Website"). This Website is owned and operated by Vacation Village (ALPL 3 LLP) ("Vacation Village," "we," "us," or "our"). These Terms and Conditions ("Terms") constitute a legally binding agreement governing your access to and use of the Website, including any content, information, services, and features offered.
+                This Website www.vacationvillage.in is owned and operated by ALPL 3 LLP. Vacation Village is a brand of ALPL 3 LLP. ("Vacation Village," "we," "us," or "our"). These Terms and Conditions ("Terms") constitute a legally binding agreement governing your access to and use of the Website, including any content, information, services, and features offered.
               </p>
               <p>
-                By accessing, browsing, or using Vacation Village (ALPL 3 LLP) in any manner, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree with any part of these Terms, you must immediately cease all use of the Website.
+                By accessing, browsing, or using www.vacationvillage.in in any manner, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree with any part of these Terms, you must immediately cease all use of the Website.
               </p>
             </div>
           </section>
@@ -55,12 +55,11 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">2. Description of Services</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                Vacation Village (ALPL 3 LLP) provides a platform for users to access information and services related to real estate and agricultural land investments. Our services include, but are not limited to:
+                www.vacationvillage.in provides a platform for users to access information and services related to real estate and investments. Our services include, but are not limited to:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>Informational Content:</strong> Providing articles, guides, and analysis on topics such as the return on investment (ROI) for farmland, the implications of Goods and Services Tax (GST) on the real estate sector, and trends in property markets, particularly around Bangalore.</li>
-                <li><strong>Property Listings:</strong> Showcasing various real estate and farmland properties available for purchase.</li>
-                <li><strong>Managed Farmland Services:</strong> Offering professionally managed farmland investment opportunities, where we handle cultivation, maintenance, and marketing of produce on behalf of the landowner.</li>
+                <li><strong>Informational Content:</strong> Providing articles, guides, and analysis on topics such as the return on investment (ROI) for real estate investments, the implications of Goods and Services Tax (GST) on the real estate sector, and trends in property markets.</li>
+                <li><strong>Property Listings:</strong> Showcasing various real estate properties available for purchase.</li>
                 <li><strong>Advisory and Consultation:</strong> Providing guidance and consultation to help clients make informed investment decisions in the real estate and agricultural sectors.</li>
               </ul>
             </div>
@@ -71,7 +70,7 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">3. User Conduct and Obligations</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                As a condition of your use of Vacation Village (ALPL 3 LLP) you agree not to use the Website for any purpose that is unlawful or prohibited by these Terms. You are expressly prohibited from:
+                As a condition of your use of www.vacationvillage.in you agree not to use the Website for any purpose that is unlawful or prohibited by these Terms. You are expressly prohibited from:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Engaging in any activity that could damage, disable, overburden, or impair the Website or interfere with any other party's use and enjoyment of the Website.</li>
@@ -89,7 +88,7 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">4. Investment Disclaimer</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                All information provided on Vacation Village (ALPL 3 LLP) is for informational purposes only and should not be construed as financial, legal, or investment advice. Investing in real estate and farmland involves a significant degree of risk, including the potential for loss of the principal investment.
+                All information provided on www.vacationvillage.in is for informational purposes only and should not be construed as financial, legal, or investment advice. Investing in real estate involves a significant degree of risk, including the potential for loss of the principal investment. Please note the disclaimer below:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li><strong>No Guarantees:</strong> We do not guarantee any specific investment returns, land appreciation rates, or revenue from farming activities. Past performance is not indicative of future results.</li>
@@ -104,7 +103,7 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">5. Intellectual Property Rights</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                All content on this Website, including but not limited to text, graphics, logos, button icons, images, audio clips, digital downloads, data compilations, and software, is the property of Vacation Village (ALPL 3 LLP) or its content suppliers and is protected by Indian and international copyright and trademark laws.
+                All content on this Website, including but not limited to text, graphics, logos, button icons, images, audio clips, digital downloads, data compilations, and software, is the property of www.vacationvillage.in or its content suppliers and is protected by Indian and international copyright and trademark laws.
               </p>
               <p>
                 You are granted a limited, non-exclusive, non-transferable license to access and use the Website and its content for your personal, non-commercial use only. You may not copy, reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Website without our prior written consent.
@@ -117,7 +116,7 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">6. Limitation of Liability</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                In no event will Vacation Village (ALPL 3 LLP), its affiliates, or their licensors, service providers, employees, agents, officers, or directors be liable for damages of any kind, under any legal theory, arising out of or in connection with your use, or inability to use, Vacation Village (ALPL 3 LLP), any websites linked to it, any content on the Website, or such other websites.
+                In no event will www.vacationvillage.in, its affiliates, or their licensors, service providers, employees, agents, officers, or directors be liable for damages of any kind, under any legal theory, arising out of or in connection with your use, or inability to use, Vacation Village (ALPL 3 LLP), any websites linked to it, any content on the Website, or such other websites.
               </p>
               <p>
                 This includes any direct, indirect, special, incidental, consequential, or punitive damages, including but not limited to, personal injury, pain and suffering, emotional distress, loss of revenue, loss of profits, loss of business or anticipated savings, loss of use, loss of goodwill, loss of data, and whether caused by tort (including negligence), breach of contract, or otherwise, even if foreseeable.
@@ -130,7 +129,7 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">7. Indemnification</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                You agree to defend, indemnify, and hold harmless Vacation Village (ALPL 3 LLP), its officers, directors, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees) arising from: (i) your use of and access to the Website; (ii) your violation of any term of these Terms; or (iii) your violation of any third-party right, including without limitation any copyright, property, or privacy right.
+                You agree to defend, indemnify, and hold harmless ALPL 3 LLP/www.vacationvillage.in/group companies, its officers, directors, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees) arising from: (i) your use of and access to the Website; (ii) your violation of any term of these Terms; or (iii) your violation of any third-party right, including without limitation any copyright, property, or privacy right.
               </p>
             </div>
           </section>
@@ -140,7 +139,7 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">8. Third-Party Websites and Content</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                The Website may contain links to other websites that are not owned or controlled by Vacation Village (ALPL 3 LLP). We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites. By using Vacation Village (ALPL 3 LLP), you expressly relieve Vacation Village (ALPL 3 LLP) from any and all liability arising from your use of any third-party website.
+                The Website may contain links to other websites that are not owned or controlled by www.vacationvillage.in. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites. By using www.vacationvillage.in, you expressly relieve www.vacationvillage.in from any and all liability arising from your use of any third-party website.
               </p>
             </div>
           </section>
@@ -160,7 +159,7 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">10. Modifications to Terms</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                Vacation Village (ALPL 3 LLP) reserves the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion. Your continued use of Vacation Village (ALPL 3 LLP) after any such changes constitutes your acceptance of the new Terms.
+                www.vacationvillage.in reserves the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion. Your continued use of www.vacationvillage.in after any such changes constitutes your acceptance of the new Terms.
               </p>
             </div>
           </section>
@@ -170,7 +169,7 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">11. Shipping Details</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                Transaction details and receipts will be accessible through the applicant's email ID. If required, the same can be sent to the applicant's address upon request. ALPL 3 LLP reserves the right to choose the delivery mode of the said documents.
+                Transaction details and receipts will be accessible through the applicant's email ID. If required, the same can be sent to the applicant's address upon request. www.vacationvillage.in reserves the right to choose the delivery mode of the said documents.
               </p>
             </div>
           </section>
@@ -180,7 +179,7 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">12. Refund and Cancellation</h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                The EOI amount is collected only to register interest and does not constitute a confirmed booking. Cancellation is permitted prior to allotment, and refunds, if applicable, will be processed through the original payment mode. Vacation Village (ALPL 3 LLP) reserves the right to modify this policy at any time.
+                The EOI amount is collected only to register interest and does not constitute a confirmed booking. Cancellation is permitted prior to allotment, and refunds, if applicable, will be processed through the original payment mode. www.vacationvillage.in reserves the right to modify this policy at any time.
               </p>
             </div>
           </section>
@@ -190,9 +189,12 @@ const TermsAndConditions = () => {
             <h2 className="font-display text-xl text-[#084a61] mb-4">13. Contact Information</h2>
             <div className="text-gray-700 space-y-4">
               <p>For any questions or concerns regarding these Terms, please contact:</p>
-              <div className="bg-[#084a61]/5 p-6 rounded-xl">
-                <p className="mb-2"><strong>Phone:</strong> (+91) 9540 03 0303</p>
-                <p><strong>Company:</strong> Vacation Village (ALPL 3 LLP)</p>
+              <div className="bg-[#084a61]/5 p-6 rounded-xl space-y-2">
+                <p><strong>Phone:</strong> (+91) 9540 03 0303</p>
+                <p><strong>Company:</strong> ALPL 3 LLP</p>
+                <p><strong>Corporate Office:</strong> Unit 7, Level 3, Vista Pixel, 8/2B and 8, 2nd C Main Rd, Jakkuru Layout, Jakkuru, Bengaluru, Karnataka 560092</p>
+                <p><strong>Email:</strong> enquiries@vacationvillage.co.in</p>
+                <p><strong>Ph:</strong> 72042 33402</p>
               </div>
             </div>
           </section>
