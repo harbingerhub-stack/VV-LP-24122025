@@ -230,6 +230,84 @@ const CompanyProfile = () => {
         </div>
       </section>
 
+      {/* Media Coverage */}
+      <section className="py-20 bg-[#f8f9f6]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase font-display italic">Media</span>
+            <h2 className="font-display text-3xl md:text-4xl text-[#9B9068] mt-2">Coverages</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {mediaItems.map((item, index) => (
+              <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                <div className="h-40 mb-4 flex items-center justify-center bg-gray-50 rounded-xl overflow-hidden">
+                  {item.image ? (
+                    <img src={item.image} alt={item.source} className="h-full w-full object-contain p-2" />
+                  ) : (
+                    <span className="font-display text-2xl text-[#084a61] italic">{item.source}</span>
+                  )}
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed">{item.headline}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the Founders */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase font-display italic">Meet the</span>
+            <h2 className="font-display text-3xl md:text-4xl text-[#9B9068] mt-2">Founders</h2>
+          </div>
+          <div className="max-w-5xl mx-auto space-y-16">
+            {founders.map((founder, index) => (
+              <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}>
+                <div className="w-64 h-64 flex-shrink-0">
+                  <img 
+                    src={founder.image} 
+                    alt={founder.name} 
+                    className="w-full h-full object-cover object-top rounded-2xl shadow-lg"
+                  />
+                </div>
+                <div className={`flex-1 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+                  <p className="text-gray-600 italic text-lg mb-4">"{founder.quote}"</p>
+                  <h3 className="font-display text-2xl text-[#084a61]">{founder.name}</h3>
+                  <p className="text-[#9B9068] font-medium">{founder.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Our Leadership */}
+      <section className="py-20 bg-[#f8f9f6]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase font-display italic">Meet Our</span>
+            <h2 className="font-display text-3xl md:text-4xl text-[#9B9068] mt-2">Leadership</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {leadership.map((leader, index) => (
+              <div key={index} className="bg-white p-6 rounded-2xl shadow-lg text-center">
+                <div className="w-32 h-32 mx-auto mb-4">
+                  <img 
+                    src={leader.image} 
+                    alt={leader.name} 
+                    className="w-full h-full object-cover object-top rounded-full shadow-md"
+                  />
+                </div>
+                <h3 className="font-display text-xl text-[#084a61]">{leader.name}</h3>
+                <p className="text-[#9B9068] font-medium text-sm mb-4">{leader.title}</p>
+                <p className="text-gray-600 italic text-sm">"{leader.quote}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-20">
         <div className="container mx-auto px-4">
