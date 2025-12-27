@@ -1,37 +1,63 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Award, Users, TreePine, MapPin, Building2, Target, Eye, Heart, Handshake, Calendar, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Users, TreePine, MapPin, Building2, Target, Eye, Heart, Handshake, ChevronRight } from 'lucide-react';
 
 const CompanyProfile = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const groupCompanies = [
+    { 
+      name: "Agrocorp Landbase (P) Ltd", 
+      services: ["Development of Themed Second Home Farm Communities", "Land Development & Management"] 
+    },
+    { 
+      name: "Landshare India (P) Ltd", 
+      services: ["Transaction Advisory", "Land Acquisition", "Policy Research"] 
+    },
+    { 
+      name: "Vacation Village", 
+      services: ["Premium Second Home Development & Management Brand", "A-Grade Themed Second Home Communities"] 
+    },
+    { 
+      name: "ALPL Logistics (P) Ltd", 
+      services: ["A-Grade Warehousing Facilities"] 
+    }
+  ];
+
   const stats = [
-    { number: "13+", label: "Years Since Inception" },
+    { number: "14+", label: "Years Since Inception" },
     { number: "1200+", label: "Acres Transacted & Delivered" },
-    { number: "1300+", label: "Satisfied Customers" },
-    { number: "110000+", label: "Trees Planted" },
+    { number: "2000+", label: "Satisfied Customers" },
+    { number: "150,000+", label: "Trees Planted" },
     { number: "11", label: "Projects Completed" }
   ];
 
-  const timeline = [
-    { year: "2012", title: "Foundation", description: "Founded with expertise in residential & commercial properties. Recognized potential for lucrative land investment in Bengaluru." },
-    { year: "2013", title: "First Transaction", description: "Successfully completed first transaction of 49 acres. Built network & knowledge bank through policy research." },
-    { year: "2014", title: "Growth", description: "Successfully transacted nearly 300 acres of land in North Bengaluru. Streamlined processes and invested in lands." },
-    { year: "2015", title: "Innovation", description: "Introduced 'Managed Farm Communities' - a new category in real estate for organized land investment." },
-    { year: "2016", title: "Agrocorp Inception", description: "Founded Agrocorp Landbase Pvt Ltd. Developed Avenue II, first managed farm community." },
-    { year: "2017-2019", title: "Expansion", description: "Launched Aranya Farm (2017), Aspya Farms (2018), Amatra Farms, and Amaryllis Farms (2019)." },
-    { year: "2020-2021", title: "Diversification", description: "Launched Amari Farms and Landshare - Land Acquisition & Advisory Services with mandates worth ₹4000+ crores." },
-    { year: "2022", title: "The Vineyard", description: "Launched globally recognized farm community in Doddaballapur - innovative concept partnered with Grover Zampa." },
-    { year: "2023", title: "Vacation Village", description: "Launched premium vacation home development brand. Mission to become India's leading vacation home company." },
-    { year: "2024-25", title: "New Horizons", description: "ALPL Logistics Division, Central Vista Farms, and Vacation Village Chikkamagaluru - 41 acres, ₹300 Cr potential." }
+  const missionPoints = [
+    { title: "Setting the Gold Standard", description: "To be recognized as India's leading name in second-home living, offering unparalleled development and expert management." },
+    { title: "Building Beyond Structures", description: "To cultivate vibrant, trust-based communities where innovation and connection are at the heart of every Project." },
+    { title: "Architectural Excellence", description: "To craft stunning retreats that blend world-class design with robust, future-ready infrastructure." },
+    { title: "Elevating the Holiday Experience", description: "To provide a worry-free ecosystem where security and convenience meet, allowing you to enjoy your getaway exactly as it was meant to be." }
   ];
 
-  const groupCompanies = [
-    { name: "Agrocorp Landbase (P) Ltd", services: ["Managed Farm Community Development", "Land Development Services"] },
-    { name: "Landshare India (P) Ltd", services: ["Transaction Advisory", "Land Acquisition", "Policy Research"] },
-    { name: "The Vacation Village", services: ["A-Grade Themed Second Home Projects"] },
-    { name: "ALPL Logistics (P) Ltd", services: ["A-Grade Warehousing Facilities"] }
+  const visionPoints = [
+    { title: "Revolutionizing the Journey", description: "To transform the real estate experience into a transparent, seamless, and rewarding journey for every buyer and seller." },
+    { title: "Inspiring Belonging", description: "To cultivate a vibrant spirit of community and connection that breathes life into every development we create." },
+    { title: "Escapes Within Reach", description: "To establish a sanctuary of \"vacation villages\" within reach of every major metropolitan hub, making luxury getaways a part of daily life." },
+    { title: "A National Footprint", description: "To become the heartbeat of Indian leisure by establishing a presence in every premier tourist destination across the country." }
+  ];
+
+  const timeline = [
+    { year: "2012", title: "The Foundation", description: "Strategic Vision: Established with deep expertise in residential and commercial sectors, identifying North Bengaluru as the next frontier for land investment." },
+    { year: "2013", title: "Establishing Trust", description: "First Milestone: Successfully closed a 49-acre landmark transaction. Knowledge Bank: Invested heavily in policy research to simplify the complexities of land acquisition for our clients." },
+    { year: "2014", title: "Market Leadership", description: "Scaling Operations: Transacted nearly 300 acres of prime land, building a reputation for transparency and efficiency in every deal." },
+    { year: "2015", title: "The \"Managed Farm\" Revolution", description: "A New Category: Introduced 'Managed Farm Communities'—a pioneering concept designed to give investors a secure, organized, and hands-off way to own productive land." },
+    { year: "2016", title: "The Agrocorp Era", description: "Brand Inception: Founded Agrocorp Landbase Pvt. Ltd. with a singular focus: making land investment near Bengaluru seamless and secure. Flagship Launch: Debuted Avenue 11, setting the benchmark for professionally managed farm communities." },
+    { year: "2017–2019", title: "Proven Growth", description: "Building Communities: Rapidly expanded the Agrocorp portfolio with the launch of Aranya, Aspya, Amatra, and Amaryllis Farms, creating a new standard for weekend retreats." },
+    { year: "2020–2021", title: "Expertise at Scale", description: "Advisory Excellence: Launched Landshare, an advisory division managing land mandates worth ₹4,000+ Crores, proving our mastery in land acquisition." },
+    { year: "2022", title: "Redefining Luxury", description: "Global Recognition: Launched The Vineyard in Doddaballapur—a world-class collaboration with Grover Zampa and India Sotheby's International Realty, blending investment with lifestyle." },
+    { year: "2023", title: "From Investment to Experience", description: "Vacation Village: Launched our premium brand dedicated to high-end second homes. The New Mission: Transitioning from being leaders in land investment to becoming India's premier Vacation Home Company." },
+    { year: "2024–2025", title: "New Horizons", description: "Strategic Expansion: Acquired 31 acres in Chikkamagaluru for our flagship Vacation Village project and 28 acres for Central Vista Farms, a tropical-themed retreat on NH 44. Industrial Growth: Diversified into Grade-A warehousing with the launch of the ALPL Logistics Division near the Bengaluru-Vijayawada Expressway." }
   ];
 
   const values = [
@@ -40,17 +66,6 @@ const CompanyProfile = () => {
     { icon: Building2, title: "Continuous Infrastructure", description: "Communities evolve over time, and we're there to help grow together." },
     { icon: Users, title: "Common Vision", description: "People are the most important ingredient in building a community." },
     { icon: Handshake, title: "Promoting Empathy", description: "Developing deep empathy for all human beings." }
-  ];
-
-  const partners = [
-    "ARCOP (Architecture Partner)",
-    "BAA Bhatnagar & Associates",
-    "ANANDAM DESIGNS",
-    "BLISS GARDEN & EXTERIOR (Dubai)",
-    "Grover Zampa Vineyards",
-    "Sila (Facility Management)",
-    "NETAFIM™ & Jain Pipes",
-    "Rainy (Rainwater Harvesting)"
   ];
 
   const testimonials = [
@@ -89,14 +104,43 @@ const CompanyProfile = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
+      {/* Group Companies */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase">Our Ecosystem</span>
+            <h2 className="font-display text-3xl md:text-4xl text-[#084a61] mt-4">Group Companies</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {groupCompanies.map((company, index) => (
+              <div key={index} className="bg-[#f8f9f6] p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="font-display text-lg text-[#084a61] mb-4">{index + 1}. {company.name}</h3>
+                <ul className="space-y-2">
+                  {company.services.map((service, idx) => (
+                    <li key={idx} className="text-gray-600 text-sm flex items-start gap-2">
+                      <ChevronRight className="w-4 h-4 text-[#9B9068] flex-shrink-0 mt-0.5" />
+                      {service}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Statistics */}
+      <section className="py-16 bg-[#084a61]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase">Our Impact</span>
+            <h2 className="font-display text-3xl md:text-4xl text-white mt-4">Key Statistics</h2>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <p className="font-display text-4xl md:text-5xl text-[#9B9068] mb-2">{stat.number}</p>
-                <p className="text-gray-600 text-sm">{stat.label}</p>
+                <p className="text-white/70 text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -112,23 +156,16 @@ const CompanyProfile = () => {
                 <Target className="w-7 h-7 text-white" />
               </div>
               <h2 className="font-display text-2xl text-[#084a61] mb-6">Our Mission</h2>
-              <ul className="space-y-4 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <ChevronRight className="w-5 h-5 text-[#9B9068] flex-shrink-0 mt-0.5" />
-                  <span>To curate transparent & hassle-free land investment & acquisition solutions.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ChevronRight className="w-5 h-5 text-[#9B9068] flex-shrink-0 mt-0.5" />
-                  <span>To organize & streamline land investment to create promising opportunities for all segments.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ChevronRight className="w-5 h-5 text-[#9B9068] flex-shrink-0 mt-0.5" />
-                  <span>To build communities through trust & innovation, one acre at a time.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ChevronRight className="w-5 h-5 text-[#9B9068] flex-shrink-0 mt-0.5" />
-                  <span>To become India's leading vacation home development and management company.</span>
-                </li>
+              <ul className="space-y-5 text-gray-700">
+                {missionPoints.map((point, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <ChevronRight className="w-5 h-5 text-[#9B9068] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-semibold text-[#084a61]">{point.title}:</span>{' '}
+                      <span>{point.description}</span>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-lg">
@@ -136,29 +173,17 @@ const CompanyProfile = () => {
                 <Eye className="w-7 h-7 text-white" />
               </div>
               <h2 className="font-display text-2xl text-[#084a61] mb-6">Our Vision</h2>
-              <ul className="space-y-4 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <ChevronRight className="w-5 h-5 text-[#9B9068] flex-shrink-0 mt-0.5" />
-                  <span>To change the landscape & experience of buying & selling real estate.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ChevronRight className="w-5 h-5 text-[#9B9068] flex-shrink-0 mt-0.5" />
-                  <span>To cultivate a community spirit across all our developments.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ChevronRight className="w-5 h-5 text-[#9B9068] flex-shrink-0 mt-0.5" />
-                  <span>To develop a vacation village around every major metropolitan city.</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ChevronRight className="w-5 h-5 text-[#9B9068] flex-shrink-0 mt-0.5" />
-                  <span>To establish presence in every high tourist footfall city in India.</span>
-                </li>
+              <ul className="space-y-5 text-gray-700">
+                {visionPoints.map((point, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <ChevronRight className="w-5 h-5 text-[#9B9068] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-semibold text-[#084a61]">{point.title}:</span>{' '}
+                      <span>{point.description}</span>
+                    </div>
+                  </li>
+                ))}
               </ul>
-              <div className="mt-8 p-4 bg-[#084a61]/5 rounded-xl">
-                <p className="text-[#084a61] font-medium italic">
-                  "Land ownership is a fundamental right for all & not just a few."
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -169,7 +194,7 @@ const CompanyProfile = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase">Our Story</span>
-            <h2 className="font-display text-3xl md:text-4xl text-[#084a61] mt-4">The Journey</h2>
+            <h2 className="font-display text-3xl md:text-4xl text-[#084a61] mt-4">Our Journey</h2>
           </div>
           <div className="relative">
             {/* Timeline line */}
@@ -194,31 +219,6 @@ const CompanyProfile = () => {
         </div>
       </section>
 
-      {/* Group Companies */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase">Our Ecosystem</span>
-            <h2 className="font-display text-3xl md:text-4xl text-[#084a61] mt-4">Group Companies</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {groupCompanies.map((company, index) => (
-              <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <h3 className="font-display text-lg text-[#084a61] mb-4">{company.name}</h3>
-                <ul className="space-y-2">
-                  {company.services.map((service, idx) => (
-                    <li key={idx} className="text-gray-600 text-sm flex items-start gap-2">
-                      <ChevronRight className="w-4 h-4 text-[#9B9068] flex-shrink-0 mt-0.5" />
-                      {service}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Values */}
       <section className="py-20 bg-[#084a61] text-white">
         <div className="container mx-auto px-4">
@@ -239,23 +239,6 @@ const CompanyProfile = () => {
             <p className="text-xl italic text-white/80">
               "We shape our dwellings, and afterwards our dwellings shape us."
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Strategic Partners */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase">Collaborations</span>
-            <h2 className="font-display text-3xl md:text-4xl text-[#084a61] mt-4">Strategic Partners</h2>
-          </div>
-          <div className="flex flex-wrap justify-center gap-4">
-            {partners.map((partner, index) => (
-              <span key={index} className="px-6 py-3 bg-[#f8f9f6] rounded-full text-gray-700 text-sm font-medium">
-                {partner}
-              </span>
-            ))}
           </div>
         </div>
       </section>
@@ -303,7 +286,7 @@ const CompanyProfile = () => {
       {/* Contact */}
       <section className="py-20 bg-[#084a61] text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl md:text-4xl mb-8">Get In Touch</h2>
+          <h2 className="font-display text-3xl md:text-4xl mb-8">Contact Information</h2>
           <div className="max-w-2xl mx-auto space-y-4">
             <p className="text-white/80">
               <strong>Corporate Office:</strong><br />
@@ -312,17 +295,6 @@ const CompanyProfile = () => {
             <p className="text-white/80">
               <strong>Phone:</strong> +91-9555 26 1111
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <a href="https://www.agrocorp.co.in" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
-                www.agrocorp.co.in
-              </a>
-              <a href="https://www.vacationvillage.co.in" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
-                www.vacationvillage.co.in
-              </a>
-              <a href="https://www.landshareindia.com" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
-                www.landshareindia.com
-              </a>
-            </div>
           </div>
         </div>
       </section>
