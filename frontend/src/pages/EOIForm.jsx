@@ -250,7 +250,7 @@ const EOIForm = () => {
           <img 
             src="https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/21s3ac58_VV%20BLUE%20LOGO%20SITE-03.png" 
             alt="Vacation Village" 
-            className="h-14 w-auto"
+            className="h-16 md:h-20 w-auto"
           />
         </div>
       </header>
