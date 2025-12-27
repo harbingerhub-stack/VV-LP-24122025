@@ -269,27 +269,59 @@ const Plots = () => {
         )}
       </div>
 
-      {/* Modal/Lightbox */}
+      {/* Modal/Lightbox with Zoom */}
       {isModalOpen && (
         <div 
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
-          onClick={() => setIsModalOpen(false)}
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 overflow-auto"
+          onClick={handleCloseModal}
         >
-          {/* Close Button */}
-          <button
-            onClick={() => setIsModalOpen(false)}
-            className="absolute top-4 right-4 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-3 transition-all z-10"
-          >
-            <X className="w-6 h-6" />
-          </button>
+          {/* Control Buttons */}
+          <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
+            {/* Zoom Out Button */}
+            <button
+              onClick={handleZoomOut}
+              disabled={zoomLevel <= 0.5}
+              className="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-3 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <ZoomOut className="w-6 h-6" />
+            </button>
+            
+            {/* Zoom Level Indicator */}
+            <span className="text-white/80 text-sm font-medium min-w-[60px] text-center">
+              {Math.round(zoomLevel * 100)}%
+            </span>
+            
+            {/* Zoom In Button */}
+            <button
+              onClick={handleZoomIn}
+              disabled={zoomLevel >= 3}
+              className="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-3 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <ZoomIn className="w-6 h-6" />
+            </button>
+            
+            {/* Close Button */}
+            <button
+              onClick={handleCloseModal}
+              className="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-3 transition-all ml-2"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
 
-          {/* Image */}
-          <img
-            src={sitePlanImage}
-            alt="Vacation Village Master Plan"
-            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+          {/* Image Container */}
+          <div 
+            className="flex items-center justify-center w-full h-full overflow-auto"
             onClick={(e) => e.stopPropagation()}
-          />
+          >
+            <img
+              src={sitePlanImage}
+              alt="Vacation Village Master Plan"
+              className="max-w-none rounded-lg shadow-2xl transition-transform duration-300 ease-out cursor-move"
+              style={{ transform: `scale(${zoomLevel})` }}
+              draggable={false}
+            />
+          </div>
         </div>
       )}
     </section>
