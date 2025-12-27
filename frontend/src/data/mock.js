@@ -99,7 +99,7 @@ export const manorData = {
 
 export const contactData = {
   title: "Begin Your Journey",
-  subtitle: "to know more",
+  subtitle: "To know more",
   phone: "+91 9555 26 1111",
   email: "enquiries@vacationvillage.co.in",
   website: "www.vacationvillage.co.in",
