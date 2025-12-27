@@ -267,16 +267,19 @@ const CompanyProfile = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <div key={index} className="bg-white/10 backdrop-blur p-6 rounded-xl">
-                <value.icon className="w-10 h-10 text-[#9B9068] mb-4" />
-                <h3 className="font-display text-xl mb-3">{value.title}</h3>
-                <p className="text-white/70">{value.description}</p>
+                {value.isQuote ? (
+                  <p className="text-xl italic text-white/90 flex items-center justify-center h-full">
+                    "{value.description}"
+                  </p>
+                ) : (
+                  <>
+                    <value.icon className="w-10 h-10 text-[#9B9068] mb-4" />
+                    <h3 className="font-display text-xl mb-3">{value.title}</h3>
+                    <p className="text-white/70">{value.description}</p>
+                  </>
+                )}
               </div>
             ))}
-          </div>
-          <div className="text-center mt-12">
-            <p className="text-xl italic text-white/80">
-              "We shape our dwellings, and afterwards our dwellings shape us."
-            </p>
           </div>
         </div>
       </section>
