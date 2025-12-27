@@ -274,12 +274,12 @@ const CompanyProfile = () => {
       <section className="py-20 bg-[#084a61] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl md:text-4xl mb-8">Contact Information</h2>
-          <div className="max-w-2xl mx-auto space-y-4">
-            <p className="text-white/80">
+          <div className="max-w-2xl mx-auto space-y-6">
+            <p className="text-white/90 text-lg md:text-xl">
               <strong>Corporate Office:</strong><br />
               No. 07, Level 3, VISTA PIXEL, 8/2B and 8/2C, Bellary Road, Jakkuru, Bengaluru, Karnataka 560092
             </p>
-            <p className="text-white/80">
+            <p className="text-white/90 text-lg md:text-xl">
               <strong>Phone:</strong> +91-9555 26 1111
             </p>
           </div>
