@@ -76,34 +76,13 @@ const CompanyProfile = () => {
 
   const mediaItems = [
     { 
-      source: "Real Estate Conclave & Awards 2025",
-      headline: "Agrocorp Landbase wins Iconic Real Estate Developer Award 2025 for it's impact on Bengaluru.",
-      image: "https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/5c9umulp_image.png"
+      image: "https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/0xysc8ox_Artboard%201.jpg"
     },
     { 
-      source: "Landshare India",
-      headline: "Landshare India Drives Strategic Partnership for Arvind Smart Spaces' New Project",
-      image: null
+      image: "https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/li7ozstc_Artboard%202.jpg"
     },
     { 
-      source: "Business Standard",
-      headline: "India Sotheby's International Realty (ISIR) forays into Bengaluru's Luxury Realty Market with \"The Vineyard\" by Agrocorp",
-      image: null
-    },
-    { 
-      source: "MEDIABRIEF",
-      headline: "Exclusive | Agrocorp's Ayan Nagpal on simplifying land investments with hassle-free, effortless, and transparent transactions.",
-      image: null
-    },
-    { 
-      source: "Construction Week",
-      headline: "Arush Nagpal, Director, Agrocorp Landbase, on how one can own a luxurious vineyard in one's back",
-      image: null
-    },
-    { 
-      source: "Realty+",
-      headline: "Agrocorp Establishes Landshare India Aims To Achieve Rs. 2500 Cr. By FY 2023-24 End.",
-      image: null
+      image: "https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/a7wgxqtp_Artboard%204.jpg"
     }
   ];
 
