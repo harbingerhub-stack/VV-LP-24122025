@@ -101,15 +101,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Company Profile Link */}
-            <a 
-              href="/about-us" 
-              className="inline-flex items-center gap-2 text-[#9B9068] hover:text-white transition-colors text-sm font-medium"
-            >
-              <span>Click here to know more about the company</span>
-              <span>→</span>
-            </a>
           </div>
 
           {/* Form Side */}
