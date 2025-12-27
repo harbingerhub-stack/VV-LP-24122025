@@ -65,7 +65,8 @@ const CompanyProfile = () => {
     { icon: TreePine, title: "Giving Back", description: "Building self-sustaining communities that give back to the earth." },
     { icon: Building2, title: "Continuous Infrastructure", description: "Communities evolve over time, and we're there to help grow together." },
     { icon: Users, title: "Common Vision", description: "People are the most important ingredient in building a community." },
-    { icon: Handshake, title: "Promoting Empathy", description: "Developing deep empathy for all human beings." }
+    { icon: Handshake, title: "Promoting Empathy", description: "Developing deep empathy for all human beings." },
+    { icon: null, title: null, description: "We shape our dwellings, and afterwards our dwellings shape us.", isQuote: true }
   ];
 
   const testimonials = [
