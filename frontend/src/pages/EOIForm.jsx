@@ -556,17 +556,14 @@ const EOIForm = () => {
                     <div className="flex gap-3">
                       <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                       <div className="text-sm text-amber-800">
-                        <p className="font-medium mb-1">Important Notes:</p>
-                        <ul className="list-disc list-inside space-y-1">
-                          <li>EOI Registration Amount: ₹99,999 (Fixed)</li>
-                          <li>Payments accepted only from Applicant's or Co-Applicant's account</li>
-                          {formData.paymentMethod === 'bank' && (
-                            <li>₹1,000 penalty applicable for cheque dishonour</li>
-                          )}
-                          {formData.paymentMethod === 'gateway' && (
-                            <li>Payment gateway charges, if any, will be borne by the applicant</li>
-                          )}
-                        </ul>
+                        <p className="font-medium mb-2">Important Notes:</p>
+                        <ol className="list-decimal list-inside space-y-2">
+                          <li><strong>Nature of EOI:</strong> This Expression of Interest (EOI) is intended solely to gauge buyer interest and does not constitute an offer of sale or an agreement to sell.</li>
+                          <li><strong>Refund Policy:</strong> The EOI amount is 100% refundable in the event that a unit is not allotted to the applicant.</li>
+                          <li><strong>Regulatory Compliance:</strong> Our RERA acknowledgment number is ACK/KA/RERA/1255/477/PR/111225/009847. Final bookings will be accepted only upon successful RERA registration and are subject to unit allotment.</li>
+                          <li><strong>Payment Guidelines:</strong> Payments must be made exclusively from the bank account of the primary Applicant or Co-Applicant. Third-party payments will not be accepted.</li>
+                          <li><strong>Terms and Conditions:</strong> All transactions are subject to the prevailing terms and conditions.</li>
+                        </ol>
                       </div>
                     </div>
                   </div>
