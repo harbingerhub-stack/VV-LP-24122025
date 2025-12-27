@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg py-3">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg py-2">
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -45,7 +45,7 @@ const Header = () => {
             <img 
               src="https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/lksba2p2_VV%20BLUE%20LOGO%20SITE-03.png" 
               alt="Vacation Village Chikkamagaluru" 
-              className="h-16 md:h-20 w-auto"
+              className="h-12 md:h-14 w-auto"
             />
           </a>
 
