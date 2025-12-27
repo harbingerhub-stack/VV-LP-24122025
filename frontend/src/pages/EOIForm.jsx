@@ -248,9 +248,9 @@ const EOIForm = () => {
             <span className="font-medium">Back to Home</span>
           </a>
           <img 
-            src="https://customer-assets.emergentagent.com/job_paradise-plots-3/artifacts/pxhq9e10_VV%20BLUE%20LOGO%20SITE-02.png" 
+            src="https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/21s3ac58_VV%20BLUE%20LOGO%20SITE-03.png" 
             alt="Vacation Village" 
-            className="h-12 w-auto"
+            className="h-14 w-auto"
           />
         </div>
       </header>

@@ -45,7 +45,7 @@ const Header = () => {
             <img 
               src="https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/21s3ac58_VV%20BLUE%20LOGO%20SITE-03.png" 
               alt="Vacation Village Chikkamagaluru" 
-              className="h-12 md:h-14 w-auto"
+              className="h-14 md:h-16 w-auto"
             />
           </a>
 
