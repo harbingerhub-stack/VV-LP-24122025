@@ -31,6 +31,11 @@ razorpay_client = razorpay.Client(auth=(
 # Create the main app without a prefix
 app = FastAPI()
 
+# Health check endpoint for Kubernetes deployment
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
+
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
