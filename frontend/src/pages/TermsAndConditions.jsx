@@ -190,7 +190,6 @@ const TermsAndConditions = () => {
             <div className="text-gray-700 space-y-4">
               <p>For any questions or concerns regarding these Terms, please contact:</p>
               <div className="bg-[#084a61]/5 p-6 rounded-xl space-y-2">
-                <p><strong>Phone:</strong> (+91) 9540 03 0303</p>
                 <p><strong>Company:</strong> ALPL 3 LLP</p>
                 <p><strong>Corporate Office:</strong> Unit 7, Level 3, Vista Pixel, 8/2B and 8, 2nd C Main Rd, Jakkuru Layout, Jakkuru, Bengaluru, Karnataka 560092</p>
                 <p><strong>Email:</strong> enquiries@vacationvillage.co.in</p>
