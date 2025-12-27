@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Grid3X3, Map, X, ZoomIn, Sparkles } from 'lucide-react';
+import { ArrowRight, Grid3X3, Map, X, ZoomIn, ZoomOut, Sparkles } from 'lucide-react';
 import { Button } from '../ui/button';
 import { plotsData } from '../../data/mock';
 
@@ -37,6 +37,7 @@ const Plots = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('plots');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -48,10 +49,13 @@ const Plots = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Close modal on escape key
+  // Close modal on escape key and reset zoom
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape') setIsModalOpen(false);
+      if (e.key === 'Escape') {
+        setIsModalOpen(false);
+        setZoomLevel(1);
+      }
     };
     if (isModalOpen) {
       document.addEventListener('keydown', handleEscape);
@@ -62,6 +66,21 @@ const Plots = () => {
       document.body.style.overflow = 'unset';
     };
   }, [isModalOpen]);
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setZoomLevel(1);
+  };
+
+  const handleZoomIn = (e) => {
+    e.stopPropagation();
+    setZoomLevel(prev => Math.min(prev + 0.5, 3));
+  };
+
+  const handleZoomOut = (e) => {
+    e.stopPropagation();
+    setZoomLevel(prev => Math.max(prev - 0.5, 0.5));
+  };
 
   const scrollToContact = () => {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
