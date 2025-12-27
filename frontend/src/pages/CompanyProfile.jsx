@@ -91,19 +91,6 @@ const CompanyProfile = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="bg-[#084a61] text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase mb-4 block">About Us</span>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">Agrocorp</h1>
-          <p className="text-2xl md:text-3xl font-light text-white/80 mb-8">Real Estate. Reimagined.</p>
-          <p className="text-lg text-white/70 max-w-3xl mx-auto">
-            A pioneer in managed farm communities and premium vacation home developments, 
-            building communities through trust & innovation, one acre at a time.
-          </p>
-        </div>
-      </section>
-
       {/* Group Companies */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
