@@ -242,7 +242,7 @@ const EOIForm = () => {
     <div className="min-h-screen bg-[#f8f9f6]">
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2 text-[#084a61] hover:text-[#9B9068] transition-colors">
             <ArrowLeft className="w-5 h-5" />
             <span className="font-medium">Back to Home</span>
@@ -250,7 +250,7 @@ const EOIForm = () => {
           <img 
             src="https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/lksba2p2_VV%20BLUE%20LOGO%20SITE-03.png" 
             alt="Vacation Village" 
-            className="h-16 md:h-20 w-auto"
+            className="h-12 md:h-14 w-auto"
           />
         </div>
       </header>
