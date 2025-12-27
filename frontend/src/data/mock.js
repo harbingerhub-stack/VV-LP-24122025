@@ -62,7 +62,7 @@ export const plotsData = {
     { size: "30' × 50'", sqft: "1,500", units: "198", price: "2BHK Villa Plot", cost: "₹55.99 Lakhs*" },
     { size: "30' × 60'", sqft: "1,800", units: "18", price: "3BHK Villa Plot", cost: "₹65.99 Lakhs*" }
   ],
-  note: "All plots governed by neo-classical design code. *All inclusive pricing."
+  note: "*Registration charges and stamp duty payable extra. Terms and conditions apply."
 };
 
 export const amenitiesData = {
