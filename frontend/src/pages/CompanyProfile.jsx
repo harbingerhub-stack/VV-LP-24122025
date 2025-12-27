@@ -334,7 +334,13 @@ const CompanyProfile = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {leadership.map((leader, index) => (
-              <div key={index} className="bg-[#f8f9f6] p-5 rounded-2xl shadow-lg text-center">
+              <a 
+                key={index} 
+                href={leader.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#f8f9f6] p-5 rounded-2xl shadow-lg text-center hover:shadow-xl transition-shadow cursor-pointer block"
+              >
                 <div className="w-28 h-28 mx-auto mb-4">
                   <img 
                     src={leader.image} 
@@ -345,7 +351,7 @@ const CompanyProfile = () => {
                 <h3 className="font-display text-lg text-[#084a61]">{leader.name}</h3>
                 <p className="text-[#9B9068] font-medium text-xs mb-3">{leader.title}</p>
                 <p className="text-gray-600 italic text-xs leading-relaxed">"{leader.quote}"</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
