@@ -288,17 +288,10 @@ const CompanyProfile = () => {
             <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase font-display italic">Media</span>
             <h2 className="font-display text-3xl md:text-4xl text-[#9B9068] mt-2">Coverages</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {mediaItems.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div className="h-40 mb-4 flex items-center justify-center bg-gray-50 rounded-xl overflow-hidden">
-                  {item.image ? (
-                    <img src={item.image} alt={item.source} className="h-full w-full object-contain p-2" />
-                  ) : (
-                    <span className="font-display text-2xl text-[#084a61] italic">{item.source}</span>
-                  )}
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed">{item.headline}</p>
+              <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <img src={item.image} alt="Media Coverage" className="w-full h-auto object-cover" />
               </div>
             ))}
           </div>
