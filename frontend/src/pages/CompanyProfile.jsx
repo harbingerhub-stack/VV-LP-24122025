@@ -74,6 +74,75 @@ const CompanyProfile = () => {
     { name: "Mr. V. Ganeshan", text: "WOW experience! Professional team, good after-sale services, and perfect locations." }
   ];
 
+  const mediaItems = [
+    { 
+      source: "Real Estate Conclave & Awards 2025",
+      headline: "Agrocorp Landbase wins Iconic Real Estate Developer Award 2025 for it's impact on Bengaluru.",
+      image: "https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/5c9umulp_image.png"
+    },
+    { 
+      source: "Landshare India",
+      headline: "Landshare India Drives Strategic Partnership for Arvind Smart Spaces' New Project",
+      image: null
+    },
+    { 
+      source: "Business Standard",
+      headline: "India Sotheby's International Realty (ISIR) forays into Bengaluru's Luxury Realty Market with \"The Vineyard\" by Agrocorp",
+      image: null
+    },
+    { 
+      source: "MEDIABRIEF",
+      headline: "Exclusive | Agrocorp's Ayan Nagpal on simplifying land investments with hassle-free, effortless, and transparent transactions.",
+      image: null
+    },
+    { 
+      source: "Construction Week",
+      headline: "Arush Nagpal, Director, Agrocorp Landbase, on how one can own a luxurious vineyard in one's back",
+      image: null
+    },
+    { 
+      source: "Realty+",
+      headline: "Agrocorp Establishes Landshare India Aims To Achieve Rs. 2500 Cr. By FY 2023-24 End.",
+      image: null
+    }
+  ];
+
+  const founders = [
+    {
+      name: "Ayan Nagpal",
+      title: "Director",
+      quote: "Land is limited & is the core of all realty developments. The idea is to make the journey of all stakeholders organised, transparent & seamless.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    },
+    {
+      name: "Arush Nagpal",
+      title: "Director",
+      quote: "People forget that they are at the core of any true real estate transaction. We value people & they value the transaction process.",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+    }
+  ];
+
+  const leadership = [
+    {
+      name: "Saummay Sinha",
+      title: "Associate Vice President: Sales",
+      quote: "One should not only persevere to complete the sales cycle but to make the process effective and sustainable",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face"
+    },
+    {
+      name: "Sagar Patil",
+      title: "Associate Vice President: Acquisitions",
+      quote: "Land is the one entity that at its core is limited, but provides unlimited opportunities for meaningful endeavours & purposeful benefits for our investments",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face"
+    },
+    {
+      name: "Shailesh Kumar",
+      title: "Vice President: Transaction Advisory",
+      quote: "Shared vision, integrity and transparency is the bedrock of my decade long relationship with global and domestic financial institutions, private equity funds and real estate developers",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#f8f9f6]">
       {/* Header */}
