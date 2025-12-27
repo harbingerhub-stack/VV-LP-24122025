@@ -35,7 +35,7 @@ const TermsAndConditions = () => {
         </div>
 
         {/* Content */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 space-y-8">
+        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 space-y-8" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
           
           {/* Section 1 */}
           <section>
