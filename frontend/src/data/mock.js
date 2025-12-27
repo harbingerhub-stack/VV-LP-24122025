@@ -109,7 +109,7 @@ export const contactData = {
 
 export const navLinks = [
   { name: "Home", href: "/about-us", isPage: true },
-  { name: "About", href: "#about" },
+  { name: "About", href: "/about-us", isPage: true },
   { name: "Location", href: "#location" },
   { name: "Plots", href: "#plots" },
   { name: "Contact", href: "#contact" }
