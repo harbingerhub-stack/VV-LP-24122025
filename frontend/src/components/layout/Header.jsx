@@ -1,10 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '../ui/button';
 import { navLinks, contactData } from '../../data/mock';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavClick = (link) => {
+    setIsMobileMenuOpen(false);
+    if (link.isPage) {
+      navigate(link.href);
+    } else {
+      const element = document.querySelector(link.href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   const scrollToSection = (href) => {
     setIsMobileMenuOpen(false);
@@ -20,10 +34,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a
-            href="#home"
+            href="/"
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection('#home');
+              navigate('/');
+              window.scrollTo(0, 0);
             }}
             className="flex items-center"
           >
@@ -42,7 +57,7 @@ const Header = () => {
                 href={link.href}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(link.href);
+                  handleNavClick(link);
                 }}
                 className="text-lg font-medium tracking-wide text-[#084a61] transition-all duration-300 hover:text-[#9B9068]"
               >
@@ -87,7 +102,7 @@ const Header = () => {
                   href={link.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection(link.href);
+                    handleNavClick(link);
                   }}
                   className="text-[#084a61] font-medium py-2 hover:text-[#9B9068] transition-colors"
                 >
