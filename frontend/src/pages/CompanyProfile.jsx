@@ -321,25 +321,25 @@ const CompanyProfile = () => {
       </section>
 
       {/* Meet Our Leadership */}
-      <section className="py-20 bg-[#f8f9f6]">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase font-display italic">Meet Our</span>
             <h2 className="font-display text-3xl md:text-4xl text-[#9B9068] mt-2">Leadership</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {leadership.map((leader, index) => (
-              <div key={index} className="bg-white p-6 rounded-2xl shadow-lg text-center">
-                <div className="w-32 h-32 mx-auto mb-4">
+              <div key={index} className="bg-[#f8f9f6] p-5 rounded-2xl shadow-lg text-center">
+                <div className="w-28 h-28 mx-auto mb-4">
                   <img 
                     src={leader.image} 
                     alt={leader.name} 
                     className="w-full h-full object-cover object-top rounded-full shadow-md"
                   />
                 </div>
-                <h3 className="font-display text-xl text-[#084a61]">{leader.name}</h3>
-                <p className="text-[#9B9068] font-medium text-sm mb-4">{leader.title}</p>
-                <p className="text-gray-600 italic text-sm">"{leader.quote}"</p>
+                <h3 className="font-display text-lg text-[#084a61]">{leader.name}</h3>
+                <p className="text-[#9B9068] font-medium text-xs mb-3">{leader.title}</p>
+                <p className="text-gray-600 italic text-xs leading-relaxed">"{leader.quote}"</p>
               </div>
             ))}
           </div>
