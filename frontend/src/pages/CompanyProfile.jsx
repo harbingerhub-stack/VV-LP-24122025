@@ -107,7 +107,13 @@ const CompanyProfile = () => {
     }
   ];
 
-  const founders = [
+  const leadership = [
+    {
+      name: "Arush Nagpal",
+      title: "Director",
+      quote: "People forget that they are at the core of any true real estate transaction. We value people & they value the transaction process.",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+    },
     {
       name: "Ayan Nagpal",
       title: "Director",
@@ -115,14 +121,11 @@ const CompanyProfile = () => {
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
     },
     {
-      name: "Arush Nagpal",
-      title: "Director",
-      quote: "People forget that they are at the core of any true real estate transaction. We value people & they value the transaction process.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-    }
-  ];
-
-  const leadership = [
+      name: "Shailesh Kumar",
+      title: "Vice President: Transaction Advisory",
+      quote: "Shared vision, integrity and transparency is the bedrock of my decade long relationship with global and domestic financial institutions, private equity funds and real estate developers",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face"
+    },
     {
       name: "Saummay Sinha",
       title: "Associate Vice President: Sales",
@@ -134,12 +137,6 @@ const CompanyProfile = () => {
       title: "Associate Vice President: Acquisitions",
       quote: "Land is the one entity that at its core is limited, but provides unlimited opportunities for meaningful endeavours & purposeful benefits for our investments",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face"
-    },
-    {
-      name: "Shailesh Kumar",
-      title: "Vice President: Transaction Advisory",
-      quote: "Shared vision, integrity and transparency is the bedrock of my decade long relationship with global and domestic financial institutions, private equity funds and real estate developers",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face"
     }
   ];
 
