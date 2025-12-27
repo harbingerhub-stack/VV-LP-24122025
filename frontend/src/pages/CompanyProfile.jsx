@@ -320,34 +320,6 @@ const CompanyProfile = () => {
         </div>
       </section>
 
-      {/* Meet the Founders */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase font-display italic">Meet the</span>
-            <h2 className="font-display text-3xl md:text-4xl text-[#9B9068] mt-2">Founders</h2>
-          </div>
-          <div className="max-w-5xl mx-auto space-y-16">
-            {founders.map((founder, index) => (
-              <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}>
-                <div className="w-64 h-64 flex-shrink-0">
-                  <img 
-                    src={founder.image} 
-                    alt={founder.name} 
-                    className="w-full h-full object-cover object-top rounded-2xl shadow-lg"
-                  />
-                </div>
-                <div className={`flex-1 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                  <p className="text-gray-600 italic text-lg mb-4">"{founder.quote}"</p>
-                  <h3 className="font-display text-2xl text-[#084a61]">{founder.name}</h3>
-                  <p className="text-[#9B9068] font-medium">{founder.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Meet Our Leadership */}
       <section className="py-20 bg-[#f8f9f6]">
         <div className="container mx-auto px-4">
