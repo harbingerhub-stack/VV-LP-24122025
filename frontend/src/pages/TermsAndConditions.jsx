@@ -16,7 +16,7 @@ const TermsAndConditions = () => {
             <span className="font-medium">Back to Home</span>
           </a>
           <img 
-            src="https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/21s3ac58_VV%20BLUE%20LOGO%20SITE-03.png" 
+            src="https://customer-assets.emergentagent.com/job_harmony-estates/artifacts/lksba2p2_VV%20BLUE%20LOGO%20SITE-03.png" 
             alt="Vacation Village" 
             className="h-16 md:h-20 w-auto"
           />
