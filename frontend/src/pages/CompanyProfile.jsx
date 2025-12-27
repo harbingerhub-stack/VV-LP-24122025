@@ -291,7 +291,7 @@ const CompanyProfile = () => {
             <span className="text-[#9B9068] font-medium tracking-wider text-sm uppercase font-display italic">Media</span>
             <h2 className="font-display text-3xl md:text-4xl text-[#9B9068] mt-2">Coverages</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {mediaItems.map((item, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
                 <img src={item.image} alt="Media Coverage" className="w-full h-auto object-cover" />
