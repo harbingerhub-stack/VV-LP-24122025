@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import "./App.css";
 import { Toaster } from './components/ui/sonner';
 
@@ -16,6 +16,7 @@ import EOIForm from './pages/EOIForm';
 import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import CompanyProfile from './pages/CompanyProfile';
+import AdminDashboard from './pages/AdminDashboard';
 
 function LandingPage() {
   return (
@@ -34,20 +35,31 @@ function LandingPage() {
   );
 }
 
+// Wrapper to conditionally show FloatingCTA
+function AppContent() {
+  const location = useLocation();
+  const hideFloatingCTA = location.pathname === '/admin';
+  
+  return (
+    <div className="App">
+      <Toaster position="top-right" richColors />
+      {!hideFloatingCTA && <FloatingCTA />}
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/eoi" element={<EOIForm />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/about-us" element={<CompanyProfile />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+      </Routes>
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Toaster position="top-right" richColors />
-        <FloatingCTA />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/eoi" element={<EOIForm />} />
-          <Route path="/terms" element={<TermsAndConditions />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/about-us" element={<CompanyProfile />} />
-        </Routes>
-      </div>
+      <AppContent />
     </Router>
   );
 }
