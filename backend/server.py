@@ -422,6 +422,113 @@ async def get_payment_status(eoi_id: str):
     return payment
 
 
+# ==================== ADMIN DASHBOARD ENDPOINTS ====================
+
+# Simple admin credentials (in production, use proper auth)
+ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME', 'admin')
+ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'VacationVillage@2025')
+
+class AdminLoginRequest(BaseModel):
+    username: str
+    password: str
+
+@api_router.post("/admin/login")
+async def admin_login(request: AdminLoginRequest):
+    """Admin login endpoint"""
+    if request.username == ADMIN_USERNAME and request.password == ADMIN_PASSWORD:
+        # Generate a simple token (in production, use JWT)
+        token = hashlib.sha256(f"{request.username}{datetime.now().isoformat()}".encode()).hexdigest()
+        return {
+            "success": True,
+            "token": token,
+            "message": "Login successful"
+        }
+    raise HTTPException(status_code=401, detail="Invalid credentials")
+
+@api_router.get("/admin/callbacks")
+async def get_admin_callbacks():
+    """Get all callback requests for admin dashboard"""
+    callbacks = await db.callback_requests.find({}, {"_id": 0}).to_list(1000)
+    
+    # Sort by created_at descending (newest first)
+    callbacks.sort(key=lambda x: x.get('created_at', ''), reverse=True)
+    
+    return {
+        "success": True,
+        "count": len(callbacks),
+        "data": callbacks
+    }
+
+@api_router.get("/admin/eoi")
+async def get_admin_eoi():
+    """Get all EOI submissions for admin dashboard"""
+    submissions = await db.eoi_submissions.find({}, {"_id": 0}).to_list(1000)
+    
+    # Sort by created_at descending (newest first)
+    submissions.sort(key=lambda x: x.get('created_at', ''), reverse=True)
+    
+    return {
+        "success": True,
+        "count": len(submissions),
+        "data": submissions
+    }
+
+@api_router.get("/admin/payments")
+async def get_admin_payments():
+    """Get all payments for admin dashboard"""
+    payments = await db.payments.find({}, {"_id": 0}).to_list(1000)
+    
+    # Sort by created_at descending (newest first)
+    payments.sort(key=lambda x: x.get('created_at', ''), reverse=True)
+    
+    return {
+        "success": True,
+        "count": len(payments),
+        "data": payments
+    }
+
+@api_router.put("/admin/callback/{callback_id}/status")
+async def update_callback_status(callback_id: str, status: str):
+    """Update callback request status"""
+    result = await db.callback_requests.update_one(
+        {"id": callback_id},
+        {"$set": {"status": status}}
+    )
+    
+    if result.modified_count == 0:
+        raise HTTPException(status_code=404, detail="Callback request not found")
+    
+    return {"success": True, "message": "Status updated"}
+
+@api_router.put("/admin/eoi/{eoi_id}/status")
+async def update_eoi_status(eoi_id: str, status: str):
+    """Update EOI submission status"""
+    result = await db.eoi_submissions.update_one(
+        {"id": eoi_id},
+        {"$set": {"status": status}}
+    )
+    
+    if result.modified_count == 0:
+        raise HTTPException(status_code=404, detail="EOI submission not found")
+    
+    return {"success": True, "message": "Status updated"}
+
+@api_router.get("/admin/stats")
+async def get_admin_stats():
+    """Get dashboard statistics"""
+    callback_count = await db.callback_requests.count_documents({})
+    eoi_count = await db.eoi_submissions.count_documents({})
+    payment_count = await db.payments.count_documents({})
+    paid_count = await db.payments.count_documents({"status": "paid"})
+    
+    return {
+        "callbacks": callback_count,
+        "eoi_submissions": eoi_count,
+        "total_payments": payment_count,
+        "successful_payments": paid_count
+    }
+
+
 # Include the router in the main app
 app.include_router(api_router)
 
